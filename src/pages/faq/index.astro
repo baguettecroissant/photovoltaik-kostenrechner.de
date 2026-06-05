@@ -1,0 +1,592 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { siteConfig } from '../../../site.config';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const budgetFaq = [
+  {
+    id: "b1",
+    cat: "budget",
+    q: "Was kostet eine Solaranlage für ein Einfamilienhaus im Jahr 2026?",
+    a: "Die Kosten einer Photovoltaikanlage hängen stark von der Nennleistung (kWp) und dem Speicher ab. Eine 10 kWp Anlage ohne Speicher kostet schlüsselfertig inklusive Montage ca. <strong>9.000 € bis 13.000 €</strong>. Inklusive eines modernen 10 kWh Batteriespeichers liegt der Preis bei ca. <strong>15.000 € bis 20.000 €</strong>. Durch den Wegfall der 19% Umsatzsteuer (0%-Steuersatz) sparen Käufer direkt bares Geld."
+  },
+  {
+    id: "b2",
+    cat: "budget",
+    q: "Wann amortisiert sich eine Photovoltaikanlage in Deutschland?",
+    a: "Die durchschnittliche Amortisationszeit liegt heute bei <strong>8 bis 11 Jahren</strong>. Ohne Speicher amortisiert sich die Anlage meist nach 7 bis 9 Jahren, mit Speicher nach 9 bis 12 Jahren. Da moderne Solarmodule eine Lebensdauer von über 25 bis 30 Jahren aufweisen, wirft die Anlage nach der Amortisation mindestens 15 Jahre lang reinen Gewinn durch kostenlosen Solarstrom ab."
+  },
+  {
+    id: "b3",
+    cat: "budget",
+    q: "Wie stabil ist der Preis für Stromspeicher 2026?",
+    a: "Die Preise für Batteriespeicher (insbesondere Lithium-Eisenphosphat-Zellen, LFP) sind auf einem historischen Tiefstand. Ein hochwertiger 5 kWh Speicher kostet ca. 3.500 € bis 5.500 €, während ein 10 kWh Standard-Speicher für 6.000 € bis 9.000 € inklusive Installation erhältlich ist. Aufgrund des hohen Wettbewerbs haben sich die Preise stabilisiert."
+  },
+  {
+    id: "b4",
+    cat: "budget",
+    q: "Wie viel Geld kann ich pro Jahr mit Solarstrom einsparen?",
+    a: "Bei einem typischen Stromverbrauch von 4.500 kWh und einer 10 kWp Anlage mit Speicher können Sie eine Eigenverbrauchsquote von ca. 70% erreichen. Dadurch müssen Sie ca. 3.150 kWh weniger Strom vom Netz einkaufen. Bei einem Strompreis von 35 Cent/kWh spart das ca. <strong>1.100 € pro Jahr</strong>. Hinzu kommen ca. 500 € Einnahmen aus der Einspeisevergütung, was eine Gesamtersparnis von <strong>ca. 1.600 € jährlich</strong> ergibt."
+  }
+];
+
+const subsidiesFaq = [
+  {
+    id: "s1",
+    cat: "subsidies",
+    q: "Welche PV-Förderungen gibt es 2026 in Deutschland?",
+    a: "Es gibt drei Hauptförderungen: <ol><li><strong>0% Umsatzsteuer (Nullsteuersatz):</strong> Keine Mehrwertsteuer auf PV-Anlagen, Speicher und Montage für Wohngebäude (§ 12 Abs. 3 UStG).</li><li><strong>KfW-Kredit 270:</strong> Zinsgünstige Darlehen für Photovoltaik-Projekte.</li><li><strong>Einspeisevergütung:</strong> Staatlich garantierte Vergütung über 20 Jahre für eingespeisten Solarstrom.</li></ol> Falls Sie PV zusammen mit einer Wärmepumpe installieren, können Sie im KfW-Programm 458 bis zu 70% Zuschuss (max. 21.000 €) beantragen."
+  },
+  {
+    id: "s2",
+    cat: "subsidies",
+    q: "Muss ich die Einnahmen aus meiner Solaranlage versteuern?",
+    a: "Nein. Seit dem Steuerjahr 2022 sind Photovoltaikanlagen auf Einfamilienhäusern bis zu einer Nennleistung von <strong>30 kWp komplett von der Einkommensteuer befreit</strong> (§ 3 Nr. 72 EStG). Sie müssen die Einnahmen aus der Einspeisevergütung oder dem Eigenverbrauch also nicht in Ihrer Steuererklärung angeben. Zudem entfällt durch den 0%-Umsatzsteuersatz die Notwendigkeit, für die Steuerbefreiung in die Regelbesteuerung zu optieren."
+  },
+  {
+    id: "s3",
+    cat: "subsidies",
+    q: "Gibt es zusätzliche regionale Förderungen für Stromspeicher?",
+    a: "Ja, einige Bundesländer (z. B. Berlin mit 'Solarplus', Sachsen, Schleswig-Holstein) sowie viele Städte und Kommunen bieten eigene Zuschussprogramme für Batteriespeicher oder innovative PV-Konzepte an. Diese sind oft mit den bundesweiten Förderungen kombinierbar. Fragen Sie Ihren regionalen Solar-Fachbetrieb nach aktuellen lokalen Programmen."
+  }
+];
+
+const techFaq = [
+  {
+    id: "t1",
+    cat: "tech",
+    q: "Wie groß sollte meine PV-Anlage sein?",
+    a: "Als Faustregel gilt: Installieren Sie so viel Leistung, wie es Ihre Dachfläche und Ihr Budget sinnvoll zulassen. Jedes zusätzliche kWp senkt die Grenzkosten der Installation und erhöht die Ausbeute an bewölkten Tagen. Für ein Standard-Einfamilienhaus mit 4 Personen liegt die optimale Nennleistung meist zwischen <strong>8 und 12 kWp</strong>. Bei geplanter Anschaffung einer Wärmepumpe oder eines E-Autos empfiehlt es sich, das Dach vollzubelegen (12 bis 15+ kWp)."
+  },
+  {
+    id: "t2",
+    cat: "tech",
+    q: "Wie viel Strom erzeugt eine 10 kWp Solaranlage im Jahr?",
+    a: "In Deutschland erzeugt eine 10 kWp Solaranlage je nach Region und Dachausrichtung ca. <strong>9.000 bis 11.000 kWh</strong> Strom pro Jahr. Im sonnigen Süden (Bayern, Baden-Württemberg) liegt der Ertrag am höchsten (ca. 1.000 bis 1.100 kWh pro kWp), im Norden und Nordwesten sind es ca. 850 bis 950 kWh pro kWp."
+  },
+  {
+    id: "t3",
+    cat: "tech",
+    q: "Welche Dächer sind für Photovoltaik geeignet?",
+    a: "Ideal sind Ziegel- und Metalldächer mit einer Neigung von 25 bis 40 Grad und einer Ausrichtung nach Süden, Osten oder Westen. Auch Flachdächer sind durch entsprechende Aufständerung der Module hervorragend geeignet. <strong>Ausschlusskriterium:</strong> Dächer mit Asbest- oder Schiefer-Eindeckung dürfen aus gesundheitlichen und statischen Gründen von den meisten Fachbetrieben nicht belegt werden."
+  }
+];
+
+const storageFaq = [
+  {
+    id: "st1",
+    cat: "storage",
+    q: "Welche Speichergröße ist für mich optimal?",
+    a: "Als Faustregel für die Dimensionierung gilt: <strong>1 kWh Speicherkapazität pro 1 kWp PV-Leistung</strong>. Haben Sie beispielsweise eine 8 kWp Anlage, ist ein Speicher mit 8 kWh optimal. Alternativ rechnet man ca. 1 kWh Nutzkapazität pro 1.000 kWh jährlichem Stromverbrauch. Ein zu kleiner Speicher ist schnell erschöpft, ein deutlich zu großer Speicher wird selten voll und ist unwirtschaftlich."
+  },
+  {
+    id: "st2",
+    cat: "storage",
+    q: "Wie lang ist die Lebensdauer moderner Solarspeicher?",
+    a: "Moderne Lithium-Eisenphosphat-Speicher (LiFePO4) haben eine Lebenserwartung von ca. <strong>10 bis 15 Jahren</strong>. Sie überstehen mühelos 6.000 bis 8.000 Ladezyklen, bevor ihre Kapazität auf 80% des Ausgangswerts sinkt. Die Solarmodule selbst halten 25 bis 30 Jahre. Daher muss der Speicher im Laufe der Modul-Lebensdauer voraussichtlich einmal ersetzt werden."
+  }
+];
+
+const installFaq = [
+  {
+    id: "i1",
+    cat: "install",
+    q: "Muss ich eine Solaranlage genehmigen lassen?",
+    a: "Für PV-Anlagen auf privaten Wohnhäusern ist in Deutschland im Regelfall <strong>keine Baugenehmigung erforderlich</strong>. Ausnahmen gelten nur für denkmalgeschützte Gebäude oder in Gebieten mit speziellen Gestaltungssatzungen. Die Anlage muss jedoch beim lokalen Netzbetreiber angemeldet und im <strong>Marktstammdatenregister (MaStR)</strong> der Bundesnetzagentur registriert werden. Diese Anmeldung übernimmt üblicherweise der Solar-Fachbetrieb für Sie."
+  },
+  {
+    id: "i2",
+    cat: "install",
+    q: "Wie finde ich den passenden Solarteur in meiner Region?",
+    a: "Vergleichen Sie unbedingt mehrere Angebote. Achten Sie auf die Qualifikation des Betriebs (eingetragener Elektromeisterbetrieb), Garantien auf Module und Wechselrichter, und ob die Anmeldung beim Netzbetreiber im Preis inbegriffen ist. Unser kostenloser Angebotsvergleich vermittelt Ihnen bis zu 3 Angebote von geprüften Betrieben direkt aus Ihrer Region."
+  }
+];
+
+const faqCategories = [
+  { id: "all", name: "Alle", icon: "📋" },
+  { id: "budget", name: "Preise & Rendite", icon: "💰" },
+  { id: "subsidies", name: "Förderung & Steuern", icon: "🏛️" },
+  { id: "tech", name: "Technik & Planung", icon: "⚙️" },
+  { id: "storage", name: "Speicher & Autarkie", icon: "🔋" },
+  { id: "install", name: "Montage & Anbieter", icon: "🔧" }
+];
+
+const allFaq = [...budgetFaq, ...subsidiesFaq, ...techFaq, ...storageFaq, ...installFaq];
+
+// FAQ JSON-LD formatting
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": allFaq.map(f => ({
+      "@type": "Question",
+      "name": f.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": f.a.replace(/<\/?[^>]+(>|$)/g, "") // Clean HTML tags for JSON schema compliance
+      }
+    }))
+  }
+];
+---
+
+<BaseLayout
+  title={`FAQ Solaranlage 2026: Fragen & Antworten zu PV-Kosten | ${siteConfig.name}`}
+  description={`Experten-Antworten auf Ihre Fragen zu Photovoltaik: Preise für Module und Speicher, staatliche KfW-Förderung, Nullsteuersatz und Wirtschaftlichkeit.`}
+  canonical="/faq"
+  jsonLd={jsonLd}
+>
+  <!-- Hero Section -->
+  <section class="gradient-hero text-white py-12 relative overflow-hidden">
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(251,191,36,0.1),transparent)] pointer-events-none"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <Breadcrumbs items={[
+        { label: "FAQ", href: "/faq" },
+      ]} />
+      <h1 class="text-3xl md:text-5xl font-extrabold mb-4 font-heading mt-6 tracking-tight">
+        ❓ Häufig gestellte Fragen (FAQ)
+      </h1>
+      <p class="text-blue-100 text-lg max-w-3xl font-medium leading-relaxed">
+        Sie haben Fragen zu Technik, Genehmigungen, Preisen oder der KfW-Förderung? Hier finden Sie verlässliche Antworten unseres Expertenteams.
+      </p>
+    </div>
+  </section>
+
+  <!-- Interactive Controls Section -->
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 -mt-6 relative z-20">
+    <div class="bg-white rounded-2xl border border-gray-200 p-6 shadow-xl space-y-6">
+      
+      <!-- Live Search Box -->
+      <div class="relative max-w-2xl mx-auto">
+        <label for="faq-search" class="sr-only">Frage suchen</label>
+        <div class="relative">
+          <span class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-amber-500">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+          </span>
+          <input
+            type="search"
+            id="faq-search"
+            placeholder="Suchbegriff eingeben (z. B. Förderung, Speicher, Steuern, Asbest...)"
+            class="block w-full pl-12 pr-10 py-4 bg-gray-50 border border-gray-200 text-gray-900 placeholder-gray-400 rounded-xl focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500 text-base shadow-sm transition-all"
+          />
+          <button 
+            type="button" 
+            id="search-clear" 
+            class="hidden absolute inset-y-0 right-0 pr-4 flex items-center text-gray-400 hover:text-gray-900 transition-colors"
+            aria-label="Suche löschen"
+          >
+            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+        <p id="search-status" class="mt-2 text-xs font-semibold text-amber-600 text-center transition-opacity duration-200 h-4"></p>
+      </div>
+
+      <!-- Categories Pills Filter -->
+      <div class="border-t border-gray-100 pt-5">
+        <p class="text-xs font-bold text-gray-500 uppercase tracking-wider text-center mb-3">Nach Thema filtern</p>
+        <div class="flex flex-wrap justify-center gap-2 max-w-4xl mx-auto" role="tablist">
+          {faqCategories.map(cat => {
+            const count = cat.id === 'all' ? allFaq.length : allFaq.filter(f => f.cat === cat.id).length;
+            return (
+              <button
+                type="button"
+                data-filter={cat.id}
+                role="tab"
+                aria-selected={cat.id === 'all' ? "true" : "false"}
+                class={`flex items-center gap-2 px-4 py-2 text-xs md:text-sm font-bold rounded-full border transition-all duration-200 shadow-sm cursor-pointer select-none
+                  ${cat.id === 'all'
+                    ? 'bg-amber-600 text-white border-amber-600 ring-2 ring-amber-600/20'
+                    : 'bg-white text-gray-700 border-gray-200 hover:bg-gray-50 hover:border-gray-300'
+                  }`}
+              >
+                <span>{cat.icon}</span>
+                <span>{cat.name}</span>
+                <span class={`text-[10px] px-1.5 py-0.5 rounded-full font-extrabold ${cat.id === 'all' ? 'bg-amber-700 text-white' : 'bg-gray-100 text-gray-600'}`}>
+                  {count}
+                </span>
+              </button>
+            )
+          })}
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Accordions List Section -->
+  <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div id="faq-container" class="space-y-12">
+      
+      <!-- Category 1 -->
+      <div class="faq-group-section" data-cat-section="budget">
+        <h2 class="text-xl md:text-2xl font-bold text-gray-900 mb-6 font-heading border-b border-gray-200 pb-2.5 flex items-center gap-3">
+          <span class="p-1.5 bg-amber-100 rounded-lg text-lg">💰</span> Preise & Wirtschaftlichkeit
+        </h2>
+        <div class="space-y-4">
+          {budgetFaq.map(item => (
+            <details 
+              class="faq-card bg-white border border-gray-200 rounded-2xl overflow-hidden group shadow-sm transition-all duration-300 hover:border-amber-300/80 hover:shadow-md" 
+              data-item-cat={item.cat} 
+              id={item.id}
+            >
+              <summary class="flex justify-between items-center p-5 font-extrabold text-gray-800 text-sm md:text-base hover:bg-amber-50/40 transition-colors select-none cursor-pointer">
+                <span class="faq-question-text pr-4">{item.q}</span>
+                <svg class="w-5 h-5 text-gray-500 faq-chevron transform group-open:rotate-180 transition-transform duration-300 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                </svg>
+              </summary>
+              <div class="px-5 pb-5 pt-1 text-sm md:text-base text-gray-600 leading-relaxed border-t border-gray-100 bg-gray-50/20 prose max-w-none">
+                <div class="faq-answer-text" set:html={item.a} />
+              </div>
+            </details>
+          ))}
+        </div>
+      </div>
+
+      <!-- Category 2 -->
+      <div class="faq-group-section" data-cat-section="subsidies">
+        <h2 class="text-xl md:text-2xl font-bold text-gray-900 mb-6 font-heading border-b border-gray-200 pb-2.5 flex items-center gap-3">
+          <span class="p-1.5 bg-amber-100 rounded-lg text-lg">🏛️</span> Förderung & Steuervorteile
+        </h2>
+        <div class="space-y-4">
+          {subsidiesFaq.map(item => (
+            <details 
+              class="faq-card bg-white border border-gray-200 rounded-2xl overflow-hidden group shadow-sm transition-all duration-300 hover:border-amber-300/80 hover:shadow-md" 
+              data-item-cat={item.cat} 
+              id={item.id}
+            >
+              <summary class="flex justify-between items-center p-5 font-extrabold text-gray-800 text-sm md:text-base hover:bg-amber-50/40 transition-colors select-none cursor-pointer">
+                <span class="faq-question-text pr-4">{item.q}</span>
+                <svg class="w-5 h-5 text-gray-500 faq-chevron transform group-open:rotate-180 transition-transform duration-300 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                </svg>
+              </summary>
+              <div class="px-5 pb-5 pt-1 text-sm md:text-base text-gray-600 leading-relaxed border-t border-gray-100 bg-gray-50/20 prose max-w-none">
+                <div class="faq-answer-text" set:html={item.a} />
+              </div>
+            </details>
+          ))}
+        </div>
+      </div>
+
+      <!-- Category 3 -->
+      <div class="faq-group-section" data-cat-section="tech">
+        <h2 class="text-xl md:text-2xl font-bold text-gray-900 mb-6 font-heading border-b border-gray-200 pb-2.5 flex items-center gap-3">
+          <span class="p-1.5 bg-amber-100 rounded-lg text-lg">⚙️</span> Technik & Auslegung
+        </h2>
+        <div class="space-y-4">
+          {techFaq.map(item => (
+            <details 
+              class="faq-card bg-white border border-gray-200 rounded-2xl overflow-hidden group shadow-sm transition-all duration-300 hover:border-amber-300/80 hover:shadow-md" 
+              data-item-cat={item.cat} 
+              id={item.id}
+            >
+              <summary class="flex justify-between items-center p-5 font-extrabold text-gray-800 text-sm md:text-base hover:bg-amber-50/40 transition-colors select-none cursor-pointer">
+                <span class="faq-question-text pr-4">{item.q}</span>
+                <svg class="w-5 h-5 text-gray-500 faq-chevron transform group-open:rotate-180 transition-transform duration-300 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                </svg>
+              </summary>
+              <div class="px-5 pb-5 pt-1 text-sm md:text-base text-gray-600 leading-relaxed border-t border-gray-100 bg-gray-50/20 prose max-w-none">
+                <div class="faq-answer-text" set:html={item.a} />
+              </div>
+            </details>
+          ))}
+        </div>
+      </div>
+
+      <!-- Category 4 -->
+      <div class="faq-group-section" data-cat-section="storage">
+        <h2 class="text-xl md:text-2xl font-bold text-gray-900 mb-6 font-heading border-b border-gray-200 pb-2.5 flex items-center gap-3">
+          <span class="p-1.5 bg-amber-100 rounded-lg text-lg">🔋</span> Stromspeicher & Autarkie
+        </h2>
+        <div class="space-y-4">
+          {storageFaq.map(item => (
+            <details 
+              class="faq-card bg-white border border-gray-200 rounded-2xl overflow-hidden group shadow-sm transition-all duration-300 hover:border-amber-300/80 hover:shadow-md" 
+              data-item-cat={item.cat} 
+              id={item.id}
+            >
+              <summary class="flex justify-between items-center p-5 font-extrabold text-gray-800 text-sm md:text-base hover:bg-amber-50/40 transition-colors select-none cursor-pointer">
+                <span class="faq-question-text pr-4">{item.q}</span>
+                <svg class="w-5 h-5 text-gray-500 faq-chevron transform group-open:rotate-180 transition-transform duration-300 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                </svg>
+              </summary>
+              <div class="px-5 pb-5 pt-1 text-sm md:text-base text-gray-600 leading-relaxed border-t border-gray-100 bg-gray-50/20 prose max-w-none">
+                <div class="faq-answer-text" set:html={item.a} />
+              </div>
+            </details>
+          ))}
+        </div>
+      </div>
+
+      <!-- Category 5 -->
+      <div class="faq-group-section" data-cat-section="install">
+        <h2 class="text-xl md:text-2xl font-bold text-gray-900 mb-6 font-heading border-b border-gray-200 pb-2.5 flex items-center gap-3">
+          <span class="p-1.5 bg-amber-100 rounded-lg text-lg">🔧</span> Montage & Partnerbetriebe
+        </h2>
+        <div class="space-y-4">
+          {installFaq.map(item => (
+            <details 
+              class="faq-card bg-white border border-gray-200 rounded-2xl overflow-hidden group shadow-sm transition-all duration-300 hover:border-amber-300/80 hover:shadow-md" 
+              data-item-cat={item.cat} 
+              id={item.id}
+            >
+              <summary class="flex justify-between items-center p-5 font-extrabold text-gray-800 text-sm md:text-base hover:bg-amber-50/40 transition-colors select-none cursor-pointer">
+                <span class="faq-question-text pr-4">{item.q}</span>
+                <svg class="w-5 h-5 text-gray-500 faq-chevron transform group-open:rotate-180 transition-transform duration-300 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                </svg>
+              </summary>
+              <div class="px-5 pb-5 pt-1 text-sm md:text-base text-gray-600 leading-relaxed border-t border-gray-100 bg-gray-50/20 prose max-w-none">
+                <div class="faq-answer-text" set:html={item.a} />
+              </div>
+            </details>
+          ))}
+        </div>
+      </div>
+
+      <!-- No Results State -->
+      <div id="faq-empty-state" class="hidden text-center py-12 px-4 bg-amber-50/30 rounded-2xl border border-amber-200/50">
+        <span class="text-5xl">🔍</span>
+        <h3 class="text-lg font-bold text-gray-900 mt-4 mb-2">Keine Ergebnisse gefunden</h3>
+        <p class="text-gray-600 text-sm max-w-md mx-auto">
+          Wir konnten keine Antwort für "<span id="search-query-highlight" class="font-bold text-amber-600"></span>" finden. Versuchen Sie es mit einem anderen Begriff (z. B. "Förderung", "Speicher" oder "Mehrwertsteuer").
+        </p>
+        <button 
+          type="button" 
+          id="faq-reset-btn"
+          class="mt-5 inline-flex items-center gap-2 bg-amber-600 text-white font-bold text-sm px-5 py-2.5 rounded-xl hover:bg-amber-700 transition-colors shadow-sm cursor-pointer"
+        >
+          Suche zurücksetzen
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Final CTA card -->
+    <div class="cta-gradient rounded-2xl p-8 md:p-12 text-center text-white mt-16 shadow-xl relative overflow-hidden">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_70%_70%,rgba(255,255,255,0.15),transparent)] pointer-events-none"></div>
+      <div class="relative z-10">
+        <h2 class="text-2xl md:text-3xl font-extrabold mb-4 font-heading tracking-tight">
+          Sie planen ein konkretes Solarprojekt?
+        </h2>
+        <p class="text-blue-100 mb-8 text-sm md:text-base max-w-xl mx-auto leading-relaxed">
+          Berechnen Sie unverbindlich Ihr Sparpotenzial und vergleichen Sie kostenlose Angebote von geprüften Solar-Installateuren aus Ihrer Postleitzahlen-Region.
+        </p>
+        <a href="/angebot" class="inline-flex items-center justify-center bg-white text-amber-600 font-extrabold px-8 py-4 rounded-xl hover:bg-gray-100 hover:scale-105 transition-all shadow-md text-base">
+          ☀️ Angebote kostenlos vergleichen
+        </a>
+      </div>
+    </div>
+
+    <!-- Cross-links: Guides -->
+    <section class="mt-12 bg-white rounded-2xl shadow-sm border border-gray-200 p-6 md:p-8">
+      <h2 class="text-xl font-bold text-gray-900 mb-4 font-heading">📚 Solar-Ratgeber lesen</h2>
+      <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-4">
+        <a href="/ratgeber/solaranlage-kosten-2026" class="bg-gray-50 rounded-xl p-4 border border-gray-100 hover:border-amber-400 hover:shadow-md transition-all group">
+          <span class="text-lg block mb-1">💰</span>
+          <span class="font-bold text-gray-900 group-hover:text-amber-600 text-sm block">PV Kosten 2026</span>
+        </a>
+        <a href="/ratgeber/photovoltaik-foerderung-2026" class="bg-gray-50 rounded-xl p-4 border border-gray-100 hover:border-amber-400 hover:shadow-md transition-all group">
+          <span class="text-lg block mb-1">🏛️</span>
+          <span class="font-bold text-gray-900 group-hover:text-amber-600 text-sm block">KfW Förderung</span>
+        </a>
+        <a href="/ratgeber/solaranlage-mit-speicher" class="bg-gray-50 rounded-xl p-4 border border-gray-100 hover:border-amber-400 hover:shadow-md transition-all group">
+          <span class="text-lg block mb-1">🔋</span>
+          <span class="font-bold text-gray-900 group-hover:text-amber-600 text-sm block">Speicher lohnenswert?</span>
+        </a>
+        <a href="/ratgeber/photovoltaik-amortisation" class="bg-gray-50 rounded-xl p-4 border border-gray-100 hover:border-amber-400 hover:shadow-md transition-all group">
+          <span class="text-lg block mb-1">⚖️</span>
+          <span class="font-bold text-gray-900 group-hover:text-amber-600 text-sm block">Amortisation berechnen</span>
+        </a>
+      </div>
+      <div class="text-center mt-4">
+        <a href="/ratgeber" class="text-amber-600 hover:text-amber-700 font-semibold text-sm transition-colors">Alle Ratgeber →</a>
+      </div>
+    </section>
+  </section>
+</BaseLayout>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const searchInput = document.getElementById('faq-search') as HTMLInputElement | null;
+    const clearButton = document.getElementById('search-clear') as HTMLButtonElement | null;
+    const searchStatus = document.getElementById('search-status') as HTMLParagraphElement | null;
+    const emptyState = document.getElementById('faq-empty-state') as HTMLDivElement | null;
+    const highlightSpan = document.getElementById('search-query-highlight') as HTMLSpanElement | null;
+    const resetBtn = document.getElementById('faq-reset-btn') as HTMLButtonElement | null;
+    const cards = document.querySelectorAll('.faq-card') as NodeListOf<HTMLDetailsElement>;
+    const groupSections = document.querySelectorAll('.faq-group-section') as NodeListOf<HTMLDivElement>;
+    const filterButtons = document.querySelectorAll('[data-filter]') as NodeListOf<HTMLButtonElement>;
+
+    let currentCategory = 'all';
+    let searchQuery = '';
+
+    const originalTextCache = new Map<string, { q: string; a: string }>();
+    cards.forEach(card => {
+      const qText = card.querySelector('.faq-question-text');
+      const aText = card.querySelector('.faq-answer-text');
+      if (qText && aText) {
+        originalTextCache.set(card.id, {
+          q: qText.innerHTML,
+          a: aText.innerHTML
+        });
+      }
+    });
+
+    const stripHtml = (html: string) => {
+      const doc = new DOMParser().parseFromString(html, 'text/html');
+      return doc.body.textContent || "";
+    };
+
+    const highlight = (text: string, term: string) => {
+      if (!term) return text;
+      const escapedTerm = term.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+      const regex = new RegExp(`(${escapedTerm})`, 'gi');
+      return text.replace(regex, '<mark class="bg-amber-200 text-gray-900 px-0.5 rounded font-semibold">$1</mark>');
+    };
+
+    const updateFaq = () => {
+      let visibleCount = 0;
+      const normalizedQuery = searchQuery.trim().toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+
+      if (clearButton) {
+        if (searchQuery.length > 0) {
+          clearButton.classList.remove('hidden');
+        } else {
+          clearButton.classList.add('hidden');
+        }
+      }
+
+      cards.forEach(card => {
+        const cache = originalTextCache.get(card.id);
+        const qTextEl = card.querySelector('.faq-question-text');
+        const aTextEl = card.querySelector('.faq-answer-text');
+
+        if (!cache || !qTextEl || !aTextEl) return;
+
+        const categoryMatches = (currentCategory === 'all' || card.dataset.itemCat === currentCategory);
+        
+        const plainQ = stripHtml(cache.q).toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+        const plainA = stripHtml(cache.a).toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+        const textMatches = searchQuery.length === 0 || 
+                            plainQ.includes(normalizedQuery) || 
+                            plainA.includes(normalizedQuery);
+
+        if (categoryMatches && textMatches) {
+          card.classList.remove('hidden');
+          visibleCount++;
+          
+          if (searchQuery.length > 0) {
+            qTextEl.innerHTML = highlight(cache.q, searchQuery);
+            aTextEl.innerHTML = highlight(cache.a, searchQuery);
+            card.open = true;
+          } else {
+            qTextEl.innerHTML = cache.q;
+            aTextEl.innerHTML = cache.a;
+            card.open = false;
+          }
+        } else {
+          card.classList.add('hidden');
+          card.open = false;
+        }
+      });
+
+      groupSections.forEach(section => {
+        const sectionCat = section.dataset.catSection;
+        const hasVisibleInGroup = Array.from(cards).some(card => 
+          !card.classList.contains('hidden') && card.dataset.itemCat === sectionCat
+        );
+        
+        if (hasVisibleInGroup && (currentCategory === 'all' || currentCategory === sectionCat)) {
+          section.classList.remove('hidden');
+        } else {
+          section.classList.add('hidden');
+        }
+      });
+
+      if (searchStatus) {
+        if (searchQuery.length > 0) {
+          searchStatus.textContent = `${visibleCount} Frage(n) gefunden`;
+          searchStatus.style.opacity = '1';
+        } else {
+          searchStatus.style.opacity = '0';
+        }
+      }
+
+      if (emptyState && highlightSpan) {
+        if (visibleCount === 0) {
+          emptyState.classList.remove('hidden');
+          highlightSpan.textContent = searchQuery;
+        } else {
+          emptyState.classList.add('hidden');
+        }
+      }
+    };
+
+    if (searchInput) {
+      searchInput.addEventListener('input', (e) => {
+        searchQuery = (e.target as HTMLInputElement).value;
+        updateFaq();
+      });
+    }
+
+    if (clearButton && searchInput) {
+      clearButton.addEventListener('click', () => {
+        searchInput.value = '';
+        searchQuery = '';
+        updateFaq();
+        searchInput.focus();
+      });
+    }
+
+    if (resetBtn && searchInput) {
+      resetBtn.addEventListener('click', () => {
+        searchInput.value = '';
+        searchQuery = '';
+        currentCategory = 'all';
+        
+        filterButtons.forEach(btn => {
+          if (btn.dataset.filter === 'all') {
+            btn.classList.add('bg-amber-600', 'text-white', 'border-amber-600', 'ring-2', 'ring-amber-600/20');
+            btn.classList.remove('bg-white', 'text-gray-700', 'border-gray-200');
+            btn.setAttribute('aria-selected', 'true');
+          } else {
+            btn.classList.remove('bg-amber-600', 'text-white', 'border-amber-600', 'ring-2', 'ring-amber-600/20');
+            btn.classList.add('bg-white', 'text-gray-700', 'border-gray-200');
+            btn.setAttribute('aria-selected', 'false');
+          }
+        });
+
+        updateFaq();
+      });
+    }
+
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const filter = button.dataset.filter || 'all';
+        currentCategory = filter;
+
+        filterButtons.forEach(btn => {
+          if (btn.dataset.filter === filter) {
+            btn.classList.add('bg-amber-600', 'text-white', 'border-amber-600', 'ring-2', 'ring-amber-600/20');
+            btn.classList.remove('bg-white', 'text-gray-700', 'border-gray-200');
+            btn.setAttribute('aria-selected', 'true');
+          } else {
+            btn.classList.remove('bg-amber-600', 'text-white', 'border-amber-600', 'ring-2', 'ring-amber-600/20');
+            btn.classList.add('bg-white', 'text-gray-700', 'border-gray-200');
+            btn.setAttribute('aria-selected', 'false');
+          }
+        });
+
+        updateFaq();
+      });
+    });
+  });
+</script>

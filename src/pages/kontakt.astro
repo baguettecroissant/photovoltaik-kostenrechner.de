@@ -1,0 +1,48 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { siteConfig } from '../../site.config';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Kontakt - " + siteConfig.name,
+    "url": "https://" + siteConfig.domain + "/kontakt",
+  }
+];
+---
+
+<BaseLayout title={`Kontakt | ${siteConfig.name}`} description={`Nehmen Sie Kontakt mit ${siteConfig.name} auf. Schreiben Sie uns eine E-Mail.`} canonical="/kontakt" jsonLd={jsonLd}>
+  <section class="gradient-hero text-white py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <Breadcrumbs items={[
+        { label: "Kontakt", href: "/kontakt" },
+      ]} />
+      <h1 class="text-3xl md:text-4xl font-extrabold mb-4 font-heading mt-6">
+        Kontakt
+      </h1>
+      <p class="text-blue-100">Haben Sie Fragen oder Anregungen? Wir freuen uns über Ihre Nachricht.</p>
+    </div>
+  </section>
+
+  <section class="max-w-xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="bg-white rounded-2xl border border-gray-200 p-6 md:p-8 shadow-sm space-y-6 text-gray-700">
+      <p class="text-sm md:text-base leading-relaxed">
+        Wenn Sie Fragen zu unserer Website, Kooperationen oder unserem Informationsangebot haben, schreiben Sie uns einfach eine E-Mail. Wir bemühen uns, Ihre Anfrage innerhalb von 48 Stunden zu beantworten.
+      </p>
+
+      <div class="bg-blue-50 border border-blue-100 rounded-xl p-4 flex items-center gap-3">
+        <span class="text-2xl">✉️</span>
+        <div>
+          <h4 class="font-bold text-sm text-blue-900">E-Mail-Adresse</h4>
+          <a href="mailto:info@solardach-kosten.de" class="text-blue-700 hover:underline text-sm font-semibold">info@solardach-kosten.de</a>
+        </div>
+      </div>
+
+      <div class="text-xs text-gray-500 pt-4 border-t border-gray-100">
+        📌 <strong>Hinweis:</strong> Wir sind ein unabhängiges Informationsportal und kein direkter Solar-Installateur. Wenn Sie Angebote für eine Solaranlage anfordern möchten, nutzen Sie bitte unser dafür vorgesehenes <a href="/angebot" class="text-blue-600 hover:underline">Anfrageformular</a>.
+      </div>
+    </div>
+  </section>
+</BaseLayout>

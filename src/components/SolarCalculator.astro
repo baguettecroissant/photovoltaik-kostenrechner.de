@@ -1,0 +1,351 @@
+---
+import { siteConfig } from '../../site.config';
+
+interface Props {
+  isCompact?: boolean;
+}
+
+const { isCompact = false } = Astro.props;
+---
+
+<div class="bg-white rounded-2xl border border-card-border shadow-xl overflow-hidden p-6 md:p-8" id="calculator-widget">
+  <div class="grid md:grid-cols-12 gap-8 items-start">
+    
+    <!-- Input Fields -->
+    <div class="md:col-span-7 space-y-6">
+      <h3 class="text-xl font-bold text-text font-heading border-b border-gray-100 pb-3 flex items-center gap-2">
+        <span>🔢</span> Berechnen Sie Ihre PV-Anlage
+      </h3>
+
+      <!-- Dachfläche Slider -->
+      <div>
+        <div class="flex justify-between items-center mb-1">
+          <label class="block text-sm font-semibold text-text">
+            Nutzbare Dachfläche (m²):
+          </label>
+          <span class="font-data text-accent font-extrabold text-lg" id="calc-area-val">50 m²</span>
+        </div>
+        <input
+          type="range"
+          id="calc-area"
+          min="10"
+          max="200"
+          value="50"
+          step="5"
+          class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-accent"
+        />
+        <div class="flex justify-between text-[10px] text-text-light mt-1">
+          <span>10 m²</span>
+          <span>50 m²</span>
+          <span>100 m²</span>
+          <span>200 m²</span>
+        </div>
+      </div>
+
+      <!-- Dachausrichtung & Dachneigung Grid -->
+      <div class="grid grid-cols-2 gap-4">
+        <!-- Dachausrichtung Dropdown -->
+        <div>
+          <label class="block text-xs font-bold text-text mb-1.5 uppercase tracking-wider">Dachausrichtung:</label>
+          <select id="calc-orientation" class="calc-select">
+            <option value="1.0" selected>Süden (+0%)</option>
+            <option value="0.9">Südost / Südwest (-10%)</option>
+            <option value="0.8">Ost / West (-20%)</option>
+          </select>
+        </div>
+
+        <!-- Dachneigung Dropdown -->
+        <div>
+          <label class="block text-xs font-bold text-text mb-1.5 uppercase tracking-wider">Dachneigung:</label>
+          <select id="calc-tilt" class="calc-select">
+            <option value="1.0" selected>30° (optimal)</option>
+            <option value="0.95">15°</option>
+            <option value="0.95">45°</option>
+            <option value="0.90">Flachdach</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Stromverbrauch Slider -->
+      <div>
+        <div class="flex justify-between items-center mb-1">
+          <label class="block text-sm font-semibold text-text">
+            Jährlicher Stromverbrauch (kWh):
+          </label>
+          <span class="font-data text-accent font-extrabold text-lg" id="calc-consumption-val">4.000 kWh</span>
+        </div>
+        <input
+          type="range"
+          id="calc-consumption"
+          min="1000"
+          max="10000"
+          value="4000"
+          step="500"
+          class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-accent"
+        />
+        <div class="flex justify-between text-[10px] text-text-light mt-1">
+          <span>1.000 kWh</span>
+          <span>4.000 kWh</span>
+          <span>7.000 kWh</span>
+          <span>10.000 kWh</span>
+        </div>
+      </div>
+
+      <!-- Speicher gewünscht Checkbox & PLZ -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 items-center pt-2">
+        <!-- Speicher gewünscht? Toggle -->
+        <div class="flex items-center gap-3 bg-brand-50 border border-card-border p-3.5 rounded-xl cursor-pointer" id="storage-toggle-container">
+          <input type="checkbox" id="calc-storage" checked class="w-5 h-5 text-accent border-gray-300 rounded focus:ring-accent cursor-pointer" />
+          <label for="calc-storage" class="text-sm font-bold text-text cursor-pointer select-none">
+            🔋 Stromspeicher gewünscht
+          </label>
+        </div>
+
+        <!-- PLZ Input -->
+        <div class="bg-gray-50 border border-gray-200 p-2 rounded-xl flex items-center justify-between">
+          <span class="text-xs font-bold text-text pl-2">PLZ:</span>
+          <input type="text" id="calc-zip" maxlength="5" placeholder="PLZ eingeben" class="form-input text-right w-32 font-bold font-data bg-white" value="10115" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Calculations & Results -->
+    <div class="md:col-span-5 bg-brand-900 text-white rounded-2xl border border-brand-800 p-6 flex flex-col justify-between min-h-[420px] shadow-lg">
+      <div class="space-y-4">
+        <h4 class="text-base font-bold text-amber-500 border-b border-brand-800 pb-2 font-heading">
+          ✨ Berechnetes Ergebnis
+        </h4>
+
+        <!-- Recommended system size -->
+        <div class="flex justify-between items-center text-sm">
+          <span class="text-blue-100/80">Empfohlene Anlagengröße:</span>
+          <span class="font-data font-bold text-amber-500" id="calc-res-kwp">8.3 kWp</span>
+        </div>
+
+        <!-- Jährlicher Ertrag -->
+        <div class="flex justify-between items-center text-sm">
+          <span class="text-blue-100/80">Jährlicher Ertrag (kWh):</span>
+          <span class="font-data font-bold text-amber-500" id="calc-res-yield">7.885 kWh</span>
+        </div>
+
+        <!-- Eigenverbrauchsquote -->
+        <div class="flex justify-between items-center text-sm">
+          <span class="text-blue-100/80">Eigenverbrauchsquote:</span>
+          <span class="font-bold text-blue-200" id="calc-res-ratio">ca. 70%</span>
+        </div>
+
+        <!-- Jährliche Ersparnis -->
+        <div class="flex justify-between items-center text-sm">
+          <span class="text-blue-100/80 font-bold">Jährliche Ersparnis:</span>
+          <span class="font-data font-bold text-emerald-400 text-base" id="calc-res-savings">1.340 €</span>
+        </div>
+
+        <!-- CO2-Einsparung -->
+        <div class="flex justify-between items-center text-sm border-b border-brand-850 pb-3">
+          <span class="text-blue-100/80">CO2-Einsparung:</span>
+          <span class="font-data font-bold text-blue-200" id="calc-res-co2">2.99 T/Jahr</span>
+        </div>
+
+        <!-- Estimated cost range -->
+        <div class="py-2">
+          <span class="text-xs text-blue-100/60 block uppercase font-semibold">Geschätzte Kosten (0% MwSt):</span>
+          <span class="font-data font-extrabold text-xl text-white block mt-1" id="calc-res-cost">13.500 € - 17.500 €</span>
+        </div>
+
+        <!-- ROI badge -->
+        <div class="bg-accent rounded-xl p-4 text-center shadow-inner">
+          <span class="text-[10px] text-amber-100 block uppercase font-bold tracking-wider">Amortisationszeit (ROI)</span>
+          <span class="font-data font-extrabold text-2xl text-white block mt-0.5" id="calc-res-roi">9.8 Jahre</span>
+        </div>
+      </div>
+
+      <!-- Conversion flow (CTA & Qualification alerts) -->
+      <div class="mt-6">
+        <!-- Error Alerts -->
+        <div id="calc-error-size" class="hidden bg-rose-500/20 border border-rose-500/30 p-3 rounded-xl text-xs text-rose-300 text-center leading-relaxed">
+          ⚠️ **Angebot leider nicht möglich:**<br/>Dachfläche &lt; 20 m² ist zu klein für eine PV-Anlage.
+        </div>
+        <div id="calc-error-consumption" class="hidden bg-rose-500/20 border border-rose-500/30 p-3 rounded-xl text-xs text-rose-300 text-center leading-relaxed">
+          ⚠️ **Angebot leider nicht möglich:**<br/>Eine PV-Anlage lohnt sich erst ab 1.500 kWh Jahresstromverbrauch.
+        </div>
+
+        <!-- Conversion Button -->
+        <a href={siteConfig.taptaphome.trackingLinkPV} target="_blank" rel="nofollow sponsored" id="calc-cta" class="block w-full text-center cta-gradient text-white font-bold py-3.5 rounded-xl transition-all shadow-lg text-sm">
+          ☀️ Angebote für <span id="calc-cta-kwp">8.3</span> kWp vergleichen
+        </a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<style>
+  .calc-select {
+    width: 100%;
+    padding: 0.625rem 0.75rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 0.75rem;
+    font-size: 0.875rem;
+    color: #1b1b2f;
+    outline: none;
+    background-color: #ffffff;
+    cursor: pointer;
+    font-weight: 600;
+  }
+  .calc-select:focus {
+    border-color: #ff6d00;
+    box-shadow: 0 0 0 2px rgba(255, 109, 0, 0.1);
+  }
+  .form-input {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    color: #1b1b2f;
+    outline: none;
+    transition: border-color 0.2s ease;
+  }
+  .form-input:focus {
+    border-color: #ff6d00;
+    box-shadow: 0 0 0 2px rgba(255, 109, 0, 0.1);
+  }
+</style>
+
+<script is:inline>
+  (function() {
+    const areaInput = document.getElementById('calc-area');
+    const areaVal = document.getElementById('calc-area-val');
+    const orientationSelect = document.getElementById('calc-orientation');
+    const tiltSelect = document.getElementById('calc-tilt');
+    const consumptionInput = document.getElementById('calc-consumption');
+    const consumptionVal = document.getElementById('calc-consumption-val');
+    const storageCheckbox = document.getElementById('calc-storage');
+    const zipInput = document.getElementById('calc-zip');
+
+    const resKwp = document.getElementById('calc-res-kwp');
+    const resYield = document.getElementById('calc-res-yield');
+    const resRatio = document.getElementById('calc-res-ratio');
+    const resSavings = document.getElementById('calc-res-savings');
+    const resCo2 = document.getElementById('calc-res-co2');
+    const resCost = document.getElementById('calc-res-cost');
+    const resRoi = document.getElementById('calc-res-roi');
+
+    const errorSize = document.getElementById('calc-error-size');
+    const errorConsumption = document.getElementById('calc-error-consumption');
+    const ctaBtn = document.getElementById('calc-cta');
+    const ctaKwp = document.getElementById('calc-cta-kwp');
+
+    function getSolarHoursByZip(zip) {
+      if (!zip || zip.length < 2) return 1550;
+      const prefix = zip.slice(0, 2);
+      const south = ["70", "71", "72", "73", "74", "75", "76", "77", "78", "79", "80", "81", "82", "83", "84", "85", "86", "87", "88", "89", "90", "91", "92", "93", "94", "95", "96", "97", "98"];
+      const north = ["20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "18", "19", "30", "31", "38"];
+      if (south.includes(prefix)) return 1750;
+      if (north.includes(prefix)) return 1450;
+      return 1550; // default Mitteldeutschland
+    }
+
+    function calculate() {
+      const area = parseInt(areaInput.value);
+      areaVal.textContent = area + ' m²';
+
+      const consumption = parseInt(consumptionInput.value);
+      consumptionVal.textContent = consumption.toLocaleString('de-DE') + ' kWh';
+
+      const orientationMultiplier = parseFloat(orientationSelect.value);
+      const tiltMultiplier = parseFloat(tiltSelect.value);
+      const hasStorage = storageCheckbox.checked;
+      const zip = zipInput.value;
+
+      // Recommended size (kWp) - roughly 1 kWp per 6m2
+      const recommendedKwp = Math.round((area / 6) * 10) / 10;
+      resKwp.textContent = recommendedKwp + ' kWp';
+      if (ctaKwp) ctaKwp.textContent = recommendedKwp;
+
+      // Local sun hours from ZIP
+      const sunHours = getSolarHoursByZip(zip);
+
+      // Annual yield: recommended kWp * local sun hours * Ausrichtung * Neigung * Systemverlust factor (0.95)
+      const annualYield = Math.round(recommendedKwp * sunHours * 0.95 * orientationMultiplier * tiltMultiplier);
+      resYield.textContent = annualYield.toLocaleString('de-DE') + ' kWh';
+
+      // CO2 savings (0.38 kg/kWh)
+      const co2 = (annualYield * 0.38) / 1000;
+      resCo2.textContent = co2.toFixed(2) + ' T/Jahr';
+
+      // Cost estimation based on size & storage option
+      const baseCost = recommendedKwp * 1150 + 2000;
+      const storageCost = hasStorage ? recommendedKwp * 700 : 0;
+      
+      // Regional multipliers depending on PLZ prefix
+      let regionalFactor = 1.0;
+      const firstDigit = zip.charAt(0);
+      if (["7", "8", "9"].includes(firstDigit)) regionalFactor = 1.05; // South
+      else if (["1", "2"].includes(firstDigit)) regionalFactor = 0.95; // North
+      else if (["0"].includes(firstDigit)) regionalFactor = 0.90; // East
+
+      const estimatedCost = Math.round((baseCost + storageCost) * regionalFactor);
+      
+      // Display range (approx +/- 15%)
+      const costMin = Math.round((estimatedCost * 0.9) / 100) * 100;
+      const costMax = Math.round((estimatedCost * 1.1) / 100) * 100;
+      resCost.textContent = `${costMin.toLocaleString('de-DE')} € - ${costMax.toLocaleString('de-DE')} €`;
+
+      // Eigenverbrauch & Autarkie
+      let selfConsumptionRate = 0.30;
+      if (hasStorage) {
+        // storage capacity ratio
+        const ratio = recommendedKwp / (consumption / 1000 || 1);
+        if (ratio >= 1.5) selfConsumptionRate = 0.78;
+        else if (ratio >= 0.8) selfConsumptionRate = 0.70;
+        else selfConsumptionRate = 0.55;
+      }
+      resRatio.textContent = `ca. ${Math.round(selfConsumptionRate * 100)}%`;
+
+      // Kilowatt hours saved
+      const potentialSelfConsumed = annualYield * selfConsumptionRate;
+      const autarkieRate = hasStorage ? 0.70 : 0.30;
+      const actualSelfConsumedKwh = Math.min(potentialSelfConsumed, consumption * autarkieRate);
+      const feedInKwh = Math.max(0, annualYield - actualSelfConsumedKwh);
+
+      // Savings (grid electricity price: 35ct, feed-in: 8.0ct)
+      const gridSavings = actualSelfConsumedKwh * 0.35;
+      const feedInRevenue = feedInKwh * 0.08;
+      const annualSavings = Math.round(gridSavings + feedInRevenue);
+      resSavings.textContent = `${annualSavings.toLocaleString('de-DE')} €`;
+
+      // ROI years
+      const roi = estimatedCost / (annualSavings || 1);
+      resRoi.textContent = `${roi.toFixed(1)} Jahre`;
+
+      // Qualification checklist
+      let isDisqualified = false;
+      errorSize.classList.add('hidden');
+      errorConsumption.classList.add('hidden');
+      ctaBtn.classList.remove('hidden');
+
+      if (area < 20) {
+        errorSize.classList.remove('hidden');
+        ctaBtn.classList.add('hidden');
+        isDisqualified = true;
+      }
+
+      if (consumption < 1500) {
+        errorConsumption.classList.remove('hidden');
+        ctaBtn.classList.add('hidden');
+        isDisqualified = true;
+      }
+    }
+
+    // Attach listeners
+    areaInput.addEventListener('input', calculate);
+    consumptionInput.addEventListener('input', calculate);
+    orientationSelect.addEventListener('change', calculate);
+    tiltSelect.addEventListener('change', calculate);
+    storageCheckbox.addEventListener('change', calculate);
+    zipInput.addEventListener('input', calculate);
+
+    // Initial calculation
+    calculate();
+  })();
+</script>

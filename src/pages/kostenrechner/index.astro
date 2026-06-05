@@ -1,0 +1,96 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { siteConfig } from '../../../site.config';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import SolarCalculator from '../../components/SolarCalculator.astro';
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Kostenrechner für Photovoltaik & Solaranlagen 2026",
+    "description": "Berechnen Sie kostenlos die Anschaffungskosten, den Ertrag und die Amortisationszeit Ihrer neuen Solaranlage mit unserem interaktiven Rechner.",
+    "url": "https://" + siteConfig.domain + "/kostenrechner",
+  }
+];
+---
+
+<BaseLayout
+  title={`Photovoltaik Kostenrechner 2026: Kosten & Ertrag online berechnen | ${siteConfig.name}`}
+  description={`Berechnen Sie in wenigen Sekunden die Kosten, den Solarertrag (kWh) und die Amortisationszeit für Ihr Solardach. Kostenlos und unverbindlich.`}
+  canonical="/kostenrechner"
+  jsonLd={jsonLd}
+>
+  <section class="gradient-hero text-white py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <Breadcrumbs items={[
+        { label: "Startseite", href: "/" },
+        { label: "Kostenrechner", href: "/kostenrechner" },
+      ]} />
+      <h1 class="text-3xl md:text-5xl font-extrabold mb-4 font-heading mt-6">
+        🧮 Interaktiver Photovoltaik Kostenrechner
+      </h1>
+      <p class="text-blue-100 text-lg max-w-2xl">
+        Ermitteln Sie die Anschaffungskosten, das Einsparpotenzial und die Amortisationszeit für Ihr Solardach schlüsselfertig im Jahr 2026.
+      </p>
+    </div>
+  </section>
+
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="space-y-8">
+      <!-- Calculator component -->
+      <SolarCalculator />
+
+      <!-- Explanatory content card -->
+      <div class="bg-white rounded-2xl border border-card-border p-6 md:p-8 space-y-6 text-gray-700 leading-relaxed shadow-sm">
+        <h2 class="text-xl md:text-2xl font-bold text-text font-heading">💡 Wie funktioniert die Kosten- & Ertragsberechnung?</h2>
+        <p>
+          Unser Kostenrechner basiert auf aktuellen Marktdaten für das Jahr 2026 in Deutschland. Er kalkuliert die empfohlene Anlagengröße (in kWp) direkt anhand Ihrer nutzbaren Dachfläche. Dabei wird davon ausgegangen, dass pro 1 kWp Leistung etwa 6 m² Dachfläche benötigt werden.
+        </p>
+        <div class="grid md:grid-cols-3 gap-6 pt-2">
+          <div class="space-y-2">
+            <h3 class="font-bold text-text text-sm">1. Der Standort (Sonnenstunden)</h3>
+            <p class="text-xs text-text-light">
+              Die Postleitzahl bestimmt die regionalen Sonnenstunden. In Süddeutschland (z. B. Bayern oder Baden-Württemberg) liegt der Jahresertrag pro kWp bei über 1.000 kWh, während im Norden ca. 850–900 kWh üblich sind.
+            </p>
+          </div>
+          <div class="space-y-2">
+            <h3 class="font-bold text-text text-sm">2. Ausrichtung und Neigung</h3>
+            <p class="text-xs text-text-light">
+              Ein optimal ausgerichtetes Süddach mit 30° Neigung erreicht 100% des Ertragspotenzials. Ost-West-Ausrichtungen oder Flachdächer verringern den maximalen Ertrag leicht, bieten aber oft einen höheren Eigenverbrauch über den Tag verteilt.
+            </p>
+          </div>
+          <div class="space-y-2">
+            <h3 class="font-bold text-text text-sm">3. Eigenverbrauch & Speicher</h3>
+            <p class="text-xs text-text-light">
+              Ohne Stromspeicher können Sie meist nur 30% des Solarstroms selbst nutzen. Ein Batteriespeicher erhöht diese Quote auf 70% bis 80%. Da selbst erzeugter Strom deutlich günstiger ist als Netzstrom, verkürzt dies die Amortisationszeit.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cross-links: Guides -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 border-t border-gray-200">
+    <h2 class="text-xl font-bold text-text mb-4 font-heading">📚 Nützliche Solar-Ratgeber</h2>
+    <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-4">
+      <a href="/ratgeber/solaranlage-kosten-2026" class="bg-white rounded-xl p-4 border border-gray-200 hover:border-amber-400 hover:shadow-md transition-all group card-hover">
+        <span class="text-lg block mb-1">💰</span>
+        <span class="font-bold text-text group-hover:text-accent text-sm block">Komplette PV-Preise 2026</span>
+      </a>
+      <a href="/ratgeber/photovoltaik-foerderung-2026" class="bg-white rounded-xl p-4 border border-gray-200 hover:border-amber-400 hover:shadow-md transition-all group card-hover">
+        <span class="text-lg block mb-1">🏛️</span>
+        <span class="font-bold text-text group-hover:text-accent text-sm block">KfW-Förderprogramme</span>
+      </a>
+      <a href="/ratgeber/solaranlage-mit-speicher" class="bg-white rounded-xl p-4 border border-gray-200 hover:border-amber-400 hover:shadow-md transition-all group card-hover">
+        <span class="text-lg block mb-1">🔋</span>
+        <span class="font-bold text-text group-hover:text-accent text-sm block">Wann lohnt ein Speicher?</span>
+      </a>
+      <a href="/ratgeber/photovoltaik-amortisation" class="bg-white rounded-xl p-4 border border-gray-200 hover:border-amber-400 hover:shadow-md transition-all group card-hover">
+        <span class="text-lg block mb-1">⚖️</span>
+        <span class="font-bold text-text group-hover:text-accent text-sm block">PV Amortisations-Modelle</span>
+      </a>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,181 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import QuoteWidget from '../../components/QuoteWidget.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { siteConfig } from '../../../site.config';
+import { blogArticles, type BlogArticle } from '../../data/blog-articles';
+import { getAllCities } from '../../lib/cities';
+
+export function getStaticPaths() {
+  return blogArticles.map(article => ({
+    params: { slug: article.slug },
+    props: { article },
+  }));
+}
+
+const { article } = Astro.props as { article: BlogArticle };
+const relatedArticles = blogArticles.filter(a => a.slug !== article.slug).slice(0, 3);
+
+const title = article.metaTitle + " | " + siteConfig.name;
+const description = article.metaDescription;
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": article.title,
+    "description": article.metaDescription,
+    "image": "https://" + siteConfig.domain + article.image,
+    "datePublished": article.date + "T08:00:00+01:00",
+    "author": {
+      "@type": "Organization",
+      "name": siteConfig.name
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": siteConfig.name,
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://" + siteConfig.domain + "/favicon.svg"
+      }
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://" + siteConfig.domain },
+      { "@type": "ListItem", "position": 2, "name": "Ratgeber", "item": "https://" + siteConfig.domain + "/ratgeber" },
+      { "@type": "ListItem", "position": 3, "name": article.title },
+    ]
+  }
+];
+
+const topCities = getAllCities().slice(0, 8);
+---
+
+<BaseLayout title={title} description={description} canonical={"/ratgeber/" + article.slug} jsonLd={jsonLd}>
+  <section class="gradient-hero text-white py-12 md:py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <Breadcrumbs items={[
+        { label: "Ratgeber", href: "/ratgeber" },
+        { label: article.title, href: "/ratgeber/" + article.slug },
+      ]} />
+
+      <div class="grid lg:grid-cols-5 gap-10 items-start mt-6">
+        <div class="lg:col-span-3">
+          <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-3 py-1.5 rounded-full text-sm mb-4">
+            <span>{article.emoji}</span>
+            <span>{article.category} • Veröffentlicht am {new Date(article.date).toLocaleDateString('de-DE', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
+          </div>
+
+          <h1 class="text-3xl md:text-5xl font-extrabold leading-tight mb-4 font-heading">
+            {article.title}
+          </h1>
+          <p class="text-blue-100 leading-relaxed mb-6 max-w-xl text-sm md:text-base">
+            {article.excerpt}
+          </p>
+
+          <div class="inline-flex items-center gap-2 text-xs text-blue-100/80 font-semibold bg-white/5 px-3 py-1.5 rounded-md">
+            <span>⏱️ Lesezeit: {article.readTime}</span>
+          </div>
+        </div>
+        <div class="lg:col-span-2">
+          <QuoteWidget keyword={article.title} />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="grid lg:grid-cols-12 gap-8 items-start">
+      <!-- Article Content -->
+      <article class="lg:col-span-8 bg-white rounded-2xl border border-gray-200 shadow-sm p-6 md:p-10 prose prose-amber max-w-none text-gray-700 leading-relaxed">
+        <img src={article.image} alt={article.title} class="w-full h-80 object-cover rounded-2xl mb-8 border border-gray-100 shadow-sm" />
+        <div set:html={article.content} />
+      </article>
+
+      <!-- Sidebar -->
+      <aside class="lg:col-span-4 space-y-6">
+        <!-- Solchange CTA -->
+        <div class="cta-gradient rounded-2xl p-6 text-white text-center shadow-lg lg:sticky lg:top-24">
+          <h3 class="text-base font-bold mb-3 font-heading">☀️ Angebote für Solaranlagen vergleichen</h3>
+          <p class="text-xs text-blue-100 mb-4">Erhalten Sie bis zu 3 kostenlose Angebote von geprüften Solarteuren aus Ihrer Region.</p>
+          <a href="/angebot" class="inline-block bg-white text-amber-600 font-bold px-6 py-3 rounded-xl hover:bg-gray-100 transition-colors text-sm shadow-md">
+            Angebote anfordern →
+          </a>
+        </div>
+
+        <!-- Quick links: Hersteller -->
+        <div class="bg-white rounded-2xl border border-gray-200 p-5 shadow-sm">
+          <h3 class="text-sm font-bold text-gray-900 mb-3 font-heading">🏆 Führende Hersteller</h3>
+          <ul class="space-y-2">
+            <li><a href="/hersteller/meyer-burger" class="text-xs text-gray-700 hover:text-amber-600 transition-colors">🇨🇭 Meyer Burger — Premium-Module</a></li>
+            <li><a href="/hersteller/solarwatt" class="text-xs text-gray-700 hover:text-amber-600 transition-colors">🇩🇪 Solarwatt — Glas-Glas-Module</a></li>
+            <li><a href="/hersteller/sma-solar" class="text-xs text-gray-700 hover:text-amber-600 transition-colors">🇩🇪 SMA Solar — Wechselrichter</a></li>
+            <li><a href="/hersteller/fronius" class="text-xs text-gray-700 hover:text-amber-600 transition-colors">🇦🇹 Fronius — Speicherlösungen</a></li>
+            <li><a href="/hersteller/senec" class="text-xs text-gray-700 hover:text-amber-600 transition-colors">🇩🇪 Senec — High-End-Speicher</a></li>
+            <li><a href="/hersteller/jinkosolar" class="text-xs text-gray-700 hover:text-amber-600 transition-colors">🇨🇳 JinkoSolar — Weltmarktführer</a></li>
+          </ul>
+          <a href="/hersteller" class="block text-center text-amber-600 hover:text-amber-700 font-semibold text-xs mt-3 transition-colors">Hersteller-Übersicht →</a>
+        </div>
+
+        <!-- Quick links: Rechner -->
+        <a href="/kostenrechner" class="block bg-blue-900 text-white rounded-2xl border border-blue-950 p-5 hover:bg-blue-800 transition-all group shadow-md">
+          <span class="text-xl block mb-1">🧮</span>
+          <h3 class="font-bold text-sm text-amber-300 group-hover:text-amber-200">Kostenrechner</h3>
+          <p class="text-xs text-blue-200/80 mt-1">PV-Preise & Ertrag online berechnen.</p>
+        </a>
+
+        <!-- Related articles -->
+        <div class="bg-white rounded-2xl border border-gray-200 p-5 shadow-sm">
+          <h3 class="text-sm font-bold text-gray-900 mb-3 font-heading">📚 Weitere Artikel</h3>
+          <div class="space-y-3">
+            {relatedArticles.map((a) => (
+              <a href={`/ratgeber/${a.slug}`} class="flex gap-3 group hover:bg-gray-50 rounded-lg p-2 -mx-2 transition-colors">
+                <span class="text-base">{a.emoji}</span>
+                <div>
+                  <span class="block text-xs font-bold text-gray-900 group-hover:text-amber-600 leading-snug">{a.title}</span>
+                  <span class="block text-[10px] text-gray-500 mt-0.5">{a.readTime} Lesezeit</span>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <!-- Bottom cross-links (full width) -->
+    <div class="mt-12 space-y-6 border-t border-gray-200 pt-8">
+      <!-- Popular cities -->
+      <section>
+        <h2 class="text-lg md:text-xl font-bold text-gray-900 mb-4 font-heading">📍 PV-Preise in Ihrer Stadt</h2>
+        <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-8 gap-3">
+          {topCities.map(c => (
+            <a href={`/photovoltaik-rechner/${c.slug}`} class="bg-white border border-gray-200 rounded-xl px-3 py-2.5 hover:border-amber-400 hover:shadow-md transition-all group text-center card-hover">
+              <span class="font-semibold text-gray-900 group-hover:text-amber-600 text-xs block">{c.name}</span>
+              <span class="text-[10px] text-gray-500">{c.zip}</span>
+            </a>
+          ))}
+        </div>
+        <div class="text-center mt-4">
+          <a href="/photovoltaik-rechner" class="text-amber-600 hover:text-amber-700 font-semibold text-sm transition-colors">Alle Städte →</a>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="grid sm:grid-cols-2 gap-4">
+        <a href="/faq" class="bg-white rounded-2xl border border-gray-200 p-6 hover:border-amber-400 hover:shadow-md transition-all group">
+          <span class="text-2xl block mb-2">❓</span>
+          <h3 class="font-bold text-lg font-heading text-gray-900 group-hover:text-amber-600">Häufige Fragen (FAQ)</h3>
+          <p class="text-xs text-gray-600 mt-2">Detaillierte Antworten zu Kosten, Einspeisung und Genehmigungen.</p>
+        </a>
+        <a href="/kostenrechner" class="bg-white rounded-2xl border border-gray-200 p-6 hover:border-amber-400 hover:shadow-md transition-all group">
+          <span class="text-2xl block mb-2">🧮</span>
+          <h3 class="font-bold text-lg font-heading text-gray-900 group-hover:text-amber-600">Online-Kostenrechner</h3>
+          <p class="text-xs text-gray-600 mt-2">Berechnen Sie in wenigen Klicks Ihre Ersparnis und Rendite.</p>
+        </a>
+      </section>
+    </div>
+  </div>
+</BaseLayout>

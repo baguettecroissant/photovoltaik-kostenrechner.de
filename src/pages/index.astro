@@ -1,0 +1,275 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PriceTable from '../components/PriceTable.astro';
+import ProcessSteps from '../components/ProcessSteps.astro';
+import FAQ from '../components/FAQ.astro';
+import SolarCalculator from '../components/SolarCalculator.astro';
+import { siteConfig } from '../../site.config';
+import { getAllCities } from '../lib/cities';
+
+const topCities = getAllCities().slice(0, 20);
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": siteConfig.name,
+    "url": "https://" + siteConfig.domain,
+    "description": siteConfig.description,
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": siteConfig.faq.map(f => ({
+      "@type": "Question",
+      "name": f.q,
+      "acceptedAnswer": { "@type": "Answer", "text": f.a }
+    }))
+  }
+];
+---
+
+<BaseLayout
+  title={siteConfig.niche.heroTitle + " | " + siteConfig.name}
+  description={siteConfig.description}
+  canonical="/"
+  jsonLd={jsonLd}
+>
+  <!-- Hero Section - Minimalist App-Like Tech Blue Gradient -->
+  <section class="gradient-hero text-white py-12 md:py-16 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid lg:grid-cols-12 gap-10 items-center">
+        <div class="lg:col-span-5 space-y-6">
+          <!-- Animated Solar Badge -->
+          <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full text-xs sun-pulse font-semibold">
+            <span>☀️</span>
+            <span>0% Mehrwertsteuer auf Solaranlagen in DE</span>
+          </div>
+
+          <h1 class="text-3xl md:text-5xl font-extrabold leading-tight font-heading">
+            Photovoltaik<br/>
+            <span class="text-amber-300">Kosten & Ertrag online berechnen</span>
+          </h1>
+          <p class="text-sm md:text-base text-blue-100 leading-relaxed max-w-lg">
+            {siteConfig.niche.heroSubtitle}
+          </p>
+
+          <!-- Badges from config -->
+          <div class="flex flex-wrap gap-2.5 pt-2">
+            {siteConfig.trustBadges.map((badge) => (
+              <span class="bg-white/10 backdrop-blur-sm border border-white/20 px-3.5 py-1.5 rounded-full text-xs font-semibold">
+                ✓ {badge}
+              </span>
+            ))}
+          </div>
+
+          <!-- Counter -->
+          <div class="bg-white/5 border border-white/10 backdrop-blur-sm rounded-xl px-5 py-3.5 inline-block">
+            <span class="font-data text-xl font-bold text-amber-300">1.649</span>
+            <span class="text-blue-100 text-xs ml-2">Berechnungen heute durchgeführt</span>
+          </div>
+        </div>
+
+        <!-- Sleek Calculator directly in the Hero -->
+        <div class="lg:col-span-7">
+          <SolarCalculator />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Intro Text -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6 font-heading">
+        Warum lohnt sich eine eigene Solaranlage?
+      </h2>
+      <div class="text-gray-700 leading-relaxed space-y-4 text-sm md:text-base">
+        {siteConfig.introText.split('\n\n').map((paragraph) => (
+          <p>{paragraph}</p>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-8">
+    <div class="bg-white rounded-2xl p-6 md:p-8 border border-gray-200 shadow-sm">
+      <h3 class="text-xl font-bold text-gray-900 mb-4 font-heading">✅ Warum unser Portal nutzen?</h3>
+      <div class="grid sm:grid-cols-2 gap-4">
+        {siteConfig.whyChooseUs.map((item) => (
+          <div class="flex items-start gap-3">
+            <span class="text-accent mt-0.5 font-bold">→</span>
+            <span class="text-sm text-gray-700 font-medium">{item}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <ProcessSteps />
+  </section>
+
+  <!-- Price Table -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <PriceTable />
+  </section>
+
+  <!-- Energy comparison (Netzstrom vs Solarstrom) -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div class="info-card rounded-xl p-6">
+      <h3 class="text-lg font-bold text-blue-900 mb-3 font-heading">💡 Wirtschaftlichkeits-Vergleich: Solarstrom vs. Netzstrom</h3>
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm price-table border-collapse rounded-xl overflow-hidden shadow-inner">
+          <thead>
+            <tr class="bg-blue-50 border-b border-blue-100">
+              <th class="px-4 py-3 text-left">Energiequelle</th>
+              <th class="px-4 py-3 text-left">Durchschnittlicher Preis / kWh</th>
+              <th class="px-4 py-3 text-left">Jährliche Kosten (4.500 kWh Bedarf)</th>
+              <th class="px-4 py-3 text-left">Preissicherheit</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="font-bold bg-green-50/50">
+              <td class="px-4 py-3.5 text-green-755">🟢 Solarstrom (eigenes Dach)</td>
+              <td class="px-4 py-3.5">ca. 8 – 10 Cent</td>
+              <td class="px-4 py-3.5 price font-data text-green-600">ca. 360 – 450 €</td>
+              <td class="px-4 py-3.5 text-green-755">Garantiert fest für 25+ Jahre</td>
+            </tr>
+            <tr class="border-b border-gray-155">
+              <td class="px-4 py-3.5 text-gray-900">🔴 Netzstrom (Grundversorger)</td>
+              <td class="px-4 py-3.5">ca. 35 – 38 Cent</td>
+              <td class="px-4 py-3.5 font-data text-red-650">ca. 1.575 – 1.710 €</td>
+              <td class="px-4 py-3.5">Marktschwankungen ausgesetzt</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-xs text-blue-900/80 mt-3 font-semibold">
+        * Eigenverbrauchter Solarstrom spart Ihnen somit rund 27 Cent pro Kilowattstunde. Je höher Ihr Eigenverbrauch (z. B. durch einen Batteriespeicher), desto höher fällt Ihre jährliche Gesamtersparnis aus.
+      </p>
+    </div>
+  </section>
+
+  <!-- Subsidies Section -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <h2 class="text-2xl font-bold text-gray-900 mb-2 font-heading">
+      🏛️ Staatliche Solar-Förderung & Steuervorteile 2026
+    </h2>
+    <p class="text-gray-650 text-sm mb-6">Profitieren Sie von gesetzlichen Anreizen und steuerlichen Erleichterungen in Deutschland:</p>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      {siteConfig.subsidies.map((aid) => (
+        <div class="bg-white rounded-xl p-5 border border-gray-200 card-hover flex flex-col justify-between">
+          <div>
+            <h3 class="font-bold text-gray-900 text-sm mb-1">{aid.name}</h3>
+            <p class="font-data text-lg font-bold text-accent mb-2">{aid.amount}</p>
+          </div>
+          <p class="text-xs text-gray-500 mt-2">{aid.condition}</p>
+        </div>
+      ))}
+    </div>
+    <div class="text-center mt-4">
+      <a href="/ratgeber/photovoltaik-foerderung-2026" class="text-accent hover:text-accent-hover font-semibold text-sm transition-colors">
+        Ausführlicher Ratgeber zur Solarförderung →
+      </a>
+    </div>
+  </section>
+
+  <!-- Guides Section -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <h2 class="text-2xl font-bold text-gray-900 mb-2 font-heading">
+      📚 Beliebte Ratgeber & Fachartikel
+    </h2>
+    <p class="text-gray-650 text-sm mb-6">Informieren Sie sich vorab umfassend rund um Planung und Installation:</p>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <a href="/ratgeber/solaranlage-kosten-2026" class="bg-white rounded-xl border border-gray-200 overflow-hidden hover:shadow-md transition-all group card-hover">
+        <img src="/images/blog/pv-kosten-2026.png" alt="Was kostet eine Solaranlage" class="w-full h-32 object-cover" />
+        <div class="p-4">
+          <span class="text-[10px] font-bold text-accent uppercase tracking-wider">💰 Preise</span>
+          <h3 class="font-bold text-gray-900 group-hover:text-accent text-sm mt-1 leading-snug">Was kostet eine Solaranlage 2026?</h3>
+          <p class="text-xs text-gray-500 mt-1">Kompletter Preisüberblick & Kostenbestandteile</p>
+        </div>
+      </a>
+      <a href="/ratgeber/photovoltaik-foerderung-2026" class="bg-white rounded-xl border border-gray-200 overflow-hidden hover:shadow-md transition-all group card-hover">
+        <img src="/images/blog/pv-foerderung-2026.png" alt="Photovoltaik Förderung" class="w-full h-32 object-cover" />
+        <div class="p-4">
+          <span class="text-[10px] font-bold text-accent uppercase tracking-wider">🏛️ Förderung</span>
+          <h3 class="font-bold text-gray-900 group-hover:text-accent text-sm mt-1 leading-snug">Photovoltaik-Förderung 2026</h3>
+          <p class="text-xs text-gray-500 mt-1">KfW-Zuschüsse richtig beantragen</p>
+        </div>
+      </a>
+      <a href="/ratgeber/solaranlage-mit-speicher" class="bg-white rounded-xl border border-gray-200 overflow-hidden hover:shadow-md transition-all group card-hover">
+        <img src="/images/blog/pv-speicher.png" alt="Solaranlage mit Speicher" class="w-full h-32 object-cover" />
+        <div class="p-4">
+          <span class="text-[10px] font-bold text-accent uppercase tracking-wider">🔋 Speicher</span>
+          <h3 class="font-bold text-gray-900 group-hover:text-accent text-sm mt-1 leading-snug">Lohnt sich eine PV mit Speicher?</h3>
+          <p class="text-xs text-gray-500 mt-1">Wirtschaftlichkeit & Eigenverbrauchserhöhung</p>
+        </div>
+      </a>
+      <a href="/ratgeber/photovoltaik-amortisation" class="bg-white rounded-xl border border-gray-200 overflow-hidden hover:shadow-md transition-all group card-hover">
+        <img src="/images/blog/pv-amortisation.png" alt="Photovoltaik Amortisation" class="w-full h-32 object-cover" />
+        <div class="p-4">
+          <span class="text-[10px] font-bold text-accent uppercase tracking-wider">⚖️ Wirtschaftlichkeit</span>
+          <h3 class="font-bold text-gray-900 group-hover:text-accent text-sm mt-1 leading-snug">Photovoltaik-Amortisation</h3>
+          <p class="text-xs text-gray-500 mt-1">Wann rechnet sich Ihre eigene Anlage?</p>
+        </div>
+      </a>
+    </div>
+    <div class="text-center mt-6">
+      <a href="/ratgeber" class="text-accent hover:text-accent-hover font-semibold text-sm transition-colors">
+        Alle Ratgeber-Artikel ansehen →
+      </a>
+    </div>
+  </section>
+
+  <!-- City Grid -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <h2 class="text-2xl font-bold text-gray-900 mb-2 font-heading">
+      📍 Solar-Angebote in Ihrer Region vergleichen
+    </h2>
+    <p class="text-gray-650 mb-6">Finden Sie geprüfte Solar-Fachbetriebe direkt in Ihrer Nähe:</p>
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
+      {topCities.map((city) => (
+        <a
+          href={"/photovoltaik-rechner/" + city.slug}
+          class="bg-white border border-gray-200 rounded-xl px-4 py-3 hover:border-amber-400 hover:shadow-md transition-all group text-center card-hover"
+        >
+          <span class="font-semibold text-gray-900 group-hover:text-accent text-sm">{city.name}</span>
+          <span class="block text-xs text-gray-500 mt-0.5">{city.zip}</span>
+        </a>
+      ))}
+    </div>
+    <div class="text-center mt-6">
+      <a href="/photovoltaik-rechner" class="text-accent hover:text-accent-hover font-semibold text-sm transition-colors">
+        Alle Städte ansehen →
+      </a>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <FAQ items={siteConfig.faq} />
+    <div class="text-center mt-4">
+      <a href="/faq" class="text-accent hover:text-accent-hover font-semibold text-sm transition-colors">
+        Alle FAQ-Fragen anzeigen →
+      </a>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="cta-gradient rounded-2xl p-8 md:p-12 text-center text-white">
+      <h2 class="text-2xl md:text-3xl font-bold mb-4 font-heading">
+        Bereit für Ihr eigenes Solardach?
+      </h2>
+      <p class="text-blue-100 mb-6 max-w-lg mx-auto">
+        Erhalten Sie bis zu 3 Angebote von geprüften Solarteuren aus Ihrer Region. Komplett kostenlos, unverbindlich und in wenigen Klicks.
+      </p>
+      <a href="/angebot" class="inline-block bg-white text-accent font-bold px-8 py-4 rounded-xl hover:bg-gray-100 transition-colors shadow-lg text-lg">
+        ☀️ Jetzt Angebote kostenlos vergleichen
+      </a>
+    </div>
+  </section>
+</BaseLayout>

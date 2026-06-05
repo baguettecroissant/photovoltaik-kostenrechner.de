@@ -1,0 +1,61 @@
+---
+import { siteConfig } from '../../site.config';
+---
+
+<div class="space-y-8" id="preis-table">
+  <div class="bg-white rounded-2xl border border-gray-200 shadow-sm p-6 md:p-8">
+    <h3 class="text-xl font-bold text-gray-900 mb-2 font-heading">
+      💰 Kosten einer Solaranlage nach Anlagengröße (2026)
+    </h3>
+    <p class="text-sm text-gray-600 mb-6">
+      Hier sind die typischen schlüsselfertigen Kosten für eine Photovoltaikanlage in Deutschland inklusive Montage, Zählerumbau und Anmeldung:
+    </p>
+
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm price-table border-collapse rounded-xl overflow-hidden">
+        <thead>
+          <tr class="bg-gray-50 border-b border-gray-200">
+            <th class="px-4 py-3 text-left font-bold text-gray-700">Anlagentyp & Leistung</th>
+            <th class="px-4 py-3 text-left font-bold text-gray-700">Preisbereich (schlüsselfertig)</th>
+            <th class="px-4 py-3 text-left font-bold text-gray-700">Besonderheiten / Umfang</th>
+          </tr>
+        </thead>
+        <tbody>
+          {siteConfig.pricing.map((p) => (
+            <tr class="border-b border-gray-155">
+              <td class="px-4 py-4">
+                <span class="font-bold block text-gray-900 text-sm">{p.service}</span>
+              </td>
+              <td class="px-4 py-4 price font-data font-bold text-amber-600">{p.price}</td>
+              <td class="px-4 py-4 text-xs text-gray-600 leading-relaxed">{p.details}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+
+    <p class="text-xs text-gray-500 mt-4 leading-relaxed italic">
+      ℹ️ {siteConfig.pricingNote}
+    </p>
+  </div>
+
+  <!-- Speicher costs -->
+  <div class="bg-white rounded-2xl border border-gray-200 shadow-sm p-6 md:p-8">
+    <h3 class="text-xl font-bold text-gray-900 mb-2 font-heading">
+      🔋 Stromspeicher-Kosten separat (2026)
+    </h3>
+    <p class="text-sm text-gray-600 mb-6">
+      Wenn Sie Ihre Solaranlage mit einem Batteriespeicher ausstatten oder einen Speicher nachrüsten möchten:
+    </p>
+
+    <div class="grid sm:grid-cols-3 gap-4">
+      {siteConfig.storagePricing.map((c) => (
+        <div class="flex flex-col justify-between bg-gray-50 p-4 rounded-xl border border-gray-200">
+          <span class="font-bold text-gray-900 text-sm">{c.size}</span>
+          <span class="font-data font-bold text-base text-amber-600 mt-2">{c.price}</span>
+          <span class="text-[10px] text-gray-500 mt-1">{c.details}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+</div>

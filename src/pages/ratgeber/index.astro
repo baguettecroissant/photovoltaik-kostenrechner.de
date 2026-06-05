@@ -1,0 +1,123 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { siteConfig } from '../../../site.config';
+import { blogArticles } from '../../data/blog-articles';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Ratgeber und Tipps für Photovoltaik & Solaranlagen",
+    "description": "Erfahren Sie alles über Photovoltaik-Kosten, staatliche Förderung 2026, Stromspeicher und die Planung Ihrer Solaranlage.",
+    "url": "https://" + siteConfig.domain + "/ratgeber",
+  }
+];
+---
+
+<BaseLayout
+  title={`Solar-Ratgeber 2026: Experten-Tipps, Kosten & Förderung | ${siteConfig.name}`}
+  description={`Ausführliche Leitfäden rund um Solaranlagen auf Einfamilienhäusern: Preisübersichten, KfW-Förderung 2026, Speicher-Vergleiche und Amortisation.`}
+  canonical="/ratgeber"
+  jsonLd={jsonLd}
+>
+  <section class="gradient-hero text-white py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <Breadcrumbs items={[
+        { label: "Ratgeber", href: "/ratgeber" },
+      ]} />
+      <h1 class="text-3xl md:text-5xl font-extrabold mb-4 font-heading mt-6">
+        📚 Solar-Ratgeber & Fachwissen 2026
+      </h1>
+      <p class="text-blue-100 text-lg max-w-2xl">
+        Neutrale Informationen und Leitfäden zur Planung, Förderung und Wirtschaftlichkeit Ihrer Photovoltaikanlage.
+      </p>
+    </div>
+  </section>
+
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {blogArticles.map((a) => (
+        <div class="bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden flex flex-col justify-between card-hover">
+          <div>
+            <!-- Image of article -->
+            <img src={a.image} alt={a.title} class="w-full h-48 object-cover border-b border-gray-100" />
+            
+            <div class="p-6 space-y-3">
+              <div class="flex justify-between items-center text-xs">
+                <span class="font-semibold text-amber-600 uppercase tracking-wider bg-amber-50 px-2 py-0.5 rounded">
+                  {a.category}
+                </span>
+                <span class="text-gray-500 font-data font-semibold">
+                  ⏱️ {a.readTime}
+                </span>
+              </div>
+
+              <!-- Title -->
+              <h2 class="text-xl font-bold text-gray-900 font-heading leading-tight line-clamp-2">
+                {a.title}
+              </h2>
+
+              <!-- Excerpt -->
+              <p class="text-xs text-gray-600 leading-relaxed line-clamp-3">
+                {a.excerpt}
+              </p>
+            </div>
+          </div>
+
+          <div class="bg-gray-50 p-5 border-t border-gray-100 flex items-center justify-between">
+            <span class="text-xs text-gray-500">Veröffentlicht am {new Date(a.date).toLocaleDateString('de-DE')}</span>
+            <a href={`/ratgeber/${a.slug}`} class="cta-gradient text-white text-xs font-bold px-4 py-2 rounded-lg shadow-sm hover:shadow-md transition-all">
+              Artikel lesen →
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Cross-links: Hersteller -->
+    <div class="mt-12">
+      <h2 class="text-xl font-bold text-gray-900 mb-4 font-heading">🏆 Beliebte Solarmarken & Hersteller</h2>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3">
+        <a href="/hersteller/meyer-burger" class="bg-white border border-gray-200 rounded-xl px-4 py-3 hover:border-amber-400 hover:shadow-md transition-all group text-center card-hover">
+          <span class="font-semibold text-gray-900 group-hover:text-amber-600 text-sm block">Meyer Burger</span>
+          <span class="block text-[10px] text-gray-500">🇨🇭 Schweiz/DE</span>
+        </a>
+        <a href="/hersteller/solarwatt" class="bg-white border border-gray-200 rounded-xl px-4 py-3 hover:border-amber-400 hover:shadow-md transition-all group text-center card-hover">
+          <span class="font-semibold text-gray-900 group-hover:text-amber-600 text-sm block">Solarwatt</span>
+          <span class="block text-[10px] text-gray-500">🇩🇪 Deutschland</span>
+        </a>
+        <a href="/hersteller/sma-solar" class="bg-white border border-gray-200 rounded-xl px-4 py-3 hover:border-amber-400 hover:shadow-md transition-all group text-center card-hover">
+          <span class="font-semibold text-gray-900 group-hover:text-amber-600 text-sm block">SMA Solar</span>
+          <span class="block text-[10px] text-gray-500">🇩🇪 Wechselrichter</span>
+        </a>
+        <a href="/hersteller/fronius" class="bg-white border border-gray-200 rounded-xl px-4 py-3 hover:border-amber-400 hover:shadow-md transition-all group text-center card-hover">
+          <span class="font-semibold text-gray-900 group-hover:text-amber-600 text-sm block">Fronius</span>
+          <span class="block text-[10px] text-gray-500">🇦🇹 Österreich</span>
+        </a>
+        <a href="/hersteller/senec" class="bg-white border border-gray-200 rounded-xl px-4 py-3 hover:border-amber-400 hover:shadow-md transition-all group text-center card-hover">
+          <span class="font-semibold text-gray-900 group-hover:text-amber-600 text-sm block">Senec</span>
+          <span class="block text-[10px] text-gray-500">🇩🇪 Batteriespeicher</span>
+        </a>
+        <a href="/hersteller/jinkosolar" class="bg-white border border-gray-200 rounded-xl px-4 py-3 hover:border-amber-400 hover:shadow-md transition-all group text-center card-hover">
+          <span class="font-semibold text-gray-900 group-hover:text-amber-600 text-sm block">JinkoSolar</span>
+          <span class="block text-[10px] text-gray-500">🇨🇳 Module</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Cross-links: Rechner + FAQ -->
+    <div class="mt-6 grid sm:grid-cols-2 gap-4">
+      <a href="/kostenrechner" class="bg-blue-900 text-white rounded-2xl border border-blue-950 p-6 hover:bg-blue-800 transition-all group shadow-md">
+        <span class="text-2xl block mb-2">🧮</span>
+        <h3 class="font-bold text-lg font-heading text-amber-300 group-hover:text-amber-200">Kostenrechner</h3>
+        <p class="text-xs text-blue-200/80 mt-2">Berechnen Sie die Preise und Autarkie für Ihr Dach in 2 Minuten.</p>
+      </a>
+      <a href="/faq" class="bg-white rounded-2xl border border-gray-200 p-6 hover:border-amber-400 hover:shadow-md transition-all group">
+        <span class="text-2xl block mb-2">❓</span>
+        <h3 class="font-bold text-lg font-heading text-gray-900 group-hover:text-amber-600">Häufige Fragen (FAQ)</h3>
+        <p class="text-xs text-gray-600 mt-2">Ausführliche Experten-Antworten zu Steuern, Einspeisung und Preisen.</p>
+      </a>
+    </div>
+  </section>
+</BaseLayout>

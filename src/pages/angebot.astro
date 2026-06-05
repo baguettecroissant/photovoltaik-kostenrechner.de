@@ -1,0 +1,98 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import QuoteWidget from '../components/QuoteWidget.astro';
+import { siteConfig } from '../../site.config';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Kostenloses Angebot für Solaranlagen anfordern",
+    "description": "Fordern Sie bis zu 3 kostenlose und unverbindliche Angebote von geprüften Solar-Fachbetrieben aus Ihrer Region an.",
+    "url": "https://" + siteConfig.domain + "/angebot",
+  }
+];
+---
+
+<BaseLayout
+  title={`Kostenloses Solar-Angebot anfordern | ${siteConfig.name}`}
+  description={`Vergleichen Sie Angebote von geprüften Solarteuren in Ihrer Region. Erhalten Sie bis zu 3 Angebote — 100% kostenlos und unverbindlich.`}
+  canonical="/angebot"
+  jsonLd={jsonLd}
+>
+  <section class="gradient-hero text-white py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <Breadcrumbs items={[
+        { label: "Startseite", href: "/" },
+        { label: "Angebote vergleichen", href: "/angebot" },
+      ]} />
+      <h1 class="text-3xl md:text-5xl font-extrabold mb-4 font-heading mt-6">
+        ☀️ Kostenlose Solar-Angebote vergleichen
+      </h1>
+      <p class="text-blue-100 text-lg max-w-xl">
+        Erhalten Sie bis zu 3 Angebote von geprüften Solar-Fachbetrieben aus Ihrer Region. 100% kostenlos und unverbindlich.
+      </p>
+    </div>
+  </section>
+
+  <section class="max-w-xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-2">
+      <QuoteWidget keyword="Solaranlage Angebot" />
+    </div>
+
+    <!-- Info points -->
+    <div class="mt-8 grid gap-4">
+      <div class="flex gap-3 bg-gray-50 p-4 rounded-xl border border-gray-200">
+        <span class="text-xl">✅</span>
+        <div>
+          <h4 class="font-bold text-gray-900 text-sm">Geprüfte Solar-Fachbetriebe</h4>
+          <p class="text-xs text-gray-600 mt-0.5">Alle angeschlossenen Betriebe sind qualifizierte Meisterbetriebe für Elektro- und Solartechnik mit Sitz in Ihrer Region.</p>
+        </div>
+      </div>
+      <div class="flex gap-3 bg-gray-50 p-4 rounded-xl border border-gray-200">
+        <span class="text-xl">⏱️</span>
+        <div>
+          <h4 class="font-bold text-gray-900 text-sm">Schnelle Rückmeldung in 24-48 Std.</h4>
+          <p class="text-xs text-gray-600 mt-0.5">Nach Absenden Ihrer Anfrage melden sich bis zu 3 regionale Anbieter bei Ihnen, um Ihr Dach telefonisch oder per Vor-Ort-Termin zu besprechen.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cross-links: Guides -->
+    <div class="mt-10 bg-white rounded-2xl border border-gray-200 p-6 shadow-sm">
+      <h3 class="text-lg font-bold text-gray-900 mb-4 font-heading">📚 Vorab-Informationen</h3>
+      <div class="grid gap-3">
+        <a href="/ratgeber/solaranlage-kosten-2026" class="flex items-center gap-3 bg-gray-50 rounded-xl p-3 border border-gray-200 hover:border-amber-400 transition-all group">
+          <span class="text-lg">💰</span>
+          <span class="font-bold text-gray-900 group-hover:text-amber-600 text-sm">Was kostet eine Solaranlage 2026? — Preisübersicht</span>
+        </a>
+        <a href="/ratgeber/photovoltaik-foerderung-2026" class="flex items-center gap-3 bg-gray-50 rounded-xl p-3 border border-gray-200 hover:border-amber-400 transition-all group">
+          <span class="text-lg">🏛️</span>
+          <span class="font-bold text-gray-900 group-hover:text-amber-600 text-sm">Photovoltaik-Förderung 2026 — Zuschüsse und Steuern</span>
+        </a>
+        <a href="/ratgeber/solaranlage-mit-speicher" class="flex items-center gap-3 bg-gray-50 rounded-xl p-3 border border-gray-200 hover:border-amber-400 transition-all group">
+          <span class="text-lg">🔋</span>
+          <span class="font-bold text-gray-900 group-hover:text-amber-600 text-sm">Wann lohnt sich ein Stromspeicher? — Wirtschaftlichkeit</span>
+        </a>
+      </div>
+      <div class="text-center mt-3">
+        <a href="/ratgeber" class="text-amber-600 hover:text-amber-700 font-semibold text-sm transition-colors">Alle Ratgeber →</a>
+      </div>
+    </div>
+
+    <!-- Cross-links: Hersteller + Rechner -->
+    <div class="mt-6 grid sm:grid-cols-2 gap-4">
+      <a href="/hersteller" class="bg-white rounded-2xl border border-gray-200 p-5 hover:border-amber-400 hover:shadow-md transition-all group">
+        <span class="text-2xl block mb-2">🏆</span>
+        <h4 class="font-bold text-gray-900 group-hover:text-amber-600 text-sm">Hersteller-Vergleich</h4>
+        <p class="text-xs text-gray-600 mt-1">Meyer Burger, Solarwatt, SMA Solar, Fronius, Senec...</p>
+      </a>
+      <a href="/kostenrechner" class="bg-blue-900 text-white rounded-2xl border border-blue-950 p-5 hover:bg-blue-800 transition-all group shadow-md">
+        <span class="text-2xl block mb-2">🧮</span>
+        <h4 class="font-bold text-amber-300 group-hover:text-amber-200 text-sm">Kostenrechner</h4>
+        <p class="text-xs text-blue-200/80 mt-1">Preise & Autarkiegrad in 2 Minuten berechnen.</p>
+      </a>
+    </div>
+  </section>
+</BaseLayout>

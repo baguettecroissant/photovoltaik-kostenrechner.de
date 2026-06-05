@@ -1,0 +1,218 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import QuoteWidget from '../../components/QuoteWidget.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { siteConfig } from '../../../site.config';
+import { brands, type Brand } from '../../data/brands';
+import { getAllCities } from '../../lib/cities';
+
+export function getStaticPaths() {
+  return brands.map(brand => ({
+    params: { slug: brand.slug },
+    props: { brand },
+  }));
+}
+
+const { brand } = Astro.props as { brand: Brand };
+
+const title = brand.name + " Solaranlage & Zubehör: Preise, Modelle & Test 2026";
+const description = brand.description;
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": brand.name + " Photovoltaik & Speicher",
+    "description": brand.description,
+    "brand": {
+      "@type": "Brand",
+      "name": brand.name
+    },
+    "offers": {
+      "@type": "AggregateOffer",
+      "priceCurrency": "EUR",
+      "lowPrice": brand.models[0]?.price.replace(/\s/g, '').replace('€', '') || "100",
+      "highPrice": brand.models[brand.models.length - 1]?.price.replace(/\s/g, '').replace('€', '') || "8000"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://" + siteConfig.domain },
+      { "@type": "ListItem", "position": 2, "name": "Hersteller", "item": "https://" + siteConfig.domain + "/hersteller" },
+      { "@type": "ListItem", "position": 3, "name": brand.name },
+    ]
+  }
+];
+
+const topCities = getAllCities().slice(0, 8);
+---
+
+<BaseLayout title={title} description={description} canonical={"/hersteller/" + brand.slug} jsonLd={jsonLd}>
+  <section class="gradient-hero text-white py-12 md:py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <Breadcrumbs items={[
+        { label: "Hersteller", href: "/hersteller" },
+        { label: brand.name, href: "/hersteller/" + brand.slug },
+      ]} />
+
+      <div class="grid lg:grid-cols-5 gap-10 items-start mt-6">
+        <div class="lg:col-span-3">
+          <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-3 py-1.5 rounded-full text-sm mb-4">
+            <span>{brand.flag}</span>
+            <span>Herkunft: {brand.country}</span>
+          </div>
+
+          <h1 class="text-3xl md:text-5xl font-extrabold leading-tight mb-4 font-heading">
+            {brand.name} Solaranlagen: Preise, Modelle & Vergleich 2026
+          </h1>
+          <p class="text-blue-100 leading-relaxed mb-6 max-w-xl text-sm md:text-base">
+            {brand.description}
+          </p>
+
+          <a href="#devis-form" class="inline-block cta-gradient text-white font-bold px-6 py-3.5 rounded-xl transition-all shadow-lg text-base">
+            ☀️ Angebote mit {brand.name} vergleichen
+          </a>
+        </div>
+        <div class="lg:col-span-2">
+          <QuoteWidget keyword={brand.name + " Solaranlage"} />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-12">
+    <!-- Brand Content Review -->
+    <section class="prose prose-amber max-w-none text-gray-700 space-y-4">
+      <div set:html={brand.content} />
+    </section>
+
+    <!-- Models Table -->
+    <section class="bg-white rounded-2xl border border-gray-200 p-6 md:p-8 shadow-sm">
+      <h2 class="text-xl md:text-2xl font-bold text-gray-900 mb-4 font-heading">
+        📋 Beliebte Modelle & Richtpreise von {brand.name}
+      </h2>
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm price-table border-collapse rounded-xl overflow-hidden">
+          <thead>
+            <tr class="bg-gray-50 border-b border-gray-200">
+              <th class="px-4 py-3 text-left font-bold text-gray-700">Modell / Produkt</th>
+              <th class="px-4 py-3 text-left font-bold text-gray-700">Leistung / Kapazität</th>
+              <th class="px-4 py-3 text-left font-bold text-gray-700">Wirkungsgrad / Effizienz</th>
+              <th class="px-4 py-3 text-left font-bold text-gray-700">Richtpreis (ca. Netto)</th>
+              <th class="px-4 py-3 text-left font-bold text-gray-700">Besonderheiten</th>
+            </tr>
+          </thead>
+          <tbody>
+            {brand.models.map(m => (
+              <tr class="border-b border-gray-155">
+                <td class="px-4 py-4 font-bold text-gray-950">{m.name}</td>
+                <td class="px-4 py-4 font-data text-gray-600 text-xs">{m.power}</td>
+                <td class="px-4 py-4 font-data font-semibold text-gray-700">{m.rendement}</td>
+                <td class="px-4 py-4 price font-data font-bold text-amber-600">{m.price}</td>
+                <td class="px-4 py-4 text-xs text-gray-600 leading-relaxed">{m.features}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Pros & Cons -->
+    <section class="grid md:grid-cols-2 gap-6">
+      <div class="bg-green-50/50 border border-green-200 rounded-2xl p-6 md:p-8">
+        <h3 class="text-lg font-bold text-green-800 mb-4 flex items-center gap-2 font-heading">
+          🟢 Vorteile von {brand.name}
+        </h3>
+        <ul class="space-y-2 text-xs text-gray-700">
+          {brand.pros.map(pro => (
+            <li class="flex items-start gap-2">
+              <span class="text-green-600 font-bold">✓</span>
+              <span>{pro}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div class="bg-red-50/30 border border-red-100 rounded-2xl p-6 md:p-8">
+        <h3 class="text-lg font-bold text-red-800 mb-4 flex items-center gap-2 font-heading">
+          🔴 Nachteile / Einschränkungen
+        </h3>
+        <ul class="space-y-2 text-xs text-gray-700">
+          {brand.cons.map(con => (
+            <li class="flex items-start gap-2">
+              <span class="text-red-500 font-bold">⚠</span>
+              <span>{con}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+
+    <!-- Warranty & SAV -->
+    <section class="bg-gray-50 rounded-2xl border border-gray-200 p-6 md:p-8 grid md:grid-cols-2 gap-6">
+      <div>
+        <h3 class="text-lg font-bold text-gray-900 mb-2 font-heading">🛡️ Garantie & Gewährleistung</h3>
+        <p class="text-xs text-gray-600 leading-relaxed">{brand.warranty}</p>
+      </div>
+      <div>
+        <h3 class="text-lg font-bold text-gray-900 mb-2 font-heading">🛠️ Kundenservice & Support</h3>
+        <p class="text-xs text-gray-600 leading-relaxed">{brand.sav}</p>
+      </div>
+    </section>
+
+    <!-- Other brands -->
+    <section>
+      <h2 class="text-xl font-bold text-gray-900 mb-4 font-heading">🏆 Andere Hersteller vergleichen</h2>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
+        {brands.filter(b => b.slug !== brand.slug).map((b) => (
+          <a href={`/hersteller/${b.slug}`} class="bg-white border border-gray-200 rounded-xl px-4 py-4 hover:border-amber-400 hover:shadow-md transition-all group text-center card-hover">
+            <span class="text-xl block mb-1">{b.flag}</span>
+            <span class="font-semibold text-gray-900 group-hover:text-amber-600 text-sm block">{b.name}</span>
+            <span class="text-xs text-gray-500 mt-0.5 block">{b.priceRange}</span>
+          </a>
+        ))}
+      </div>
+      <div class="text-center mt-4">
+        <a href="/hersteller" class="text-amber-600 hover:text-amber-700 font-semibold text-sm transition-colors">Alle Hersteller im Überblick →</a>
+      </div>
+    </section>
+
+    <!-- Related guides -->
+    <section class="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 md:p-8">
+      <h2 class="text-xl font-bold text-gray-900 mb-4 font-heading">📚 Relevante Ratgeber</h2>
+      <div class="grid sm:grid-cols-3 gap-4">
+        <a href="/ratgeber/solaranlage-kosten-2026" class="bg-gray-50 rounded-xl p-4 border border-gray-200 hover:border-amber-400 hover:shadow-md transition-all group">
+          <span class="text-lg block mb-1">💰</span>
+          <span class="font-bold text-gray-900 group-hover:text-amber-600 text-sm block">Preise für Solaranlagen 2026</span>
+          <span class="text-xs text-gray-500 mt-1 block">Kompletter Kostenvergleich</span>
+        </a>
+        <a href="/ratgeber/photovoltaik-rechner-vs-beratung" class="bg-gray-50 rounded-xl p-4 border border-gray-200 hover:border-amber-400 hover:shadow-md transition-all group">
+          <span class="text-lg block mb-1">⭐</span>
+          <span class="font-bold text-gray-900 group-hover:text-amber-600 text-sm block">Online-Rechner vs. Beratung</span>
+          <span class="text-xs text-gray-500 mt-1 block">So finden Sie den besten Anbieter</span>
+
+        </a>
+        <a href="/ratgeber/photovoltaik-foerderung-2026" class="bg-gray-50 rounded-xl p-4 border border-gray-200 hover:border-amber-400 hover:shadow-md transition-all group">
+          <span class="text-lg block mb-1">🏛️</span>
+          <span class="font-bold text-gray-900 group-hover:text-amber-600 text-sm block">PV-Förderung & Zuschüsse</span>
+          <span class="text-xs text-gray-500 mt-1 block">KfW & regionale Programme</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- Popular cities -->
+    <section>
+      <h2 class="text-xl font-bold text-gray-900 mb-4 font-heading">📍 Solar-Angebote in Ihrer Region</h2>
+      <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-8 gap-3">
+        {topCities.map(c => (
+          <a href={`/photovoltaik-rechner/${c.slug}`} class="bg-white border border-gray-200 rounded-xl px-3 py-2.5 hover:border-amber-400 hover:shadow-md transition-all group text-center card-hover">
+            <span class="font-semibold text-gray-900 group-hover:text-amber-600 text-xs block">{c.name}</span>
+            <span class="text-[10px] text-gray-500">{c.zip}</span>
+          </a>
+        ))}
+      </div>
+    </section>
+  </div>
+</BaseLayout>

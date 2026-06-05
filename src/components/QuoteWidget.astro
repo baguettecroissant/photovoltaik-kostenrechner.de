@@ -1,0 +1,307 @@
+---
+import { siteConfig } from '../../site.config';
+
+interface Props {
+  keyword?: string;
+  defaultZip?: string;
+}
+
+const { keyword = siteConfig.niche.name, defaultZip = '' } = Astro.props;
+---
+
+<div class="bg-white rounded-2xl border border-gray-200 shadow-xl overflow-hidden" id="devis-form">
+  <!-- Widget Header -->
+  <div class="bg-brand-700 p-5 text-white text-center border-b border-gray-100">
+    <h3 class="font-bold text-lg font-heading">
+      ☀️ Solarangebote vergleichen
+    </h3>
+    <p class="text-xs text-blue-100/80 mt-1">
+      Erhalten Sie bis zu 3 kostenlose Angebote aus Ihrer Region
+    </p>
+  </div>
+
+  <!-- Multi-step Form Container -->
+  <div class="p-6 bg-gray-50/50 min-h-[380px] flex flex-col justify-between" id="solar-form-wizard">
+    
+    <!-- Step 1: Eigentum -->
+    <div class="step-pane active" data-step="1">
+      <p class="text-xs font-semibold text-amber-600 uppercase tracking-wider mb-2 font-heading">Schritt 1 von 6</p>
+      <h4 class="font-bold text-base text-gray-900 mb-4 font-heading">Sind Sie Eigentümer der Immobilie?</h4>
+      <div class="space-y-3">
+        <button type="button" class="form-btn" data-next="true">Ja, ich bin Eigentümer</button>
+        <button type="button" class="form-btn" data-disqualify="owner">Nein, ich bin Mieter</button>
+      </div>
+    </div>
+
+    <!-- Step 2: Art der Immobilie -->
+    <div class="step-pane hidden" data-step="2">
+      <p class="text-xs font-semibold text-amber-600 uppercase tracking-wider mb-2 font-heading">Schritt 2 von 6</p>
+      <h4 class="font-bold text-base text-gray-900 mb-4 font-heading">Um welche Art von Gebäude handelt es sich?</h4>
+      <div class="space-y-3">
+        <button type="button" class="form-btn" data-next="true">Einfamilienhaus</button>
+        <button type="button" class="form-btn" data-next="true">Zweifamilienhaus</button>
+        <button type="button" class="form-btn" data-disqualify="property">Mehrfamilienhaus / Sonstiges</button>
+      </div>
+    </div>
+
+    <!-- Step 3: Dachfläche -->
+    <div class="step-pane hidden" data-step="3">
+      <p class="text-xs font-semibold text-amber-600 uppercase tracking-wider mb-2 font-heading">Schritt 3 von 6</p>
+      <h4 class="font-bold text-base text-gray-900 mb-4 font-heading">Wie groß ist die ungefähre nutzbare Dachfläche?</h4>
+      <div class="space-y-3">
+        <button type="button" class="form-btn" data-next="true">Mehr als 20 m²</button>
+        <button type="button" class="form-btn" data-disqualify="size">Weniger als 20 m²</button>
+      </div>
+    </div>
+
+    <!-- Step 4: Dacheindeckung -->
+    <div class="step-pane hidden" data-step="4">
+      <p class="text-xs font-semibold text-amber-600 uppercase tracking-wider mb-2 font-heading">Schritt 4 von 6</p>
+      <h4 class="font-bold text-base text-gray-900 mb-4 font-heading">Welche Eindeckung hat Ihr Dach?</h4>
+      <div class="space-y-3">
+        <button type="button" class="form-btn" data-next="true">Ziegel / Beton / Metall / Bitumen</button>
+        <button type="button" class="form-btn" data-disqualify="asbestos">Schiefer / Asbest</button>
+      </div>
+    </div>
+
+    <!-- Step 5: Zeitplan -->
+    <div class="step-pane hidden" data-step="5">
+      <p class="text-xs font-semibold text-amber-600 uppercase tracking-wider mb-2 font-heading">Schritt 5 von 6</p>
+      <h4 class="font-bold text-base text-gray-900 mb-4 font-heading">Wann soll die Solaranlage installiert werden?</h4>
+      <div class="space-y-3">
+        <button type="button" class="form-btn" data-next="true">In den nächsten 6 Monaten</button>
+        <button type="button" class="form-btn" data-disqualify="timing">Später</button>
+      </div>
+    </div>
+
+    <!-- Step 6: Kontaktdaten (Qualified) -->
+    <div class="step-pane hidden" data-step="6">
+      <p class="text-xs font-semibold text-amber-600 uppercase tracking-wider mb-2 font-heading">Letzter Schritt</p>
+      <h4 class="font-bold text-base text-gray-900 mb-4 font-heading">Angebote kostenlos anfordern</h4>
+      
+      <form id="solar-lead-form" class="space-y-3">
+        <div>
+          <label class="block text-xs font-bold text-gray-600 mb-1">Postleitzahl</label>
+          <input type="text" name="zip" required pattern="[0-9]{5}" placeholder="z.B. 10115" value={defaultZip} class="form-input" />
+        </div>
+        <div class="grid grid-cols-2 gap-2">
+          <div>
+            <label class="block text-xs font-bold text-gray-600 mb-1">Vorname</label>
+            <input type="text" name="firstname" required placeholder="Vorname" class="form-input" />
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-gray-600 mb-1">Nachname</label>
+            <input type="text" name="lastname" required placeholder="Nachname" class="form-input" />
+          </div>
+        </div>
+        <div>
+          <label class="block text-xs font-bold text-gray-600 mb-1">E-Mail-Adresse</label>
+          <input type="email" name="email" required placeholder="name@beispiel.de" class="form-input" />
+        </div>
+        <div>
+          <label class="block text-xs font-bold text-gray-600 mb-1">Telefonnummer</label>
+          <input type="tel" name="phone" required placeholder="z.B. 0170 1234567" class="form-input" />
+        </div>
+        
+        <div class="text-[10px] text-gray-500 leading-snug mt-2">
+          Mit dem Absenden stimmen Sie zu, dass Ihre Daten zur Angebotserstellung an {siteConfig.taptaphome.partnerName} übermittelt werden.
+        </div>
+
+        <button type="submit" class="submit-btn mt-3">
+          ☀️ Jetzt Angebote anfordern →
+        </button>
+      </form>
+    </div>
+
+    <!-- Disqualified State -->
+    <div class="step-pane hidden text-center py-6" id="disqualify-pane">
+      <span class="text-4xl block mb-3">⚠️</span>
+      <h4 class="font-bold text-base text-gray-900 mb-2 font-heading">Angebot leider nicht möglich</h4>
+      <p class="text-xs text-gray-600 leading-relaxed max-w-sm mx-auto mb-4" id="disqualify-msg">
+        Leider entsprechen Ihre Angaben nicht den Kriterien unserer Partner-Betriebe.
+      </p>
+      <a href="/ratgeber" class="inline-block bg-gray-200 text-gray-700 font-bold px-4 py-2 rounded-xl text-xs hover:bg-gray-300 transition-colors">
+        Zu unseren Solar-Ratgebern
+      </a>
+    </div>
+
+    <!-- Success State -->
+    <div class="step-pane hidden text-center py-6" id="success-pane">
+      <span class="text-4xl block mb-3">✅</span>
+      <h4 class="font-bold text-base text-gray-900 mb-2 font-heading">Anfrage erfolgreich!</h4>
+      <p class="text-xs text-gray-600 leading-relaxed max-w-sm mx-auto mb-4">
+        Vielen Dank. Ihre Daten wurden sicher übermittelt. Ein zertifizierter Solarexperte wird sich in den nächsten 24 bis 48 Stunden telefonisch oder per E-Mail bei Ihnen melden.
+      </p>
+    </div>
+
+    <!-- Footer buttons for going back -->
+    <div class="flex items-center justify-between border-t border-gray-100 pt-4 mt-6 text-xs text-gray-500" id="form-nav-footer">
+      <button type="button" id="prev-step-btn" class="hover:text-amber-600 font-semibold hidden cursor-pointer">← Zurück</button>
+      <span class="ml-auto text-[10px] font-semibold text-gray-400">100% Kostenlos & Unverbindlich</span>
+    </div>
+  </div>
+
+  <!-- Trust block -->
+  <div class="bg-gray-100/60 px-6 py-4 border-t border-gray-200 flex justify-around text-[10px] font-semibold text-gray-600">
+    <span class="flex items-center gap-1">🔒 SSL-Verschlüsselt</span>
+    <span class="flex items-center gap-1">⏱️ Dauer: 2 Min</span>
+    <span class="flex items-center gap-1">☀️ Nullsteuer 2026</span>
+  </div>
+</div>
+
+<style>
+  .form-btn {
+    display: block;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    text-align: left;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    font-size: 0.875rem;
+    color: #4a5568;
+    transition: all 0.2s ease;
+    cursor: pointer;
+  }
+  .form-btn:hover {
+    border-color: #ff6f00;
+    background: #fffcf0;
+    color: #ff6f00;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px -1px rgba(255, 111, 0, 0.05);
+  }
+  .form-input {
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    color: #1e293b;
+    outline: none;
+    transition: border-color 0.2s ease;
+  }
+  .form-input:focus {
+    border-color: #ff6f00;
+    box-shadow: 0 0 0 2px rgba(255, 111, 0, 0.1);
+  }
+  .submit-btn {
+    width: 100%;
+    background: linear-gradient(135deg, #ff6f00, #ffb300);
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 0.875rem;
+    padding: 0.875rem;
+    border-radius: 0.75rem;
+    transition: all 0.2s ease;
+    cursor: pointer;
+  }
+  .submit-btn:hover {
+    background: linear-gradient(135deg, #e65100, #ff6f00);
+    transform: scale(1.02);
+    box-shadow: 0 4px 12px rgba(255, 111, 0, 0.2);
+  }
+</style>
+
+<script is:inline define:vars={{ siteConfig }}>
+  (function() {
+    const container = document.getElementById('solar-form-wizard');
+    if (!container) return;
+
+    let currentStep = 1;
+    const steps = container.querySelectorAll('.step-pane[data-step]');
+    const prevBtn = document.getElementById('prev-step-btn');
+    const footerNav = document.getElementById('form-nav-footer');
+    const disqualifyPane = document.getElementById('disqualify-pane');
+    const successPane = document.getElementById('success-pane');
+    const disqualifyMsg = document.getElementById('disqualify-msg');
+
+    const disqualifyMessages = {
+      owner: 'Unsere Partner-Fachbetriebe arbeiten ausschließlich mit Hauseigentümern zusammen. Mieter können wir leider nicht vermitteln.',
+      property: 'Über dieses Portal können Solaranlagen leider nur für freistehende Einfamilienhäuser und Zweifamilienhäuser angefragt werden.',
+      size: 'Für eine wirtschaftliche Nutzung ist eine nutzbare Dachfläche von mindestens 20 m² erforderlich.',
+      asbestos: 'Aus Sicherheitsgründen belegen unsere Fachpartner keine Dächer mit Asbest- oder Schieferdeckung.',
+      timing: 'Unsere Partner-Betriebe können Kapazitäten nur für Projekte reservieren, deren Umsetzung in den nächsten 6 Monaten geplant ist.'
+    };
+
+    function showStep(stepNum) {
+      steps.forEach(step => {
+        if (parseInt(step.getAttribute('data-step')) === stepNum) {
+          step.classList.remove('hidden');
+          step.classList.add('active');
+        } else {
+          step.classList.add('hidden');
+          step.classList.remove('active');
+        }
+      });
+      
+      currentStep = stepNum;
+
+      if (currentStep > 1 && currentStep <= 6) {
+        prevBtn.classList.remove('hidden');
+      } else {
+        prevBtn.classList.add('hidden');
+      }
+    }
+
+    // Bind next step buttons
+    container.addEventListener('click', function(e) {
+      const btn = e.target.closest('button');
+      if (!btn) return;
+
+      if (btn.getAttribute('data-next') === 'true') {
+        showStep(currentStep + 1);
+      } else if (btn.getAttribute('data-disqualify')) {
+        const filterType = btn.getAttribute('data-disqualify');
+        disqualifyMsg.innerHTML = disqualifyMessages[filterType] || 'Ihre Angaben entsprechen leider nicht den Kriterien der regionalen Fachpartner.';
+        
+        // Hide all steps and show disqualification
+        steps.forEach(step => step.classList.add('hidden'));
+        disqualifyPane.classList.remove('hidden');
+        footerNav.classList.add('hidden');
+      }
+    });
+
+    // Bind prev button
+    if (prevBtn) {
+      prevBtn.addEventListener('click', function() {
+        if (currentStep > 1) {
+          showStep(currentStep - 1);
+        }
+      });
+    }
+
+    // Submit handler
+    const form = document.getElementById('solar-lead-form');
+    if (form) {
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Form data collection
+        const formData = new FormData(form);
+        const data = Object.fromEntries(formData.entries());
+        console.log('Qualified lead data collected:', data);
+
+        // Monetization Action depending on Mode
+        const mode = siteConfig.taptaphome.mode;
+        
+        if (mode === 'redirect') {
+          // Success pane show
+          steps.forEach(step => step.classList.add('hidden'));
+          successPane.classList.remove('hidden');
+          footerNav.classList.add('hidden');
+          
+          // Redirect to affiliate tracking link
+          setTimeout(function() {
+            window.open(siteConfig.taptaphome.trackingLinkPV, '_blank');
+          }, 1500);
+        } else {
+          // Standard API/Success response
+          steps.forEach(step => step.classList.add('hidden'));
+          successPane.classList.remove('hidden');
+          footerNav.classList.add('hidden');
+        }
+      });
+    }
+  })();
+</script>

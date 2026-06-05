@@ -1,0 +1,646 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import QuoteWidget from '../../components/QuoteWidget.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import FAQ from '../../components/FAQ.astro';
+import { siteConfig } from '../../../site.config';
+import { getAllCities, getNearbyCities, getNetzbetreiber, getSolarKatasterUrl, getSolarRanking, getEstimatedPvInstallations, getNationalAvgSonnenstunden, type City } from '../../lib/cities';
+import localContentDe from '../../data/local-content-de.json';
+
+export function getStaticPaths() {
+  const cities = getAllCities();
+  return cities.map(city => ({
+    params: { city: city.slug },
+    props: { city },
+  }));
+}
+
+const { city } = Astro.props as { city: City };
+const content = localContentDe[city.slug as keyof typeof localContentDe] || {
+  intro: "",
+  local_tip: "",
+  market_data: "",
+  faq_local: { question: "", answer: "" },
+  sonnenpotenzial: ""
+};
+
+const nearbyCities = getNearbyCities(city, 8);
+
+// ─── Netzbetreiber & external links ───
+const netzbetreiber = getNetzbetreiber(city.bundesland);
+const solarKataster = getSolarKatasterUrl(city.bundesland);
+const solarRanking = getSolarRanking(city);
+const nationalAvg = getNationalAvgSonnenstunden();
+const estimatedPv = getEstimatedPvInstallations(city.pop);
+
+// ─── TapTapHome AVR Check ───
+const isHighAvr = siteConfig.taptaphome.highAvrPrefixes.some(prefix => city.zip.startsWith(prefix));
+
+// ─── Seed-based dynamic pricing (unique per city) ───
+const seed = city.slug.split('').reduce((acc: number, c: string) => acc + c.charCodeAt(0), 0);
+let multiplier = 1.0;
+if (city.region === 'south') multiplier = 1.05;
+else if (city.region === 'north') multiplier = 0.95;
+else if (city.region === 'east') multiplier = 0.90;
+
+// Detailed pricing per kWp size
+const sizes = [
+  { kwp: 5,  label: 'Klein',    modules: '11–12', baseMin: 5200, baseMax: 7800, spBase: 9200 },
+  { kwp: 8,  label: 'Mittel',   modules: '18–20', baseMin: 7800, baseMax: 11200, spBase: 13500 },
+  { kwp: 10, label: 'Standard', modules: '23–25', baseMin: 9200, baseMax: 13000, spBase: 15500 },
+  { kwp: 12, label: 'Groß',     modules: '27–30', baseMin: 11000, baseMax: 15500, spBase: 18500 },
+  { kwp: 15, label: 'XL',       modules: '34–37', baseMin: 13200, baseMax: 18000, spBase: 21500 },
+];
+
+const priceTable = sizes.map(s => {
+  const variation = ((seed * s.kwp) % 500) - 250; // ±250€ city variation
+  const min = Math.round((s.baseMin + variation) * multiplier / 100) * 100;
+  const max = Math.round((s.baseMax + variation) * multiplier / 100) * 100;
+  const spMin = Math.round((s.spBase + variation) * multiplier / 100) * 100;
+  const spMax = Math.round((spMin + 5000 + (seed % 1000)) / 100) * 100;
+  const kWpPrice = Math.round((min + max) / 2 / s.kwp / 10) * 10;
+  return { ...s, min, max, spMin, spMax, kWpPrice };
+});
+
+// ─── Solar calculations (unique per city from sonnenstunden) ───
+const spezErtrag = Math.round(city.sonnenstunden * 0.60); // kWh/kWp realistic yield
+const ertrag10kwp = spezErtrag * 10;
+const eigenverbrauchOhne = Math.round(ertrag10kwp * 0.30);
+const eigenverbrauchMit = Math.round(ertrag10kwp * 0.70);
+const sparenOhne = Math.round(eigenverbrauchOhne * 0.35);
+const sparenMit = Math.round(eigenverbrauchMit * 0.35);
+const einspeisungOhne = Math.round((ertrag10kwp - eigenverbrauchOhne) * 0.08);
+const einspeisungMit = Math.round((ertrag10kwp - eigenverbrauchMit) * 0.08);
+const gesamtOhne = sparenOhne + einspeisungOhne;
+const gesamtMit = sparenMit + einspeisungMit;
+const investOhne = priceTable[2].min; // 10 kWp without
+const investMit = priceTable[2].spMin; // 10 kWp with
+const amortOhne = (investOhne / gesamtOhne).toFixed(1);
+const amortMit = (investMit / gesamtMit).toFixed(1);
+const gewinn25Ohne = Math.round(gesamtOhne * 25 - investOhne);
+const gewinn25Mit = Math.round(gesamtMit * 25 - investMit);
+
+// ─── CO₂ & Environment ───
+const co2ProKwh = 0.380; // kg CO₂ per kWh German grid mix 2026
+const co2Saved10kWp = Math.round(ertrag10kwp * co2ProKwh / 1000 * 10) / 10; // tonnes/year
+const co2Trees = Math.round(co2Saved10kWp * 1000 / 22); // 1 tree absorbs ~22 kg CO₂/year
+const co2Km = Math.round(co2Saved10kWp * 1000 / 0.12); // avg car: 120g CO₂/km
+
+// ─── Sonnenstunden comparison ───
+const sonneDiff = city.sonnenstunden - nationalAvg;
+const sonneDiffPct = Math.round((sonneDiff / nationalAvg) * 100);
+const sonneDiffLabel = sonneDiff >= 0 ? `+${sonneDiff}` : `${sonneDiff}`;
+
+// ─── FAQ (extended: 7 questions) ───
+const localFaq = [
+  {
+    q: `Was kostet eine Solaranlage in ${city.name} im Jahr 2026?`,
+    a: `Für ein Einfamilienhaus in ${city.name} (${city.zip}) liegen die typischen Anschaffungskosten einer schlüsselfertigen Photovoltaikanlage 2026 bei ${priceTable[2].min.toLocaleString('de-DE')} € bis ${priceTable[2].max.toLocaleString('de-DE')} € (10 kWp, ohne Speicher). Mit einem 10 kWh LFP-Batteriespeicher kostet die Anlage ${priceTable[2].spMin.toLocaleString('de-DE')} € bis ${priceTable[2].spMax.toLocaleString('de-DE')} €. Es gilt der 0%-Mehrwertsteuersatz — alle Preise sind Endpreise.`
+  },
+  {
+    q: content.faq_local.question || `Gibt es spezielle Förderungen für Photovoltaik in ${city.name}?`,
+    a: content.faq_local.answer || `Ja, in ${city.name} profitieren Sie von der bundesweiten KfW-Förderung (Programm 270) sowie dem 0%-Mehrwertsteuersatz. Zusätzlich bieten einige Stadtwerke in ${city.bundesland} eigene Förderprogramme für Batteriespeicher an.`
+  },
+  {
+    q: `Wie viel Solarstrom erzeugt eine PV-Anlage in ${city.name}?`,
+    a: `Mit ${city.sonnenstunden} Sonnenstunden pro Jahr erzielt eine optimal ausgerichtete 10 kWp Anlage in ${city.name} einen Jahresertrag von rund ${ertrag10kwp.toLocaleString('de-DE')} kWh. Der spezifische Ertrag liegt bei ${spezErtrag} kWh/kWp — das ist ${solarRanking.label} im bundesweiten Vergleich (Platz ${solarRanking.rank} von ${solarRanking.total}).`
+  },
+  {
+    q: `Lohnt sich eine Solaranlage in ${city.name}?`,
+    a: `Ja, eine 10 kWp Anlage in ${city.name} amortisiert sich in ca. ${amortOhne} Jahren (ohne Speicher) bzw. ${amortMit} Jahren (mit Speicher). Über 25 Jahre erzielen Sie einen Nettogewinn von rund ${gewinn25Mit.toLocaleString('de-DE')} € (mit Speicher). Die jährliche Rendite liegt bei ca. 6–9 % — steuerfrei.`
+  },
+  {
+    q: `Wer ist der zuständige Netzbetreiber in ${city.name}?`,
+    a: `Der zuständige Netzbetreiber für ${city.name} (${city.bundesland}) ist die ${netzbetreiber.name}. Die Netzanmeldung Ihrer PV-Anlage wird in der Regel von Ihrem Solarteur als Teil der schlüsselfertigen Installation übernommen. Zusätzlich muss die Anlage im Marktstammdatenregister (MaStR) der Bundesnetzagentur registriert werden.`
+  },
+  {
+    q: `Wie viel CO₂ spart eine Solaranlage in ${city.name}?`,
+    a: `Eine 10 kWp PV-Anlage in ${city.name} vermeidet jährlich ca. ${co2Saved10kWp} Tonnen CO₂-Emissionen. Das entspricht der Pflanzung von ca. ${co2Trees.toLocaleString('de-DE')} Bäumen oder dem Verzicht auf ca. ${co2Km.toLocaleString('de-DE')} Autokilometer pro Jahr.`
+  },
+  {
+    q: `Wie finde ich einen guten Solarteur in ${city.name}?`,
+    a: `Über unseren kostenlosen Vermittlungsservice erhalten Sie bis zu 3 unverbindliche Angebote von geprüften Solar-Fachbetrieben aus der Region ${city.bundesland}. Vergleichen Sie Preise, Garantiebedingungen und Verfügbarkeit bequem von zu Hause aus — 100% kostenlos.`
+  }
+];
+
+const title = `Photovoltaik ${city.name} (${city.zip}) — Kosten, Ertrag & Förderung 2026`;
+const description = `Solaranlage in ${city.name} ab ${priceTable[2].min.toLocaleString('de-DE')} €. ☀️ ${city.sonnenstunden} Sonnenstunden, ${spezErtrag} kWh/kWp Ertrag. Kostenlos Preise vergleichen — 0% MwSt.`;
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Photovoltaik-Beratung " + city.name,
+    "description": description,
+    "areaServed": {
+      "@type": "City",
+      "name": city.name,
+      "postalCode": city.zip,
+      "containedInPlace": {
+        "@type": "State",
+        "name": city.bundesland
+      }
+    },
+    "provider": {
+      "@type": "Organization",
+      "name": siteConfig.name,
+      "url": "https://" + siteConfig.domain
+    },
+    "offers": {
+      "@type": "AggregateOffer",
+      "priceCurrency": "EUR",
+      "lowPrice": priceTable[0].min,
+      "highPrice": priceTable[4].spMax,
+      "offerCount": priceTable.length
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": localFaq.map(f => ({
+      "@type": "Question",
+      "name": f.q,
+      "acceptedAnswer": { "@type": "Answer", "text": f.a }
+    }))
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://" + siteConfig.domain },
+      { "@type": "ListItem", "position": 2, "name": "Städte", "item": "https://" + siteConfig.domain + "/photovoltaik-rechner" },
+      { "@type": "ListItem", "position": 3, "name": city.bundesland, "item": "https://" + siteConfig.domain + "/photovoltaik-rechner" },
+      { "@type": "ListItem", "position": 4, "name": city.name },
+    ]
+  }
+];
+---
+
+<BaseLayout title={title} description={description} canonical={"/photovoltaik-rechner/" + city.slug} jsonLd={jsonLd}>
+  <!-- Hero Section -->
+  <section class="gradient-hero text-white py-12 md:py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <Breadcrumbs items={[
+        { label: "Städte", href: "/photovoltaik-rechner" },
+        { label: city.bundesland, href: "/photovoltaik-rechner" },
+        { label: city.name, href: "/photovoltaik-rechner/" + city.slug },
+      ]} />
+
+      <div class="grid lg:grid-cols-5 gap-10 items-start mt-6">
+        <div class="lg:col-span-3">
+          {isHighAvr && (
+            <div class="inline-flex items-center gap-2 bg-amber-500/20 border border-amber-500/30 px-3 py-1.5 rounded-full text-xs text-amber-300 mb-4 sun-pulse font-semibold">
+              ☀️ Top-PV-Region: Lokale Fachbetriebe aktiv
+            </div>
+          )}
+
+          <h1 class="text-2xl md:text-4xl font-extrabold leading-tight mb-4 font-heading">
+            Photovoltaik in {city.name} ({city.zip})<br class="hidden md:block" />
+            <span class="text-amber-300">Kosten, Ertrag & Förderung 2026</span>
+          </h1>
+          <p class="text-blue-100 leading-relaxed mb-6 max-w-xl text-sm md:text-base">
+            Berechnen Sie kostenlos, was eine Solaranlage auf Ihrem Dach in {city.name} kostet — mit {city.sonnenstunden} Sonnenstunden und einem Ertrag von {spezErtrag} kWh/kWp gehört Ihr Standort zu den {solarRanking.label}en Regionen Deutschlands.
+          </p>
+
+          <div class="flex flex-wrap gap-3 mb-6">
+            <span class="bg-white/10 backdrop-blur-sm border border-white/20 px-3 py-1.5 rounded-full text-xs">📍 PLZ {city.zip} • {city.bundesland}</span>
+            <span class="bg-white/10 backdrop-blur-sm border border-white/20 px-3 py-1.5 rounded-full text-xs">☀️ {city.sonnenstunden} h/Jahr</span>
+            <span class="bg-white/10 backdrop-blur-sm border border-white/20 px-3 py-1.5 rounded-full text-xs">⚡ {spezErtrag} kWh/kWp</span>
+            <span class="bg-white/10 backdrop-blur-sm border border-white/20 px-3 py-1.5 rounded-full text-xs">🏆 Platz {solarRanking.rank}/{solarRanking.total}</span>
+          </div>
+
+          <a href="#devis-form" class="inline-block cta-gradient text-white font-bold px-6 py-3.5 rounded-xl transition-all shadow-lg text-sm md:text-base">
+            ☀️ Angebote in {city.name} vergleichen →
+          </a>
+        </div>
+
+        <div class="lg:col-span-2">
+          <QuoteWidget keyword={"Solaranlage " + city.name} />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Content Section -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-10">
+    <!-- Block 1: Local Intro -->
+    <section class="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 md:p-8 space-y-6">
+      <h2 class="text-xl md:text-2xl font-bold text-gray-900 mb-2 font-heading">🏠 Photovoltaik planen in {city.name} — {city.bundesland}</h2>
+      
+      <div class="text-gray-700 space-y-4 leading-relaxed text-sm md:text-base">
+        <p>{content.intro}</p>
+        
+        <h3 class="text-lg font-bold text-gray-900 pt-2 font-heading">💡 Regionaler Expertentipp für {city.name}</h3>
+        <p set:html={content.local_tip} />
+
+        <h3 class="text-lg font-bold text-gray-900 pt-2 font-heading">📊 Solarmarkt & Installateure in {city.name}</h3>
+        <p>{content.market_data}</p>
+
+        <h3 class="text-lg font-bold text-gray-900 pt-2 font-heading">☀️ Sonnenpotenzial & Solarertrag in {city.name}</h3>
+        <p>{content.sonnenpotenzial}</p>
+      </div>
+    </section>
+
+    <!-- Block 2: Detailed Price Table -->
+    <section class="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 md:p-8">
+      <h2 class="text-lg md:text-xl font-bold text-gray-900 mb-2 font-heading">💰 Solaranlage Preise in {city.name} ({city.zip}) — Vergleichstabelle 2026</h2>
+      <p class="text-sm text-gray-600 mb-4">Schlüsselfertige Komplettpreise inkl. Montage, Netzanschluss und Anmeldung. Seit 2023 gilt der 0%-Umsatzsteuersatz.</p>
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm price-table border-collapse rounded-xl overflow-hidden">
+          <thead>
+            <tr class="bg-gray-50 border-b border-gray-200">
+              <th class="px-3 py-3 text-left font-bold text-gray-700">Anlagengröße</th>
+              <th class="px-3 py-3 text-left font-bold text-gray-700">Module</th>
+              <th class="px-3 py-3 text-left font-bold text-gray-700">Ohne Speicher</th>
+              <th class="px-3 py-3 text-left font-bold text-gray-700">Mit Speicher (10 kWh)</th>
+              <th class="px-3 py-3 text-left font-bold text-gray-700">€/kWp</th>
+            </tr>
+          </thead>
+          <tbody>
+            {priceTable.map((row, i) => (
+              <tr class={`border-b border-gray-100 ${i === 2 ? 'bg-amber-50/50' : ''}`}>
+                <td class="px-3 py-3 font-bold text-gray-900">{row.kwp} kWp <span class="text-xs text-gray-500 font-normal">({row.label})</span></td>
+                <td class="px-3 py-3 text-gray-600 font-data text-xs">{row.modules}</td>
+                <td class="px-3 py-3 font-data font-semibold text-gray-800">{row.min.toLocaleString('de-DE')} – {row.max.toLocaleString('de-DE')} €</td>
+                <td class="px-3 py-3 font-data font-bold text-amber-600">{row.spMin.toLocaleString('de-DE')} – {row.spMax.toLocaleString('de-DE')} €</td>
+                <td class="px-3 py-3 font-data text-gray-700">~{row.kWpPrice} €</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="text-xs text-gray-500 mt-3">
+        * Orientierungswerte für {city.name} ({city.bundesland}). Individuelle Abweichungen je nach Dachsituation, Komponentenwahl und Solarteur möglich. <a href="/ratgeber/solaranlage-kosten-2026" class="text-amber-600 hover:text-amber-700 underline">Detaillierter Kostenratgeber →</a>
+      </p>
+    </section>
+
+    <!-- Block 3: Solar Potential Analysis -->
+    <section class="bg-gradient-to-r from-blue-50 to-amber-50/30 rounded-2xl border border-gray-200 p-6 md:p-8">
+      <h2 class="text-lg md:text-xl font-bold text-gray-900 mb-4 font-heading">☀️ Solarpotenzial-Analyse für {city.name}</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+        <div class="bg-white rounded-xl p-4 text-center border border-gray-200 shadow-sm">
+          <span class="block text-2xl mb-1">☀️</span>
+          <span class="block text-xl font-bold text-gray-900 font-data">{city.sonnenstunden}</span>
+          <span class="block text-xs text-gray-500">Sonnenstunden / Jahr</span>
+          <span class={`block text-[10px] font-semibold mt-1 ${sonneDiff >= 0 ? 'text-green-600' : 'text-orange-500'}`}>
+            {sonneDiffLabel} vs. Ø Deutschland ({nationalAvg} h)
+          </span>
+        </div>
+        <div class="bg-white rounded-xl p-4 text-center border border-gray-200 shadow-sm">
+          <span class="block text-2xl mb-1">⚡</span>
+          <span class="block text-xl font-bold text-gray-900 font-data">{spezErtrag}</span>
+          <span class="block text-xs text-gray-500">kWh / kWp / Jahr</span>
+          <span class="block text-[10px] text-gray-400 mt-1">Spezifischer Ertrag</span>
+        </div>
+        <div class="bg-white rounded-xl p-4 text-center border border-gray-200 shadow-sm">
+          <span class="block text-2xl mb-1">🏆</span>
+          <span class="block text-xl font-bold text-gray-900 font-data">Platz {solarRanking.rank}</span>
+          <span class="block text-xs text-gray-500">von {solarRanking.total} Städten</span>
+          <span class={`block text-[10px] font-semibold mt-1 ${solarRanking.percentile >= 60 ? 'text-green-600' : solarRanking.percentile >= 40 ? 'text-blue-600' : 'text-orange-500'}`}>
+            Top {100 - solarRanking.percentile} % — {solarRanking.label}
+          </span>
+        </div>
+        <div class="bg-white rounded-xl p-4 text-center border border-gray-200 shadow-sm">
+          <span class="block text-2xl mb-1">🔋</span>
+          <span class="block text-xl font-bold text-gray-900 font-data">{ertrag10kwp.toLocaleString('de-DE')}</span>
+          <span class="block text-xs text-gray-500">kWh / Jahr (10 kWp)</span>
+          <span class="block text-[10px] text-gray-400 mt-1">Gesamtertrag einer Standardanlage</span>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl border border-gray-200 p-4 text-sm text-gray-700">
+        <p>
+          Die Region {city.name} verzeichnet im langjährigen Mittel <strong>{city.sonnenstunden} Sonnenstunden</strong> pro Jahr. 
+          Das entspricht einem spezifischen PV-Ertrag von ca. <strong>{spezErtrag} kWh pro installiertem kWp</strong> — 
+          {sonneDiff >= 0 
+            ? `das sind ${sonneDiffLabel} Stunden mehr als der Bundesdurchschnitt (${nationalAvg} h), also ein ${Math.abs(sonneDiffPct)}% höherer Ertrag.`
+            : `das sind ${Math.abs(sonneDiff)} Stunden weniger als der Bundesdurchschnitt (${nationalAvg} h), die Wirtschaftlichkeit ist dennoch gegeben.`
+          }
+          {' '}Besonders ertragreich sind die Monate Mai bis August, in denen ca. 55 % des Jahresertrags produziert werden.
+          Weitere Informationen zur Ertragsberechnung finden Sie in unserem <a href="/ratgeber/photovoltaik-ertrag" class="text-amber-600 hover:text-amber-700 underline font-semibold">Ratgeber zum PV-Ertrag</a>.
+        </p>
+      </div>
+    </section>
+
+    <!-- Block 4: ROI / Wirtschaftlichkeit -->
+    <section class="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 md:p-8">
+      <h2 class="text-lg md:text-xl font-bold text-gray-900 mb-4 font-heading">📈 Wirtschaftlichkeit einer Solaranlage in {city.name}</h2>
+      <p class="text-sm text-gray-600 mb-4">Vergleich einer 10 kWp Anlage bei 4.500 kWh Haushaltsstromverbrauch am Standort {city.name}:</p>
+
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm price-table border-collapse rounded-xl overflow-hidden">
+          <thead>
+            <tr class="bg-gray-50 border-b border-gray-200">
+              <th class="px-3 py-3 text-left font-bold text-gray-700">Kennzahl</th>
+              <th class="px-3 py-3 text-left font-bold text-gray-700">Ohne Speicher</th>
+              <th class="px-3 py-3 text-left font-bold text-amber-600">Mit Speicher (10 kWh)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b border-gray-100">
+              <td class="px-3 py-3 text-gray-700">Investitionskosten</td>
+              <td class="px-3 py-3 font-data font-semibold">{investOhne.toLocaleString('de-DE')} €</td>
+              <td class="px-3 py-3 font-data font-semibold">{investMit.toLocaleString('de-DE')} €</td>
+            </tr>
+            <tr class="border-b border-gray-100">
+              <td class="px-3 py-3 text-gray-700">Jahresertrag (10 kWp)</td>
+              <td class="px-3 py-3 font-data" colspan="2">{ertrag10kwp.toLocaleString('de-DE')} kWh</td>
+            </tr>
+            <tr class="border-b border-gray-100">
+              <td class="px-3 py-3 text-gray-700">Eigenverbrauch</td>
+              <td class="px-3 py-3 font-data">30 % ({eigenverbrauchOhne.toLocaleString('de-DE')} kWh)</td>
+              <td class="px-3 py-3 font-data">70 % ({eigenverbrauchMit.toLocaleString('de-DE')} kWh)</td>
+            </tr>
+            <tr class="border-b border-gray-100">
+              <td class="px-3 py-3 text-gray-700">Jährl. Stromersparnis (35 ct/kWh)</td>
+              <td class="px-3 py-3 font-data">{sparenOhne.toLocaleString('de-DE')} €</td>
+              <td class="px-3 py-3 font-data font-semibold text-green-600">{sparenMit.toLocaleString('de-DE')} €</td>
+            </tr>
+            <tr class="border-b border-gray-100">
+              <td class="px-3 py-3 text-gray-700">Jährl. Einspeisevergütung (8 ct/kWh)</td>
+              <td class="px-3 py-3 font-data">{einspeisungOhne.toLocaleString('de-DE')} €</td>
+              <td class="px-3 py-3 font-data">{einspeisungMit.toLocaleString('de-DE')} €</td>
+            </tr>
+            <tr class="border-b border-gray-100 bg-green-50/50">
+              <td class="px-3 py-3 font-bold text-gray-900">Jährl. Gesamtersparnis</td>
+              <td class="px-3 py-3 font-data font-bold text-green-700">{gesamtOhne.toLocaleString('de-DE')} €</td>
+              <td class="px-3 py-3 font-data font-bold text-green-700">{gesamtMit.toLocaleString('de-DE')} €</td>
+            </tr>
+            <tr class="border-b border-gray-100">
+              <td class="px-3 py-3 font-bold text-gray-900">Amortisationszeit</td>
+              <td class="px-3 py-3 font-data font-bold">{amortOhne} Jahre</td>
+              <td class="px-3 py-3 font-data font-bold">{amortMit} Jahre</td>
+            </tr>
+            <tr class="bg-amber-50/50">
+              <td class="px-3 py-3 font-bold text-gray-900">Gewinn nach 25 Jahren</td>
+              <td class="px-3 py-3 font-data font-bold text-amber-600">{gewinn25Ohne.toLocaleString('de-DE')} €</td>
+              <td class="px-3 py-3 font-data font-bold text-amber-600">{gewinn25Mit.toLocaleString('de-DE')} €</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-xs text-gray-500 mt-3">
+        Berechnung basierend auf {spezErtrag} kWh/kWp spez. Ertrag am Standort {city.name}. Strompreiserhöhungen nicht eingerechnet — die reale Amortisation ist daher oft kürzer. <a href="/ratgeber/photovoltaik-amortisation" class="text-amber-600 hover:text-amber-700 underline">Ausführliche ROI-Berechnung →</a>
+      </p>
+    </section>
+
+    <!-- Block 5: Netzstrom vs Solarstrom -->
+    <section class="info-card rounded-xl p-6">
+      <h3 class="text-lg font-bold text-blue-900 mb-3 font-heading">⚡ Netzstrom vs. Solarstrom in {city.name}</h3>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <div class="bg-white rounded-xl p-4 border border-red-100">
+          <h4 class="font-bold text-red-700 text-sm mb-2">🔴 Strombezug vom Netz</h4>
+          <p class="font-data text-lg font-bold text-red-600">ca. 35 – 38 ct / kWh</p>
+          <p class="text-xs text-gray-500">Steigende Preise, fossile Abhängigkeit</p>
+        </div>
+        <div class="bg-white rounded-xl p-4 border border-green-100">
+          <h4 class="font-bold text-green-700 text-sm mb-2">🟢 Strom vom eigenen Dach</h4>
+          <p class="font-data text-lg font-bold text-green-600">ca. 8 – 10 ct / kWh</p>
+          <p class="text-xs text-gray-500">Fester Preis über 25+ Jahre</p>
+        </div>
+      </div>
+      <p class="text-xs text-blue-900/80 mt-3 font-semibold">
+        Jede selbst verbrauchte kWh spart ~27 ct gegenüber Netzbezug. Mit einer <a href="/ratgeber/eigenverbrauch-optimieren" class="text-amber-500 hover:text-amber-400 underline">Eigenverbrauchsoptimierung</a> maximieren Sie diesen Vorteil.
+      </p>
+    </section>
+
+    <!-- Block 6: CO₂ & Environment -->
+    <section class="bg-green-50/50 rounded-2xl border border-green-200 p-6 md:p-8">
+      <h2 class="text-lg md:text-xl font-bold text-green-900 mb-4 font-heading">🌿 Umwelt-Impact einer Solaranlage in {city.name}</h2>
+      <p class="text-sm text-gray-700 mb-4">Eine 10 kWp Photovoltaikanlage auf Ihrem Dach in {city.name} leistet jedes Jahr einen messbaren Beitrag zum Klimaschutz:</p>
+      <div class="grid sm:grid-cols-3 gap-4">
+        <div class="bg-white rounded-xl p-5 text-center border border-green-100 shadow-sm">
+          <span class="block text-3xl mb-2">🌍</span>
+          <span class="block text-2xl font-bold text-green-700 font-data">{co2Saved10kWp} t</span>
+          <span class="block text-xs text-gray-600 mt-1">CO₂ vermieden pro Jahr</span>
+          <span class="block text-[10px] text-gray-400 mt-1">Basis: 380 g CO₂/kWh Strommix DE</span>
+        </div>
+        <div class="bg-white rounded-xl p-5 text-center border border-green-100 shadow-sm">
+          <span class="block text-3xl mb-2">🌳</span>
+          <span class="block text-2xl font-bold text-green-700 font-data">{co2Trees.toLocaleString('de-DE')}</span>
+          <span class="block text-xs text-gray-600 mt-1">Bäume äquivalent / Jahr</span>
+          <span class="block text-[10px] text-gray-400 mt-1">22 kg CO₂-Absorption pro Baum</span>
+        </div>
+        <div class="bg-white rounded-xl p-5 text-center border border-green-100 shadow-sm">
+          <span class="block text-3xl mb-2">🚗</span>
+          <span class="block text-2xl font-bold text-green-700 font-data">{co2Km.toLocaleString('de-DE')}</span>
+          <span class="block text-xs text-gray-600 mt-1">PKW-Kilometer eingespart</span>
+          <span class="block text-[10px] text-gray-400 mt-1">Ø 120 g CO₂/km Mittelklasse</span>
+        </div>
+      </div>
+      <p class="text-xs text-gray-600 mt-4">
+        Über die gesamte Lebensdauer von 25 Jahren vermeidet eine 10 kWp Anlage in {city.name} rund <strong>{(co2Saved10kWp * 25).toFixed(0)} Tonnen CO₂</strong> — ein bedeutender Beitrag zur Erreichung der Klimaziele.
+      </p>
+    </section>
+
+    <!-- Block 7: Map Section (Leaflet) -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script is:inline src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+    <section class="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 md:p-8 space-y-4">
+      <h2 class="text-lg md:text-xl font-bold text-gray-900 mb-1 font-heading">🗺️ Standort & Solarpotenzial — {city.name} ({city.zip})</h2>
+      <p class="text-sm text-gray-600">
+        Ihr Standort in {city.name}, {city.bundesland}. Mit {city.sonnenstunden} Sonnenstunden pro Jahr und einem spezifischen Ertrag von {spezErtrag} kWh/kWp bietet die Region {solarRanking.label}e Bedingungen für Photovoltaik.
+      </p>
+      
+      <div id="solar-map" class="h-64 md:h-80 w-full rounded-xl border border-gray-200 shadow-inner z-10"></div>
+      <p class="text-[11px] text-gray-400 text-center">
+        Kartendaten © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener nofollow" class="underline">OpenStreetMap</a>-Mitwirkende.
+      </p>
+
+      <script is:inline define:vars={{ lat: city.lat, lng: city.lng, cityName: city.name, zip: city.zip, ertrag: spezErtrag, sonnenstunden: city.sonnenstunden, bundesland: city.bundesland }}>
+        document.addEventListener('DOMContentLoaded', () => {
+          if (typeof L !== 'undefined' && document.getElementById('solar-map')) {
+            const map = L.map('solar-map', { scrollWheelZoom: false }).setView([lat, lng], 12);
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+              maxZoom: 19,
+              attribution: '© OpenStreetMap'
+            }).addTo(map);
+            
+            // Solar coverage circle (10 km radius)
+            L.circle([lat, lng], {
+              radius: 10000,
+              fillColor: '#FFAB00',
+              color: '#FF6D00',
+              weight: 1.5,
+              opacity: 0.5,
+              fillOpacity: 0.08
+            }).addTo(map);
+
+            // City marker
+            L.circleMarker([lat, lng], {
+              radius: 10,
+              fillColor: '#FF6D00',
+              color: '#FFFFFF',
+              weight: 2.5,
+              opacity: 1,
+              fillOpacity: 0.95
+            }).addTo(map)
+              .bindPopup(
+                '<div style="min-width:180px">' +
+                '<b style="font-size:14px">☀️ ' + cityName + '</b><br>' +
+                '<span style="color:#666">PLZ: ' + zip + ' • ' + bundesland + '</span><br>' +
+                '<hr style="margin:6px 0;border-color:#eee">' +
+                '<b>Sonnenstunden:</b> ' + sonnenstunden + ' h/Jahr<br>' +
+                '<b>Spez. Ertrag:</b> ' + ertrag + ' kWh/kWp<br>' +
+                '<b>10 kWp Ertrag:</b> ' + (ertrag * 10).toLocaleString('de-DE') + ' kWh/Jahr' +
+                '</div>'
+              )
+              .openPopup();
+          }
+        });
+      </script>
+    </section>
+
+    <!-- Block 8: Förderungen -->
+    <section class="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 md:p-8">
+      <h2 class="text-lg md:text-xl font-bold text-gray-900 mb-4 font-heading">🏛️ Förderung & Steuerfreiheit für PV in {city.name}</h2>
+      <div class="grid sm:grid-cols-3 gap-4">
+        <div class="bg-gray-50 rounded-xl p-4 border border-gray-200">
+          <h3 class="font-bold text-gray-900 text-sm">0% Umsatzsteuer</h3>
+          <p class="text-xs text-gray-600 mt-2">Seit 2023 entfällt die MwSt. auf PV-Anlagen und Speicher auf Wohngebäuden komplett. Sie sparen sofort 19% Anschaffungskosten — ohne Antrag.</p>
+        </div>
+        <div class="bg-gray-50 rounded-xl p-4 border border-gray-200">
+          <h3 class="font-bold text-gray-900 text-sm">KfW-Förderkredit 270</h3>
+          <p class="text-xs text-gray-600 mt-2">Zinsgünstiges Darlehen bis 100% der Investitionskosten. Antrag über Ihre Hausbank — zwingend vor Beauftragung des Solarteurs.</p>
+        </div>
+        <div class="bg-gray-50 rounded-xl p-4 border border-gray-200">
+          <h3 class="font-bold text-gray-900 text-sm">Einspeisevergütung</h3>
+          <p class="text-xs text-gray-600 mt-2">Für überschüssigen Strom erhalten Sie 20 Jahre lang ca. 8 ct/kWh. Bei Volleinspeisung sogar ca. 12,8 ct/kWh.</p>
+        </div>
+      </div>
+      <div class="text-center mt-4">
+        <a href="/ratgeber/photovoltaik-foerderung-2026" class="text-amber-600 hover:text-amber-700 text-sm font-semibold transition-colors">
+          Ausführlicher Ratgeber zur Solarförderung →
+        </a>
+      </div>
+    </section>
+
+    <!-- Block 9: External Links -->
+    <section class="bg-gray-50 rounded-2xl border border-gray-200 p-6 md:p-8">
+      <h2 class="text-lg md:text-xl font-bold text-gray-900 mb-4 font-heading">🔗 Nützliche Links für {city.name} ({city.bundesland})</h2>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <div class="bg-white rounded-xl p-4 border border-gray-200">
+          <h3 class="font-bold text-gray-900 text-sm mb-2">⚡ Netzbetreiber</h3>
+          <p class="text-xs text-gray-600 mb-2">Zuständig für den Netzanschluss und die Zählersetzung Ihrer PV-Anlage in {city.name}:</p>
+          <a href={netzbetreiber.url} target="_blank" rel="noopener nofollow" class="text-amber-600 hover:text-amber-700 text-sm font-semibold underline">{netzbetreiber.name} →</a>
+        </div>
+        <div class="bg-white rounded-xl p-4 border border-gray-200">
+          <h3 class="font-bold text-gray-900 text-sm mb-2">📋 Marktstammdatenregister</h3>
+          <p class="text-xs text-gray-600 mb-2">Pflichtregistrierung Ihrer PV-Anlage bei der Bundesnetzagentur:</p>
+          <a href="https://www.marktstammdatenregister.de/" target="_blank" rel="noopener nofollow" class="text-amber-600 hover:text-amber-700 text-sm font-semibold underline">marktstammdatenregister.de →</a>
+        </div>
+        {solarKataster && (
+          <div class="bg-white rounded-xl p-4 border border-gray-200">
+            <h3 class="font-bold text-gray-900 text-sm mb-2">🗺️ Solar-Kataster {city.bundesland}</h3>
+            <p class="text-xs text-gray-600 mb-2">Prüfen Sie das Solarpotenzial Ihres Daches im offiziellen Kataster:</p>
+            <a href={solarKataster.url} target="_blank" rel="noopener nofollow" class="text-amber-600 hover:text-amber-700 text-sm font-semibold underline">{solarKataster.name} →</a>
+          </div>
+        )}
+        <div class="bg-white rounded-xl p-4 border border-gray-200">
+          <h3 class="font-bold text-gray-900 text-sm mb-2">🧮 Unser Kostenrechner</h3>
+          <p class="text-xs text-gray-600 mb-2">Berechnen Sie Ihre individuelle PV-Anlage mit unserem interaktiven Tool:</p>
+          <a href="/kostenrechner" class="text-amber-600 hover:text-amber-700 text-sm font-semibold underline">Zum Kostenrechner →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Block 10: PV Installations Estimate -->
+    <section class="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 md:p-8">
+      <h2 class="text-lg md:text-xl font-bold text-gray-900 mb-3 font-heading">🏗️ Photovoltaik-Ausbau in {city.name}</h2>
+      <div class="flex items-center gap-4 bg-blue-50 rounded-xl p-4 border border-blue-100">
+        <span class="text-3xl">📊</span>
+        <div>
+          <p class="text-sm text-gray-700">
+            In {city.name} ({city.pop.toLocaleString('de-DE')} Einwohner) sind schätzungsweise <strong class="text-blue-700">{estimatedPv.toLocaleString('de-DE')} PV-Anlagen</strong> auf Wohngebäuden installiert (Stand 2026). 
+            Die Solardurchdringung in {city.bundesland} wächst stetig — nutzen Sie den Trend und sichern Sie sich die aktuellen Preise und Vergütungssätze.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Block 11: FAQ locale -->
+    <FAQ items={localFaq} cityName={city.name} />
+
+    <!-- Block 12: Nearby cities -->
+    {nearbyCities.length > 0 && (
+      <section>
+        <h2 class="text-lg md:text-xl font-bold text-gray-900 mb-4 font-heading">📍 Solaranbieter in der Nachbarschaft von {city.name}</h2>
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+          {nearbyCities.map((nc) => (
+            <a href={"/photovoltaik-rechner/" + nc.slug} class="bg-white border border-gray-200 rounded-xl px-4 py-3 hover:border-amber-400 hover:shadow-md transition-all group text-center card-hover">
+              <span class="font-semibold text-gray-900 group-hover:text-amber-600 text-xs md:text-sm block">{nc.name}</span>
+              <span class="text-xs text-gray-500">{nc.zip} • {nc.sonnenstunden} h</span>
+            </a>
+          ))}
+        </div>
+      </section>
+    )}
+
+    <!-- Block 13: Guides recommandés -->
+    <section class="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 md:p-8">
+      <h2 class="text-lg md:text-xl font-bold text-gray-900 mb-4 font-heading">📚 Relevante Ratgeber für Ihre Solarplanung</h2>
+      <div class="grid sm:grid-cols-3 gap-4">
+        <a href="/ratgeber/solaranlage-kosten-2026" class="bg-gray-50 rounded-xl p-4 border border-gray-200 hover:border-amber-400 hover:shadow-md transition-all group">
+          <span class="text-lg block mb-1">💰</span>
+          <span class="font-bold text-gray-900 group-hover:text-amber-600 text-sm block">PV Kosten 2026</span>
+          <span class="text-xs text-gray-600 mt-1 block">Preise pro kWp und Speicher</span>
+        </a>
+        <a href="/ratgeber/solaranlage-mit-speicher" class="bg-gray-50 rounded-xl p-4 border border-gray-200 hover:border-amber-400 hover:shadow-md transition-all group">
+          <span class="text-lg block mb-1">🔋</span>
+          <span class="font-bold text-gray-900 group-hover:text-amber-600 text-sm block">PV mit Speicher</span>
+          <span class="text-xs text-gray-600 mt-1 block">Eigenverbrauch steigern</span>
+        </a>
+        <a href="/ratgeber/dachausrichtung-neigung" class="bg-gray-50 rounded-xl p-4 border border-gray-200 hover:border-amber-400 hover:shadow-md transition-all group">
+          <span class="text-lg block mb-1">🏠</span>
+          <span class="font-bold text-gray-900 group-hover:text-amber-600 text-sm block">Dachausrichtung</span>
+          <span class="text-xs text-gray-600 mt-1 block">Neigung & Ertrag</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- Block 14: Hersteller -->
+    <section>
+      <h2 class="text-lg md:text-xl font-bold text-gray-900 mb-4 font-heading">🏆 Führende Modulhersteller & Zubehör</h2>
+      <div class="grid grid-cols-2 sm:grid-cols-6 gap-3">
+        <a href="/hersteller/meyer-burger" class="bg-white border border-gray-200 rounded-xl px-4 py-3 hover:border-amber-400 hover:shadow-md transition-all group text-center card-hover">
+          <span class="font-semibold text-gray-900 group-hover:text-amber-600 text-xs md:text-sm">Meyer Burger</span>
+          <span class="block text-[10px] text-gray-500">🇨🇭 Schweiz/DE</span>
+        </a>
+        <a href="/hersteller/solarwatt" class="bg-white border border-gray-200 rounded-xl px-4 py-3 hover:border-amber-400 hover:shadow-md transition-all group text-center card-hover">
+          <span class="font-semibold text-gray-900 group-hover:text-amber-600 text-xs md:text-sm">Solarwatt</span>
+          <span class="block text-[10px] text-gray-500">🇩🇪 Deutschland</span>
+        </a>
+        <a href="/hersteller/sma-solar" class="bg-white border border-gray-200 rounded-xl px-4 py-3 hover:border-amber-400 hover:shadow-md transition-all group text-center card-hover">
+          <span class="font-semibold text-gray-900 group-hover:text-amber-600 text-xs md:text-sm">SMA Solar</span>
+          <span class="block text-[10px] text-gray-500">🇩🇪 Wechselrichter</span>
+        </a>
+        <a href="/hersteller/fronius" class="bg-white border border-gray-200 rounded-xl px-4 py-3 hover:border-amber-400 hover:shadow-md transition-all group text-center card-hover">
+          <span class="font-semibold text-gray-900 group-hover:text-amber-600 text-xs md:text-sm">Fronius</span>
+          <span class="block text-[10px] text-gray-500">🇦🇹 Österreich</span>
+        </a>
+        <a href="/hersteller/senec" class="bg-white border border-gray-200 rounded-xl px-4 py-3 hover:border-amber-400 hover:shadow-md transition-all group text-center card-hover">
+          <span class="font-semibold text-gray-900 group-hover:text-amber-600 text-xs md:text-sm">Senec</span>
+          <span class="block text-[10px] text-gray-500">🇩🇪 Stromspeicher</span>
+        </a>
+        <a href="/hersteller/jinkosolar" class="bg-white border border-gray-200 rounded-xl px-4 py-3 hover:border-amber-400 hover:shadow-md transition-all group text-center card-hover">
+          <span class="font-semibold text-gray-900 group-hover:text-amber-600 text-xs md:text-sm">JinkoSolar</span>
+          <span class="block text-[10px] text-gray-500">🇨🇳 Weltmarktführer</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- Block 15: Final CTA -->
+    <section>
+      <div class="cta-gradient rounded-2xl p-8 text-center text-white">
+        <h2 class="text-xl md:text-2xl font-bold mb-3 font-heading">Solarangebote in {city.name} vergleichen — kostenlos & unverbindlich</h2>
+        <p class="text-amber-100 mb-5 text-xs md:text-sm max-w-xl mx-auto">
+          Erhalten Sie bis zu 3 Angebote von geprüften Solarteur-Fachbetrieben aus {city.bundesland}. Vergleichen Sie Preise, Komponenten und Service — 100% kostenlos.
+        </p>
+        <a href="/angebot" class="inline-block bg-white text-amber-600 font-bold px-8 py-3.5 rounded-xl hover:bg-gray-100 transition-colors shadow-lg text-sm md:text-base">
+          ☀️ Jetzt Angebote anfordern →
+        </a>
+      </div>
+    </section>
+  </div>
+</BaseLayout>

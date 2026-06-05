@@ -1,0 +1,75 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { siteConfig } from '../../site.config';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Datenschutzerklärung - " + siteConfig.name,
+    "url": "https://" + siteConfig.domain + "/datenschutz",
+  }
+];
+---
+
+<BaseLayout title={`Datenschutzerklärung | ${siteConfig.name}`} description={`Datenschutzerklärung und DSGVO-Hinweise für ${siteConfig.domain}.`} canonical="/datenschutz" jsonLd={jsonLd}>
+  <section class="gradient-hero text-white py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <Breadcrumbs items={[
+        { label: "Datenschutz", href: "/datenschutz" },
+      ]} />
+      <h1 class="text-3xl md:text-4xl font-extrabold mb-4 font-heading mt-6">
+        Datenschutzerklärung
+      </h1>
+      <p class="text-blue-100">Informationen über die Verarbeitung personenbezogener Daten nach DSGVO</p>
+    </div>
+  </section>
+
+  <section class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="bg-white rounded-2xl border border-gray-200 p-6 md:p-8 shadow-sm space-y-6 text-gray-700 text-sm md:text-base leading-relaxed">
+      <div>
+        <h2 class="text-lg font-bold text-gray-900 mb-2 font-heading">1. Datenschutz auf einen Blick</h2>
+        <p>
+          Wir nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Personenbezogene Daten werden auf dieser Website nur im technisch notwendigen Umfang erhoben. Die nachfolgende Erklärung gibt Ihnen einen Überblick darüber, wie wir diesen Schutz gewährleisten und welche Art von Daten zu welchem Zweck erhoben werden.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="text-lg font-bold text-gray-900 mb-2 font-heading">2. Verantwortliche Stelle</h2>
+        <p>
+          Verantwortlicher für die Datenverarbeitung auf dieser Website ist:<br />
+          Wade Sites Network / solardach-kosten.de<br />
+          E-Mail: info@solardach-kosten.de
+        </p>
+      </div>
+
+      <div>
+        <h2 class="text-lg font-bold text-gray-900 mb-2 font-heading">3. Datenerfassung auf unserer Website</h2>
+        <h3 class="font-bold text-gray-900 text-sm mt-3 mb-1">Server-Log-Files</h3>
+        <p class="text-xs md:text-sm">
+          Der Provider der Seiten erhebt und speichert automatisch Informationen in so genannten Server-Log-Files, die Ihr Browser automatisch an uns übermittelt. Dies sind: Browsertyp und Browserversion, verwendetes Betriebssystem, Referrer URL, Hostname des zugreifenden Rechners, Uhrzeit der Serveranfrage und die IP-Adresse. Diese Daten sind nicht bestimmten Personen zuzuordnen. Eine Zusammenführung dieser Daten mit anderen Datenquellen wird nicht vorgenommen.
+        </p>
+
+        <h3 class="font-bold text-gray-900 text-sm mt-3 mb-1">Angebotsanfragen (Formular & Lead-Weiterleitung)</h3>
+        <p class="text-xs md:text-sm">
+          Wenn Sie unser Anfrageformular nutzen, werden die von Ihnen eingegebenen Daten (wie Name, E-Mail-Adresse, Telefonnummer, PLZ, Angaben zum Dach) zwecks Bearbeitung der Anfrage und zur Vermittlung von Angeboten an unseren Kooperationspartner **DAA GmbH (BOSCH-Gruppe / TapTapHome)** weitergeleitet. Die Datenweiterleitung erfolgt verschlüsselt und dient ausschließlich dem Zweck der Angebotserstellung für Ihr Solaranlagenprojekt. Rechtsgrundlage für diese Verarbeitung ist Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung bzw. vorvertragliche Maßnahmen).
+        </p>
+      </div>
+
+      <div>
+        <h2 class="text-lg font-bold text-gray-900 mb-2 font-heading">4. Cookies und Analyse-Tools</h2>
+        <p class="text-xs md:text-sm">
+          Unsere Website verwendet Cookies. Das sind kleine Textdateien, die Ihr Browser auf Ihrem Endgerät speichert. Wir nutzen notwendige Cookies, um die Funktion des Formulars und der Navigation zu gewährleisten. Analyse- und Tracking-Cookies (z.B. Google Analytics) werden nur nach Ihrer ausdrücklichen Einwilligung im Cookie-Banner aktiviert (Art. 6 Abs. 1 lit. a DSGVO). Sie können Ihre Einwilligung jederzeit widerrufen, indem Sie den Speicher Ihres Browsers leeren.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="text-lg font-bold text-gray-900 mb-2 font-heading">5. Ihre Rechte</h2>
+        <p class="text-xs md:text-sm">
+          Sie haben jederzeit das Recht auf unentgeltliche Auskunft über Ihre gespeicherten personenbezogenen Daten, deren Herkunft und Empfänger und den Zweck der Datenverarbeitung sowie ein Recht auf Berichtigung, Sperrung oder Löschung dieser Daten. Wenden Sie sich hierzu oder zu weiteren Fragen zum Thema Datenschutz einfach an uns unter info@solardach-kosten.de.
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

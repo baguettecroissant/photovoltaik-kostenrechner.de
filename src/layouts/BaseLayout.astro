@@ -1,0 +1,367 @@
+---
+import { siteConfig } from '../../site.config';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+  canonical?: string;
+  ogType?: string;
+  noindex?: boolean;
+  jsonLd?: object[];
+}
+
+const {
+  title,
+  description = siteConfig.description,
+  canonical,
+  ogType = 'website',
+  noindex = false,
+  jsonLd = [],
+} = Astro.props;
+
+// Ensure trailing slash for canonical consistency with sitemap
+const rawCanonical = canonical
+  ? `https://${siteConfig.domain}${canonical}`
+  : Astro.url.href;
+const canonicalUrl = rawCanonical.endsWith('/') ? rawCanonical : rawCanonical + '/';
+const ogImage = `https://${siteConfig.domain}/images/og-default.png`;
+---
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonicalUrl} />
+  {noindex && <meta name="robots" content="noindex, nofollow" />}
+
+  <!-- Open Graph -->
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:type" content={ogType} />
+  <meta property="og:url" content={canonicalUrl} />
+  <meta property="og:site_name" content={siteConfig.name} />
+  <meta property="og:locale" content="de_DE" />
+  <meta property="og:image" content={ogImage} />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={ogImage} />
+
+  <!-- Favicon & App Icons -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <meta name="theme-color" content="#0277BD" />
+
+  <!-- Preconnect & Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&family=Urbanist:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+
+  <!-- JSON-LD Structured Data -->
+  {jsonLd.map((schema) => (
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  ))}
+</head>
+<body class="min-h-screen flex flex-col bg-bg-light text-text">
+  <!-- Header Navbar -->
+  <header id="main-nav" class="fixed top-0 left-0 right-0 z-50 navbar-scroll bg-transparent">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="/" class="flex items-center gap-2 group">
+          <svg class="w-8 h-8 text-amber-500 group-hover:text-amber-400 transition-colors sun-pulse" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5" fill="currentColor" />
+            <line x1="12" y1="1" x2="12" y2="3" />
+            <line x1="12" y1="21" x2="12" y2="23" />
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+            <line x1="1" y1="12" x2="3" y2="12" />
+            <line x1="21" y1="12" x2="23" y2="12" />
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+          </svg>
+          <span class="font-bold text-lg text-white group-hover:text-amber-200 transition-colors font-heading">
+            {siteConfig.domain}
+          </span>
+        </a>
+        <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-blue-100/90">
+          <a href="/" class="hover:text-white transition-colors">Startseite</a>
+          <a href="/ratgeber" class="hover:text-white transition-colors">Ratgeber</a>
+          <a href="/hersteller" class="hover:text-white transition-colors">Hersteller</a>
+          <a href="/photovoltaik-rechner" class="hover:text-white transition-colors">Städte</a>
+          <a href="/faq" class="hover:text-white transition-colors">FAQ</a>
+          <a href="/kostenrechner" class="hover:text-white transition-colors">Rechner</a>
+        </nav>
+        <div class="flex items-center gap-3">
+          <a href="/angebot" class="cta-gradient text-white px-5 py-2.5 rounded-lg font-semibold text-sm transition-all shadow-md hover:shadow-lg">
+            ☀️ Angebote vergleichen →
+          </a>
+          <!-- Mobile hamburger -->
+          <button id="mobile-menu-btn" class="md:hidden flex flex-col gap-1.5 p-2 rounded-lg hover:bg-white/10 transition-colors" aria-label="Navigationsmenü">
+            <span class="block w-5 h-0.5 bg-white rounded-full transition-transform" id="bar1"></span>
+            <span class="block w-5 h-0.5 bg-white rounded-full transition-opacity" id="bar2"></span>
+            <span class="block w-5 h-0.5 bg-white rounded-full transition-transform" id="bar3"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Menu Overlay -->
+  <div id="mobile-menu" class="fixed inset-0 z-50 hidden" aria-hidden="true">
+    <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" id="mobile-menu-backdrop"></div>
+    <nav class="absolute top-0 right-0 w-72 h-full bg-brand-900 shadow-2xl flex flex-col overflow-y-auto transform translate-x-full transition-transform duration-300" id="mobile-menu-panel">
+      <div class="flex items-center justify-between p-5 border-b border-brand-800">
+        <span class="text-white font-bold font-heading text-lg">Menü</span>
+        <button id="mobile-menu-close" class="text-white p-2 hover:bg-white/10 rounded-lg transition-colors" aria-label="Menü schließen">
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+      <div class="flex-1 p-5 space-y-1">
+        <a href="/" class="flex items-center gap-3 px-4 py-3 rounded-xl text-blue-100 hover:bg-white/10 transition-colors font-medium text-sm">🏠 Startseite</a>
+        <a href="/ratgeber" class="flex items-center gap-3 px-4 py-3 rounded-xl text-blue-100 hover:bg-white/10 transition-colors font-medium text-sm">📚 Ratgeber</a>
+        <a href="/hersteller" class="flex items-center gap-3 px-4 py-3 rounded-xl text-blue-100 hover:bg-white/10 transition-colors font-medium text-sm">🏆 Hersteller</a>
+        <a href="/photovoltaik-rechner" class="flex items-center gap-3 px-4 py-3 rounded-xl text-blue-100 hover:bg-white/10 transition-colors font-medium text-sm">📍 Städte-Verzeichnis</a>
+        <a href="/kostenrechner" class="flex items-center gap-3 px-4 py-3 rounded-xl text-blue-100 hover:bg-white/10 transition-colors font-medium text-sm">🧮 Kostenrechner</a>
+        <a href="/faq" class="flex items-center gap-3 px-4 py-3 rounded-xl text-blue-100 hover:bg-white/10 transition-colors font-medium text-sm">❓ FAQ</a>
+      </div>
+      <div class="p-5 border-t border-brand-800">
+        <a href="/angebot" class="block w-full cta-gradient text-white text-center py-3.5 rounded-xl font-bold text-base shadow-lg transition-all">
+          ☀️ Angebote vergleichen
+        </a>
+      </div>
+    </nav>
+  </div>
+
+  <!-- Main content -->
+  <main class="flex-1">
+    <slot />
+  </main>
+
+  <!-- Mega Footer -->
+  <footer class="footer-bg py-12 mt-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 mb-8">
+        <!-- Col 1: Über Uns -->
+        <div class="col-span-2 md:col-span-1">
+          <div class="flex items-center gap-2 mb-4">
+            <svg class="w-6 h-6 text-amber-400" viewBox="0 0 24 24" fill="currentColor">
+              <circle cx="12" cy="12" r="5" />
+              <path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke="currentColor" stroke-width="1.5" />
+            </svg>
+            <span class="text-white font-bold font-heading">{siteConfig.name}</span>
+          </div>
+          <p class="text-sm leading-relaxed text-gray-400 mb-4">{siteConfig.tagline}</p>
+          <a href="/angebot" class="inline-block cta-gradient text-white text-xs font-bold px-4 py-2 rounded-lg shadow-sm hover:shadow-md transition-all">
+            ☀️ Angebote anfordern →
+          </a>
+        </div>
+
+        <!-- Col 2: Ratgeber -->
+        <div>
+          <h4 class="text-white font-semibold mb-4 font-heading">📚 Ratgeber</h4>
+          <ul class="space-y-2 text-sm text-gray-400">
+            <li><a href="/ratgeber/solaranlage-kosten-2026" class="hover:text-white transition-colors">Photovoltaik Kosten</a></li>
+            <li><a href="/ratgeber/photovoltaik-foerderung-2026" class="hover:text-white transition-colors">KfW-Förderung 2026</a></li>
+            <li><a href="/ratgeber/solaranlage-mit-speicher" class="hover:text-white transition-colors">PV mit Speicher</a></li>
+            <li><a href="/ratgeber/photovoltaik-amortisation" class="hover:text-white transition-colors">PV Amortisation</a></li>
+            <li><a href="/ratgeber/einspeiseverguetung-2026" class="hover:text-white transition-colors">Einspeisevergütung</a></li>
+            <li class="pt-1"><a href="/ratgeber" class="text-amber-400 hover:text-white transition-colors font-semibold">Alle Artikel →</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Hersteller -->
+        <div>
+          <h4 class="text-white font-semibold mb-4 font-heading">🏆 Hersteller</h4>
+          <ul class="space-y-2 text-sm text-gray-400">
+            <li><a href="/hersteller/meyer-burger" class="hover:text-white transition-colors">Meyer Burger</a></li>
+            <li><a href="/hersteller/solarwatt" class="hover:text-white transition-colors">Solarwatt</a></li>
+            <li><a href="/hersteller/sma-solar" class="hover:text-white transition-colors">SMA Solar</a></li>
+            <li><a href="/hersteller/fronius" class="hover:text-white transition-colors">Fronius</a></li>
+            <li><a href="/hersteller/senec" class="hover:text-white transition-colors">Senec</a></li>
+            <li><a href="/hersteller/jinkosolar" class="hover:text-white transition-colors">JinkoSolar</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Top-Städte -->
+        <div>
+          <h4 class="text-white font-semibold mb-4 font-heading">📍 Top-Regionen</h4>
+          <ul class="space-y-2 text-sm text-gray-400">
+            <li><a href="/photovoltaik-rechner/berlin" class="hover:text-white transition-colors">Berlin</a></li>
+            <li><a href="/photovoltaik-rechner/hamburg" class="hover:text-white transition-colors">Hamburg</a></li>
+            <li><a href="/photovoltaik-rechner/munich" class="hover:text-white transition-colors">München</a></li>
+            <li><a href="/photovoltaik-rechner/cologne" class="hover:text-white transition-colors">Köln</a></li>
+            <li><a href="/photovoltaik-rechner/frankfurt-am-main" class="hover:text-white transition-colors">Frankfurt</a></li>
+            <li><a href="/photovoltaik-rechner/stuttgart" class="hover:text-white transition-colors">Stuttgart</a></li>
+            <li class="pt-1"><a href="/photovoltaik-rechner" class="text-amber-400 hover:text-white transition-colors font-semibold">Alle Städte →</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 5: Rechtliches & Rechner -->
+        <div>
+          <h4 class="text-white font-semibold mb-4 font-heading">🛠️ Service</h4>
+          <ul class="space-y-2 text-sm text-gray-400">
+            <li><a href="/kostenrechner" class="hover:text-white transition-colors">🧮 Kostenrechner</a></li>
+            <li><a href="/faq" class="hover:text-white transition-colors">❓ FAQ & Fragen</a></li>
+            <li><a href="/kontakt" class="hover:text-white transition-colors">✉️ Kontakt</a></li>
+            <li><a href="/ueber-uns" class="hover:text-white transition-colors">👤 Über uns</a></li>
+            <li class="pt-3"><a href="/impressum" class="hover:text-white transition-colors text-xs text-gray-500">Impressum</a></li>
+            <li><a href="/datenschutz" class="hover:text-white transition-colors text-xs text-gray-500">Datenschutzerklärung</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-gray-800 pt-6 text-center text-xs text-gray-500">
+        <p>© {new Date().getFullYear()} {siteConfig.name} — Alle Rechte vorbehalten. Die Preisangaben dienen der Orientierung und sind unverbindlich.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Sticky Mobile CTA -->
+  <div id="sticky-cta" class="fixed bottom-0 left-0 right-0 md:hidden z-40 bg-white border-t border-gray-200 p-3 shadow-xl sticky-cta-enter transition-transform duration-300" style="transform: translateY(100%);">
+    <a href="#devis-form" class="block w-full cta-gradient text-white text-center py-3.5 rounded-xl font-bold text-base shadow-lg transition-all">
+      ☀️ Solarangebote vergleichen — 100% Kostenlos
+    </a>
+  </div>
+
+  <!-- DSGVO Cookie Banner -->
+  <div id="cookie-consent-banner" class="fixed bottom-4 left-4 right-4 md:left-auto md:right-4 md:w-96 z-50 bg-white border border-gray-200 rounded-2xl p-5 shadow-2xl hidden transition-all duration-300">
+    <div class="flex items-start gap-3">
+      <span class="text-xl">🍪</span>
+      <div>
+        <h4 class="font-bold text-sm font-heading text-gray-900 mb-1">Cookie-Einstellungen</h4>
+        <p class="text-xs text-gray-600 leading-relaxed mb-4">
+          Wir nutzen Cookies, um unsere Website zu optimieren und unser Angebot für Sie stetig zu verbessern. Detaillierte Informationen finden Sie in unserer <a href="/datenschutz" class="text-blue-600 hover:underline">Datenschutzerklärung</a>.
+        </p>
+        <div class="flex items-center gap-2">
+          <button id="cookie-accept" class="bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold px-4 py-2 rounded-lg transition-colors cursor-pointer">
+            Akzeptieren
+          </button>
+          <button id="cookie-decline" class="bg-gray-100 hover:bg-gray-200 text-gray-700 text-xs font-bold px-4 py-2 rounded-lg transition-colors cursor-pointer">
+            Ablehnen
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script is:inline>
+  (function() {
+    // Navbar scroll effect
+    var nav = document.getElementById('main-nav');
+    if (nav) {
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 50) {
+          nav.classList.add('navbar-scrolled');
+        } else {
+          nav.classList.remove('navbar-scrolled');
+        }
+      }, { passive: true });
+    }
+
+    // Mobile Menu
+    var menuBtn = document.getElementById('mobile-menu-btn');
+    var menuOverlay = document.getElementById('mobile-menu');
+    var menuPanel = document.getElementById('mobile-menu-panel');
+    var menuClose = document.getElementById('mobile-menu-close');
+    var menuBackdrop = document.getElementById('mobile-menu-backdrop');
+
+    function openMenu() {
+      menuOverlay.classList.remove('hidden');
+      menuOverlay.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      requestAnimationFrame(function() {
+        menuPanel.classList.remove('translate-x-full');
+      });
+    }
+
+    function closeMenu() {
+      menuPanel.classList.add('translate-x-full');
+      document.body.style.overflow = '';
+      setTimeout(function() {
+        menuOverlay.classList.add('hidden');
+        menuOverlay.setAttribute('aria-hidden', 'true');
+      }, 300);
+    }
+
+    if (menuBtn) menuBtn.addEventListener('click', openMenu);
+    if (menuClose) menuClose.addEventListener('click', closeMenu);
+    if (menuBackdrop) menuBackdrop.addEventListener('click', closeMenu);
+
+    // Sticky CTA
+    var cta = document.getElementById('sticky-cta');
+    if (cta) {
+      if (window.location.pathname === '/angebot' || window.location.pathname === '/angebot/') {
+        cta.style.display = 'none';
+      } else {
+        var formVisible = false;
+        var scrolledPastHero = false;
+
+        function updateCTA() {
+          if (formVisible || !scrolledPastHero) {
+            cta.style.transform = 'translateY(100%)';
+          } else {
+            cta.style.transform = 'translateY(0)';
+          }
+        }
+
+        window.addEventListener('scroll', function() {
+          scrolledPastHero = window.scrollY > 300;
+          updateCTA();
+        }, { passive: true });
+
+        var formEl = document.getElementById('devis-form');
+        if (formEl && 'IntersectionObserver' in window) {
+          var observer = new IntersectionObserver(function(entries) {
+            formVisible = entries[0].isIntersecting;
+            updateCTA();
+          }, { threshold: 0.3 });
+          observer.observe(formEl);
+        }
+
+        cta.querySelector('a').addEventListener('click', function(e) {
+          if (formEl) {
+            e.preventDefault();
+            formEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
+        });
+      }
+    }
+
+    // DSGVO Cookie Banner Logic
+    var banner = document.getElementById('cookie-consent-banner');
+    var acceptBtn = document.getElementById('cookie-accept');
+    var declineBtn = document.getElementById('cookie-decline');
+
+    if (banner && acceptBtn && declineBtn) {
+      var consent = localStorage.getItem('cookie-consent');
+      if (!consent) {
+        setTimeout(function() {
+          banner.classList.remove('hidden');
+        }, 1500);
+      }
+
+      acceptBtn.addEventListener('click', function() {
+        localStorage.setItem('cookie-consent', 'accepted');
+        banner.classList.add('hidden');
+      });
+
+      declineBtn.addEventListener('click', function() {
+        localStorage.setItem('cookie-consent', 'declined');
+        banner.classList.add('hidden');
+      });
+    }
+  })();
+  </script>
+</body>
+</html>

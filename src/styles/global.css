@@ -1,0 +1,225 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+/* === PALETTE "PHOTOVOLTAIK KOSTENRECHNER" — Design System === */
+@theme {
+  /* Primary blue - Tech/Digital */
+  --color-brand-50: #E1F5FE;
+  --color-brand-100: #B3E5FC;
+  --color-brand-200: #81D4FA;
+  --color-brand-500: #0277BD;
+  --color-brand-600: #0288D1;
+  --color-brand-700: #01579B;
+  --color-brand-800: #00365D;
+  --color-brand-900: #001A33;
+
+  /* Accent Orange - Solar CTA */
+  --color-accent-400: #FF9100;
+  --color-accent-500: #FF6D00;
+  --color-accent-600: #E65100;
+
+  /* Amber - Solar yellow */
+  --color-amber-400: #FFE082;
+  --color-amber-500: #FFD54F;
+  --color-amber-600: #FFC107;
+
+  /* Custom palette states */
+  --color-success: #00C853;
+  --color-warning: #FFD600;
+  --color-dark: #1B1B2F;
+  --color-text: #1B1B2F;
+  --color-text-light: #78909C;
+  --color-bg-light: #F0F4F8;
+  --color-card-bg: #FFFFFF;
+  --color-card-border: #B3E5FC;
+  --color-calculator-bg: #E3F2FD;
+}
+
+/* === TYPOGRAPHIE === */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Rubik', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  color: #1B1B2F;
+  background-color: #F0F4F8;
+}
+
+h1, h2, h3, h4, h5, h6,
+.font-heading {
+  font-family: 'Urbanist', system-ui, -apple-system, sans-serif;
+  font-weight: 700;
+}
+
+.font-data,
+.font-mono {
+  font-family: 'Space Mono', 'Courier New', monospace;
+}
+
+/* === HERO GRADIENT — Tech-Blau mit Solar-Glow === */
+.gradient-hero {
+  background: linear-gradient(135deg, rgba(2, 119, 189, 0.96) 0%, rgba(2, 136, 209, 0.92) 50%, rgba(1, 87, 155, 0.88) 100%);
+  padding-top: 5.5rem !important; /* Spacing for the transparent navbar */
+}
+
+.gradient-hero-image {
+  background-image: var(--hero-bg, none);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  padding-top: 6.5rem !important; /* Extra spacing for the homepage hero */
+}
+.gradient-hero-image::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(1, 87, 155, 0.94), rgba(2, 119, 189, 0.82));
+  z-index: 0;
+}
+.gradient-hero-image > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* === CTA GRADIENT — Solar-Orange === */
+.cta-gradient {
+  background: linear-gradient(135deg, #FF6D00, #FF9100);
+}
+.cta-gradient:hover {
+  background: linear-gradient(135deg, #E65100, #FF6D00);
+  transform: scale(1.02);
+  box-shadow: 0 0 20px rgba(255, 109, 0, 0.4);
+}
+
+/* === SECTION GRADIENT === */
+.section-gradient {
+  background: linear-gradient(180deg, #F0F4F8 0%, #E3F2FD 100%);
+}
+
+/* === MICRO-ANIMATIONS === */
+
+/* Pulsieren der Sonne / Badges */
+@keyframes sun-pulse {
+  0%, 100% { transform: scale(1); opacity: 0.95; }
+  50% { transform: scale(1.04); opacity: 1; }
+}
+.sun-pulse {
+  animation: sun-pulse 3s ease-in-out infinite;
+}
+
+/* Entrée progressive des sections */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.fade-up {
+  animation: fade-up 0.5s ease-out both;
+}
+
+/* Compteur animé */
+@keyframes count-up {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.count-up {
+  animation: count-up 0.7s ease-out both;
+  animation-delay: 0.2s;
+}
+
+/* Cards hover effect */
+.card-hover {
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -5px rgba(2, 119, 189, 0.08), 0 8px 10px -6px rgba(2, 119, 189, 0.05);
+  border-color: #81D4FA;
+}
+
+/* CTA button arrow animation */
+@keyframes arrow-bounce {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(4px); }
+}
+.arrow-animate:hover .arrow-icon {
+  animation: arrow-bounce 0.6s ease-in-out infinite;
+}
+
+/* === FAQ Accordion === */
+details summary {
+  cursor: pointer;
+  list-style: none;
+}
+details summary::-webkit-details-marker {
+  display: none;
+}
+details[open] summary .faq-chevron {
+  transform: rotate(180deg);
+}
+.faq-chevron {
+  transition: transform 0.25s ease;
+}
+
+/* === Price Cards — Solar-Orange Left Border === */
+.price-card {
+  border-left: 4px solid #FF6D00;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.price-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -5px rgba(255, 109, 0, 0.15);
+}
+
+/* === Info Cards === */
+.info-card {
+  background: #E3F2FD;
+  border-left: 4px solid #0277BD;
+}
+
+/* === Price tables === */
+.price-table th {
+  background: #E3F2FD;
+  color: #0277BD;
+  font-family: 'Urbanist', sans-serif;
+  font-weight: 700;
+}
+.price-table td.price {
+  font-family: 'Space Mono', monospace;
+  color: #FF6D00;
+  font-weight: 600;
+}
+.price-table tr:nth-child(even) {
+  background: #FFFFFF;
+}
+
+/* === Navbar scroll effect === */
+.navbar-scroll {
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+.navbar-scrolled {
+  background-color: rgba(2, 119, 189, 0.97) !important;
+  box-shadow: 0 4px 20px rgba(2, 119, 189, 0.2);
+}
+
+/* === Footer === */
+.footer-bg {
+  background-color: #1B1B2F;
+  color: #F0F4F8;
+}
+
+/* === Sticky CTA Animation === */
+.sticky-cta-enter {
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(100%); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+
+/* === DSGVO Cookie Banner === */
+.cookie-banner {
+  box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.15);
+}

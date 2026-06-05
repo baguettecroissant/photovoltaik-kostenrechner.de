@@ -1,0 +1,1082 @@
+{
+  "paris": {
+    "intro": "À Paris, entre les immeubles haussmanniens du Marais et les pavillons de la petite couronne, la pompe à chaleur air/eau s'impose comme la solution idéale pour remplacer votre vieille chaudière fioul ou gaz. Avec des hivers parfois mordants et des étés de plus en plus caniculaires, les Parisiens recherchent un système capable de chauffer efficacement tout en valorisant leur bien immobilier. Le réseau de chaleur parisien ne dessert pas tous les quartiers, et une PAC air/eau raccordée à vos radiateurs existants peut diviser votre facture par 3.",
+    "local_tip": "La région Île-de-France propose des aides complémentaires via le dispositif Éco-Énergie, cumulables avec MaPrimeRénov'. À Paris, les copropriétés peuvent également bénéficier de l'accompagnement de l'Agence Parisienne du Climat (APC) pour les projets collectifs de remplacement de chaudière. Attention : en zone ABF (Architecte des Bâtiments de France), l'unité extérieure doit être installée en toiture ou dans une cour intérieure pour ne pas altérer la façade.",
+    "history_anecdote": "Saviez-vous que le premier réseau de chaleur urbain de France a été inauguré à Paris en 1927 par la CPCU ? Près d'un siècle plus tard, la transition énergétique parisienne passe désormais par les pompes à chaleur individuelles et collectives, une technologie qui aurait fasciné les ingénieurs de l'époque.",
+    "faq_local": {
+      "question": "Peut-on installer une PAC air/eau dans un appartement parisien en copropriété ?",
+      "answer": "Oui, c'est possible mais cela nécessite l'accord de la copropriété en assemblée générale. L'unité extérieure doit respecter les normes acoustiques (< 30 dB en limite de propriété) et les contraintes urbaines de la Ville de Paris. En immeuble haussmannien, les installateurs RGE parisiens recommandent souvent une installation en toiture-terrasse ou dans une cour intérieure."
+    },
+    "market_data": "Le prix moyen constaté à Paris pour une PAC air/eau 10-14 kW est de 12 500€ à 17 000€ TTC posée, soit environ 15% au-dessus de la moyenne nationale en raison des contraintes d'accès et des réglementations urbaines."
+  },
+  "marseille": {
+    "intro": "Sous le soleil de Marseille, la pompe à chaleur air/eau tire pleinement parti du climat méditerranéen. Avec des températures hivernales rarement négatives et un excellent COP saisonnier, c'est la ville idéale pour ce type d'installation. Du Vieux-Port aux calanques, les maisons marseillaises — souvent des bastides provençales ou des appartements dans des immeubles des années 60-70 — bénéficient d'un retour sur investissement parmi les plus rapides de France.",
+    "local_tip": "La région Sud PACA offre des primes complémentaires pour la rénovation énergétique via le dispositif 'Région Sud Climat'. À Marseille, la MPM (Métropole Aix-Marseille-Provence) propose aussi un accompagnement gratuit via les Espaces Conseil FAIRE. Avec un mistral qui accentue les déperditions thermiques, coupler votre PAC avec une bonne isolation est recommandé.",
+    "history_anecdote": "Marseille, plus ancienne ville de France fondée en 600 av. J.-C., a toujours su s'adapter aux innovations. Les thermes romains de la cité phocéenne utilisaient déjà des systèmes de chauffage par le sol (hypocauste) — un principe finalement assez proche du plancher chauffant alimenté par une PAC air/eau moderne !",
+    "faq_local": {
+      "question": "Une PAC air/eau est-elle rentable à Marseille avec le climat doux ?",
+      "answer": "Absolument, c'est même l'une des villes les plus rentables de France. Le COP moyen à Marseille est de 4,2 contre 3,5 en moyenne nationale, grâce aux températures hivernales clémentes (rarement sous 5°C). Le retour sur investissement est atteint en 4 à 5 ans au lieu de 6 à 8 ans dans le Nord."
+    },
+    "market_data": "À Marseille et dans les Bouches-du-Rhône, le prix moyen d'une PAC air/eau se situe entre 9 000€ et 14 000€ TTC, inférieur à la moyenne nationale grâce à la forte concurrence d'installateurs et aux conditions d'accès généralement favorables."
+  },
+  "lyon": {
+    "intro": "Lyon, au carrefour de la vallée du Rhône, connaît des hivers rigoureux avec des températures descendant régulièrement sous 0°C et des étés chauds marqués par la canicule. Cette amplitude thermique fait de la PAC air/eau le choix parfait pour les Lyonnais : chauffage performant en hiver et possibilité de rafraîchissement en été avec un modèle réversible. Les maisons de Caluire, Tassin ou Bron comme les appartements du 6ème ou de la Presqu'île sont tous candidats à cette transition énergétique.",
+    "local_tip": "La Métropole de Lyon finance un dispositif 'Écoréno'v qui offre un accompagnement gratuit et des aides complémentaires pouvant aller jusqu'à 5 000€ pour les ménages modestes. Renseignez-vous auprès de l'ALEC Lyon (Agence Locale de l'Énergie et du Climat) qui propose des permanences gratuites dans chaque arrondissement.",
+    "history_anecdote": "Lyon a été pionnière dans l'adoption des réseaux de chaleur urbains, avec le réseau Centre Métropole alimenté en partie par la géothermie. Depuis les années 2020, la ville encourage massivement le passage aux pompes à chaleur individuelles pour atteindre la neutralité carbone d'ici 2030.",
+    "faq_local": {
+      "question": "Quelle puissance de PAC air/eau pour une maison lyonnaise typique ?",
+      "answer": "Pour une maison de 120m² dans la métropole lyonnaise (zone climatique H1c), comptez une PAC de 11 à 14 kW. Lyon étant en zone H1 (hivers froids), privilégiez un modèle performant jusqu'à -15°C comme les Atlantic Alfea Excellia ou Daikin Altherma 3H. Un bilan thermique est indispensable et il est inclus dans nos devis gratuits."
+    },
+    "market_data": "Le prix moyen dans le Rhône pour une PAC air/eau s'établit entre 10 000€ et 15 500€ TTC pose comprise. Lyon bénéficie d'un réseau dense d'installateurs RGE, ce qui favorise la concurrence et des prix compétitifs."
+  },
+  "toulouse": {
+    "intro": "Toulouse, la Ville Rose, profite d'un climat océanique dégradé avec des hivers doux et des étés chauds parfois caniculaires. La transition énergétique est en marche dans les quartiers résidentiels de Saint-Simon, Lardenne ou Balma, où les propriétaires de maisons individuelles remplacent massivement leurs chaudières gaz par des pompes à chaleur air/eau. Avec le vent d'autan qui assèche l'air et accentue la sensation de froid, une PAC air/eau couplée à un plancher chauffant offre un confort incomparable.",
+    "local_tip": "Toulouse Métropole propose le dispositif 'Rénov'Occitanie' avec des aides complémentaires. L'EIE (Espace Info Énergie) de Toulouse, situé au 1 place Saint-Sernin, offre des consultations gratuites pour estimer la rentabilité de votre projet PAC. La région Occitanie double certaines aides MaPrimeRénov' pour les foyers les plus modestes.",
+    "history_anecdote": "L'industrie aéronautique toulousaine, berceau d'Airbus, a formé des générations d'ingénieurs en thermodynamique. Ce savoir-faire se retrouve aujourd'hui dans l'excellence des installateurs locaux de pompes à chaleur, qui maîtrisent parfaitement les cycles frigorifiques — le cœur de la technologie PAC.",
+    "faq_local": {
+      "question": "Le vent d'autan affecte-t-il les performances d'une PAC air/eau à Toulouse ?",
+      "answer": "Le vent d'autan, chaud et sec, n'affecte pas négativement les performances — au contraire, il maintient des températures de l'air relativement élevées en hiver, ce qui optimise le COP. En revanche, il est recommandé de protéger l'unité extérieure avec un pare-vent pour éviter les vibrations et le bruit. Un installateur local expérimenté saura positionner l'unité correctement."
+    },
+    "market_data": "En Haute-Garonne, les prix constatés pour une PAC air/eau sont de 9 500€ à 14 500€ TTC, dans la moyenne basse nationale grâce au climat favorable et à la forte densité d'artisans RGE."
+  },
+  "nice": {
+    "intro": "Nice et la Côte d'Azur bénéficient du climat le plus clément de France métropolitaine, ce qui rend la pompe à chaleur air/eau particulièrement efficace. Avec des hivers où la température descend rarement sous 5°C, le COP saisonnier dépasse souvent 4,5 — un record. Les villas de Cimiez, les appartements de la Promenade des Anglais et les maisons de l'arrière-pays niçois sont tous d'excellents candidats. L'investissement est amorti plus rapidement que partout ailleurs en France.",
+    "local_tip": "La Métropole Nice Côte d'Azur a lancé un plan climat ambitieux avec des subventions locales pour les rénovations énergétiques. Attention aux réglementations spécifiques des copropriétés en bord de mer : le sel marin peut accélérer la corrosion de l'unité extérieure. Optez pour un modèle avec traitement anti-corrosion (coating ou Blue Fin) si vous êtes à moins de 1 km du littoral.",
+    "history_anecdote": "Nice, rattachée à la France en 1860, a été l'une des premières villes de la Côte d'Azur à attirer les touristes britanniques pour son climat doux. Ce même climat doux fait aujourd'hui de Nice la ville où les PAC air/eau ont le meilleur rendement de France — une ironie que la Reine Victoria elle-même aurait appréciée.",
+    "faq_local": {
+      "question": "Faut-il un système de traitement anti-corrosion pour une PAC à Nice ?",
+      "answer": "Si votre logement est situé à moins de 1 km du littoral, oui, c'est fortement recommandé. L'air salin accélère la corrosion des échangeurs et des ailettes. Les marques comme Daikin, Mitsubishi et Atlantic proposent des modèles avec traitement Blue Fin ou Gold Fin spécialement conçus pour les environnements marins. Sur nos devis gratuits, les installateurs RGE de Nice vous proposeront systématiquement ces modèles adaptés."
+    },
+    "market_data": "Sur la Côte d'Azur (Alpes-Maritimes), les prix sont légèrement supérieurs à la moyenne : 11 000€ à 16 000€ TTC, en raison du coût de la vie local et des contraintes d'installation en copropriétés de standing."
+  },
+  "nantes": {
+    "intro": "Nantes, capitale des Pays de la Loire, connaît un climat océanique tempéré avec des hivers humides et des étés agréables. Ce profil climatique est idéal pour la PAC air/eau qui excelle dans les températures positives. Les quartiers résidentiels de Nantes Nord, Doulon-Bottière ou les communes limitrophes de Saint-Herblain et Rezé regorgent de pavillons des années 70-80 dont la chaudière fioul ou gaz arrive en fin de vie. Le remplacement par une PAC air/eau est la solution la plus plébiscitée.",
+    "local_tip": "Nantes Métropole propose le dispositif 'Mon Projet Rénov' avec un accompagnement gratuit et des aides financières complémentaires. L'association ALIS 44 offre des diagnostics énergétiques à domicile. L'humidité nantaise n'est pas un problème pour la PAC, mais veillez à ce que l'évacuation des condensats de l'unité extérieure soit correctement prévue par l'installateur.",
+    "history_anecdote": "Nantes, ancien grand port maritime et berceau de Jules Verne, a toujours été à l'avant-garde de l'innovation. La ville a été l'une des premières en France à installer des pompes à chaleur géothermiques sur nappe phréatique dans ses bâtiments publics dès les années 2000, ouvrant la voie aux installations résidentielles air/eau.",
+    "faq_local": {
+      "question": "L'humidité de Nantes pose-t-elle problème pour une PAC air/eau ?",
+      "answer": "Non, l'humidité n'affecte pas significativement les performances d'une PAC air/eau moderne. En revanche, lors des périodes de gel (rares à Nantes), la fonction de dégivrage automatique de l'unité extérieure se déclenche plus fréquemment. Les modèles récents gèrent cela de manière intelligente avec un impact minimal sur le COP. Les installateurs RGE nantais recommandent simplement de prévoir un espace dégagé autour de l'unité pour une bonne circulation d'air."
+    },
+    "market_data": "En Loire-Atlantique, le prix moyen d'une PAC air/eau est de 9 500€ à 14 000€ TTC, légèrement sous la moyenne nationale. La forte demande a stimulé l'installation de nombreux artisans RGE dans la métropole nantaise."
+  },
+  "montpellier": {
+    "intro": "Montpellier, perle de l'Hérault, jouit de plus de 300 jours de soleil par an et d'un climat méditerranéen qui fait de la PAC air/eau un investissement particulièrement rentable. Les lotissements de Castelnau-le-Lez, Lattes ou Juvignac, comme les résidences du quartier Antigone ou Port Marianne, sont parfaits pour cette technologie. L'hiver doux montpelliérain garantit un COP moyen supérieur à 4, et la possibilité de rafraîchissement en été avec un modèle réversible est un vrai plus face aux canicules estivales.",
+    "local_tip": "Montpellier Méditerranée Métropole propose le dispositif 'Rénov' Habitat' avec des aides complémentaires allant jusqu'à 3 000€. L'Espace Info Énergie de Montpellier, situé au 7 rue Professeur Blayac, offre des permanences gratuites. Attention : avec la tramontane, pensez à protéger l'unité extérieure derrière un muret ou une haie pour limiter le bruit.",
+    "history_anecdote": "Montpellier, ville universitaire depuis le Moyen Âge, abrite l'une des plus anciennes facultés de médecine d'Europe fondée en 1220. Son savoir-faire scientifique se retrouve dans la qualité des bureaux d'études thermiques locaux qui dimensionnent précisément les PAC air/eau en fonction du microclimat montpelliérain.",
+    "faq_local": {
+      "question": "Une PAC réversible est-elle recommandée à Montpellier ?",
+      "answer": "Oui, c'est même l'un des meilleurs rapports qualité/prix possibles à Montpellier. Avec des étés atteignant régulièrement 35-40°C, le mode rafraîchissement (via plancher chauffant/refroidissant) apporte un confort de vie considérable. Le surcoût d'un modèle réversible est d'environ 1 000 à 2 000€, amorti dès le premier été par l'économie réalisée versus une climatisation classique."
+    },
+    "market_data": "Dans l'Hérault, les prix moyens sont de 9 000€ à 13 500€ TTC pour une PAC air/eau. Montpellier bénéficie d'une forte concentration d'installateurs RGE spécialisés en rénovation énergétique grâce au dynamisme du marché immobilier local."
+  },
+  "strasbourg": {
+    "intro": "Strasbourg et l'Alsace connaissent des hivers froids avec des températures pouvant descendre à -10°C voire -15°C. C'est le test ultime pour une PAC air/eau — et les modèles haute température actuels (Daikin, Atlantic, Mitsubishi) le réussissent haut la main. Les maisons à colombages du centre historique, les pavillons de la Robertsau ou les résidences de Schiltigheim sont autant de logements qui bénéficient d'un remplacement de leur chauffage ancien par une PAC air/eau performante.",
+    "local_tip": "La Collectivité européenne d'Alsace (CeA) et l'Eurométropole de Strasbourg proposent des aides spécifiques pour la rénovation énergétique via le programme 'Climaxion'. L'ADEME Grand Est anime le réseau Rénov'Acteurs qui référence les artisans RGE de confiance. En zone H1b (climat froid), privilégiez une PAC haute température (65-70°C) compatible avec vos radiateurs existants en fonte.",
+    "history_anecdote": "Strasbourg, ville frontalière et européenne, a été pionnière dans la coopération franco-allemande en matière d'énergie. Le Bade-Wurtemberg voisin est champion d'Europe de l'installation de pompes à chaleur, et cette expertise a directement profité aux installateurs alsaciens qui comptent parmi les plus qualifiés de France.",
+    "faq_local": {
+      "question": "Une PAC air/eau fonctionne-t-elle par grand froid alsacien (-10°C à -15°C) ?",
+      "answer": "Oui, les PAC modernes haute température fonctionnent jusqu'à -25°C. À Strasbourg (zone H1b), les installateurs RGE recommandent systématiquement des modèles comme la Daikin Altherma 3 ou l'Atlantic Alfea Excellia AI, qui maintiennent un COP de 2,5 même à -10°C. Un appoint électrique intégré prend le relais lors des pics de froid extrêmes (quelques jours par an). L'économie annuelle reste de 60 à 70% par rapport au gaz."
+    },
+    "market_data": "En Alsace (Bas-Rhin), les prix sont légèrement supérieurs : 11 000€ à 16 500€ TTC, car les modèles haute température nécessaires en zone H1b sont plus coûteux. En contrepartie, les économies de chauffage y sont parmi les plus importantes de France."
+  },
+  "bordeaux": {
+    "intro": "Bordeaux et la Gironde bénéficient d'un climat océanique doux, idéal pour la pompe à chaleur air/eau. Les quartiers résidentiels de Mérignac, Pessac ou Talence regorgent de maisons individuelles des années 1970-90 avec des chaudières gaz vieillissantes. La transition vers une PAC air/eau est la solution la plus demandée par les Bordelais : confort thermique amélioré, facture divisée par 3 et valorisation du bien immobilier dans un marché immobilier toujours dynamique.",
+    "local_tip": "Bordeaux Métropole a mis en place le programme 'Rénov'Habitat' avec des visites à domicile gratuites. Le Creaq (Centre Ressource en Éco-construction) propose des ateliers et des conseils personnalisés. Bordeaux étant en zone H2c (climat tempéré), un modèle standard suffit amplement — gare au surdimensionnement que certains installateurs moins scrupuleux pourraient proposer.",
+    "history_anecdote": "Les chais bordelais, ces bâtiments qui conservent le vin à température constante depuis des siècles, fonctionnent sur le même principe que la PAC : utiliser l'inertie thermique naturelle. Les vignerons ont compris depuis longtemps ce que la technologie des pompes à chaleur exploite : capturer et redistribuer la chaleur avec intelligence.",
+    "faq_local": {
+      "question": "Quel est le temps de retour sur investissement d'une PAC air/eau à Bordeaux ?",
+      "answer": "À Bordeaux (zone H2c, climat doux), le retour sur investissement est de 5 à 7 ans après aides. Avec un COP saisonnier moyen de 3,8 et des hivers modérés, les économies annuelles atteignent 1 200 à 1 800€ par rapport au gaz. Après déduction de MaPrimeRénov' et des CEE, le reste à charge moyen est de 5 000 à 8 000€."
+    },
+    "market_data": "En Gironde, le prix moyen est de 9 000€ à 14 000€ TTC, dans la moyenne nationale. Le nombre élevé d'installateurs RGE à Bordeaux garantit une bonne concurrence et des devis compétitifs."
+  },
+  "lille": {
+    "intro": "Lille et les Hauts-de-France affrontent des hivers gris et froids, avec des températures oscillant entre -5°C et 5°C de décembre à février. Malgré ce climat exigeant, la PAC air/eau s'est imposée comme l'alternative n°1 aux chaudières gaz dans les corons rénovés, les maisons de maître du Vieux-Lille et les pavillons de Roubaix, Tourcoing ou Villeneuve-d'Ascq. Les modèles haute température garantissent un confort optimal même par grand froid.",
+    "local_tip": "La MEL (Métropole Européenne de Lille) propose le dispositif 'Amélio' avec jusqu'à 10 000€ d'aides cumulées pour les rénovations globales incluant le remplacement du chauffage. Le Cerema Nord-Picardie offre des diagnostics thermiques subventionnés. En zone H1a (la plus froide de France), exigez un modèle avec un COP garanti à -7°C supérieur à 3.",
+    "history_anecdote": "Lille, ancienne capitale industrielle du textile, a chauffé ses usines au charbon pendant deux siècles. La reconversion vers les énergies propres est un symbole fort : les cheminées des manuflatures laissent place aux discrètes unités extérieures des pompes à chaleur, tournant la page de l'ère fossile dans le Nord.",
+    "faq_local": {
+      "question": "La PAC air/eau est-elle adaptée au climat du Nord ?",
+      "answer": "Oui, les PAC modernes fonctionnent parfaitement dans le Nord. Le COP moyen à Lille est certes inférieur (3,0 à 3,5 vs 4,0 à 4,5 dans le Sud), mais les économies restent de 50 à 65% par rapport au gaz. Pour 120m² à Lille, une PAC de 12-14 kW haute température (Atlantic Alfea Excellia ou Daikin Altherma 3H HT) est idéale. L'investissement est légèrement plus élevé mais les aides MaPrimeRénov' sont aussi plus généreuses en zone H1."
+    },
+    "market_data": "Dans le Nord, les prix vont de 10 500€ à 16 000€ TTC en raison du besoin de modèles haute température et de puissances plus élevées. Les aides y sont cependant plus généreuses (zone H1a), compensant largement le surcoût."
+  },
+  "rennes": {
+    "intro": "Rennes et la Bretagne bénéficient d'un climat océanique avec des hivers doux et humides — le terrain de jeu parfait pour la PAC air/eau. Les pavillons des quartiers de Cleunay, Villejean ou des communes de Cesson-Sévigné et Chantepie sont les premiers à adopter cette technologie. Avec des températures hivernales rarement négatives, le COP saisonnier à Rennes dépasse 3,8, garantissant un retour sur investissement rapide.",
+    "local_tip": "Rennes Métropole propose le service 'Écotravo' avec un accompagnement personnalisé gratuit et des aides locales cumulables. L'ADEME Bretagne organise régulièrement des 'Défis Familles à Énergie Positive' qui permettent de bénéficier de conseils en efficacité énergétique. Le climat breton humide n'affecte pas la PAC mais prévoyez un bon drainage autour de l'unité extérieure.",
+    "history_anecdote": "La Bretagne, longtemps chauffée au bois et au fioul, effectue une transition énergétique spectaculaire. Rennes est devenue en 2024 la première métropole française où le nombre d'installations de PAC a dépassé celui des chaudières gaz — un virage historique pour une région qui dépendait à 80% des énergies fossiles il y a encore 20 ans.",
+    "faq_local": {
+      "question": "L'humidité bretonne est-elle un problème pour la PAC air/eau ?",
+      "answer": "Non, l'humidité n'est pas un facteur limitant. Les PAC modernes intègrent des cycles de dégivrage automatiques qui gèrent parfaitement les conditions humides. À Rennes, avec des hivers doux (moy. 5-7°C), la PAC fonctionne dans des conditions optimales. Le seul point d'attention est la protection de l'unité extérieure contre les projections de feuilles et de mousse, fréquentes en Bretagne."
+    },
+    "market_data": "En Ille-et-Vilaine, le prix moyen est de 9 500€ à 14 000€ TTC, dans la moyenne basse nationale. Rennes bénéficie d'un excellent maillage d'artisans RGE formés aux spécificités du climat breton."
+  },
+  "reims": {
+    "intro": "Reims, cœur de la Champagne, connaît des hivers froids et des amplitudes thermiques marquées. Les maisons champenoises en pierre de taille et les pavillons des quartiers résidentiels de Tinqueux, Cormontreuil ou Bétheny sont idéaux pour accueillir une PAC air/eau. La région Grand Est est d'ailleurs l'une des plus dynamiques en matière d'installation de pompes à chaleur, portée par les aides généreuses liées à la zone climatique H1.",
+    "local_tip": "Le Grand Reims propose des aides via le programme 'Habiter Mieux Sérénité'. L'ALEC Champagne-Ardenne offre des consultations gratuites sur rendez-vous. Astuce locale : les caves de champagne rémoises, creusées dans la craie, maintiennent naturellement 10-12°C — si vous avez une cave, l'installer à proximité de la PAC permet d'optimiser la température de départ de l'eau.",
+    "history_anecdote": "La cathédrale de Reims, chef-d'œuvre du XIII siècle où étaient sacrés les rois de France, est aujourd'hui chauffée par un système géothermique innovant. À votre échelle, une PAC air/eau apporte le même niveau de confort thermique à votre maison rémoise — sans la facture royale.",
+    "faq_local": {
+      "question": "La PAC air/eau est-elle adaptée aux maisons en pierre typiques de Reims ?",
+      "answer": "Oui, et c'est même recommandé. Les maisons en pierre champenoises ont une forte inertie thermique qui se marie parfaitement avec le fonctionnement continu d'une PAC. Le plancher chauffant basse température est la combinaison idéale, mais les radiateurs en fonte existants peuvent aussi convenir avec un modèle haute température (65°C). Nos artisans RGE à Reims sont habitués à ces configurations."
+    },
+    "market_data": "Dans la Marne, les prix constatés sont de 10 000€ à 15 500€ TTC, légèrement supérieurs à la moyenne en raison de la zone H1b qui nécessite des modèles plus performants."
+  },
+  "le-havre": {
+    "intro": "Le Havre, ville portuaire ouverte sur la Manche, offre un climat océanique marqué par l'humidité et les vents. Les maisons reconstruites après-guerre par l'architecte Auguste Perret, les pavillons de Sainte-Adresse ou les résidences du quartier de l'Eure bénéficient tous d'un remplacement de chaudière par une PAC air/eau. Le climat havrais, doux en hiver (rarement sous 0°C), est idéal pour cette technologie.",
+    "local_tip": "Le Havre Seine Métropole propose le programme 'Rénover Malin' avec des aides dédiées. L'exposition au vent marin est le principal point d'attention : choisissez un modèle avec traitement anti-corrosion et installez l'unité extérieure du côté abrité de la maison. Les installateurs RGE du Havre maîtrisent ces contraintes spécifiques.",
+    "history_anecdote": "Le Havre, reconstruit après 1945 par Auguste Perret avec du béton armé, est classé au patrimoine mondial de l'UNESCO. Ces bâtiments, conçus avec rigueur et fonctionnalité, s'adaptent parfaitement aux systèmes modernes de chauffage comme la PAC air/eau — Perret, précurseur du béton, aurait sans doute approuvé cette autre innovation technique.",
+    "faq_local": {
+      "question": "Le vent marin du Havre affecte-t-il la durée de vie d'une PAC ?",
+      "answer": "Sans protection, l'air salin peut réduire la durée de vie des échangeurs. Les installateurs RGE du Havre recommandent systématiquement des modèles avec coating anti-corrosion Blue Fin et prévoient une maintenance annuelle renforcée incluant le nettoyage des ailettes. Avec ces précautions, la durée de vie reste de 15 à 20 ans."
+    },
+    "market_data": "En Seine-Maritime, les prix moyens sont de 10 000€ à 15 000€ TTC, similaires à la moyenne nationale."
+  },
+  "saint-etienne": {
+    "intro": "Saint-Étienne, nichée dans la vallée du Furan à 500m d'altitude, connaît des hivers froids avec neige régulière. Cette situation géographique exige une PAC air/eau performante, mais les modèles haute température actuels relèvent le défi sans difficulté. Les maisons des quartiers de La Terrasse, Montplaisir ou Côte Chaude, souvent chauffées au fioul, sont les premières à bénéficier de cette transition énergétique.",
+    "local_tip": "Saint-Étienne Métropole propose le programme 'Rénov'Action' avec un guichet unique pour les aides à la rénovation. L'altitude (450-700m) classe la ville en zone H1c renforcée : prévoyez un ballon tampon de 200L minimum pour optimiser les cycles de la PAC lors des périodes de grand froid. Les artisans stéphanois sont experts de ces installations en zone montagneuse.",
+    "history_anecdote": "Saint-Étienne, capitale historique de l'armement et du cycle, a toujours été une ville d'ingénieurs et d'innovateurs. Le Musée d'Art et d'Industrie témoigne de cet esprit pionnier que l'on retrouve aujourd'hui dans l'adoption rapide des pompes à chaleur par les habitants de la 'Ville Design' UNESCO.",
+    "faq_local": {
+      "question": "L'altitude de Saint-Étienne réduit-elle l'efficacité d'une PAC ?",
+      "answer": "L'altitude elle-même n'affecte pas directement la PAC, mais les températures plus basses réduisent légèrement le COP moyen (3,0 à 3,5 vs 4,0 dans le Sud). En contrepartie, les économies versus le fioul sont encore plus importantes à Saint-Étienne car la consommation de chauffage est élevée. Un modèle 12-16 kW haute température avec ballon tampon est la configuration recommandée."
+    },
+    "market_data": "Dans la Loire, les prix sont de 10 500€ à 16 000€ TTC, dans la moyenne des zones H1. Le remplacement des chaudières fioul, encore nombreuses dans le bassin stéphanois, bénéficie de bonus MaPrimeRénov' supplémentaires."
+  },
+  "toulon": {
+    "intro": "Toulon, rade militaire et joyau de la Côte d'Azur, profite du climat le plus doux de France avec des hivers exceptionnellement cléments. La PAC air/eau y affiche des performances records avec un COP dépassant 4,5 en moyenne annuelle. Les quartiers du Mourillon, de la Rode ou de La Garde sont parfaits pour cette installation. Le rafraîchissement estival, avec un modèle réversible, est un bonus apprécié face aux canicules provençales.",
+    "local_tip": "La Métropole Toulon Provence Méditerranée propose des aides via le programme 'Rénov'Habitat TPM'. Comme à Nice, l'exposition au sel marin impose un modèle avec traitement anti-corrosion pour les logements proches du littoral. Les installateurs RGE varois sont formés à cette spécificité méditerranéenne.",
+    "history_anecdote": "La Marine nationale, implantée à Toulon depuis Louis XIV, a été pionnière dans l'utilisation des pompes à chaleur pour le conditionnement d'air de ses bâtiments. Ce savoir-faire militaire a essaimé dans le tissu d'artisans locaux qui comptent parmi les plus expérimentés du sud de la France.",
+    "faq_local": {
+      "question": "Faut-il une PAC haute température à Toulon ?",
+      "answer": "Non, un modèle standard (jusqu'à 55°C) suffit amplement pour Toulon grâce au climat méditerranéen. Cela vous fait économiser 1 000 à 2 000€ sur le prix d'achat par rapport à un modèle haute température. Les installations à Toulon sont parmi les plus simples et les moins coûteuses de France."
+    },
+    "market_data": "Dans le Var, le prix moyen est de 8 500€ à 13 000€ TTC, parmi les plus bas de France grâce au climat favorable (modèle standard suffisant) et à la forte concurrence d'installateurs."
+  },
+  "grenoble": {
+    "intro": "Grenoble, enclavée entre les massifs de la Chartreuse, du Vercors et de Belledonne, connaît un climat semi-continental avec des hivers froids et des inversions de température fréquentes. Les maisons de Meylan, Échirolles ou Fontaine, chauffées au gaz ou au fioul, trouvent dans la PAC air/eau haute température une alternative économique et éco-responsable. La cuvette grenobloise, bien que froide en hiver, offre des températures stables qui permettent un bon dimensionnement de la PAC.",
+    "local_tip": "Grenoble-Alpes Métropole est pionnière en rénovation énergétique avec le dispositif 'MUR|MUR' qui offre un accompagnement global (audit + travaux + financement). L'ALEC du Grand Grenoble anime un réseau d'artisans RGE de confiance. En fond de vallée, les inversions thermiques maintiennent des températures entre 0°C et -5°C en hiver, un régime favorable aux PAC modernes.",
+    "history_anecdote": "Grenoble, berceau de la houille blanche (hydroélectricité) grâce à Aristide Bergès en 1869, a une longue tradition d'innovation énergétique. La PAC air/eau, qui fonctionne elle aussi grâce à l'électricité, s'inscrit dans cette lignée grenobloise de valorisation des ressources naturelles — l'air remplaçant l'eau des torrents alpins.",
+    "faq_local": {
+      "question": "Les inversions thermiques de la cuvette grenobloise affectent-elles la PAC ?",
+      "answer": "Les inversions thermiques maintiennent paradoxalement des températures relativement stables entre 0°C et -5°C en fond de vallée, ce qui est favorable à la PAC. En revanche, en altitude (quartiers de la Bastille ou communes comme Le Sappey), les températures descendent plus bas et un modèle haute température 14-16 kW est recommandé. Les installateurs grenoblois connaissent parfaitement ces microclimats."
+    },
+    "market_data": "En Isère, les prix sont de 10 500€ à 16 000€ TTC, dans la moyenne des zones H1. Le réseau dense d'artisans RGE dans la métropole grenobloise assure des devis compétitifs."
+  },
+  "dijon": {
+    "intro": "Dijon, capitale de la Bourgogne et cité des Ducs, connaît un climat semi-continental avec des hivers froids et secs. Les hôtels particuliers du centre historique, les maisons vigneronnes et les pavillons des quartiers de Talant, Chenôve ou Fontaine-d'Ouche sont autant de logements où la PAC air/eau remplace avantageusement les chaudières vétustes. Le sol calcaire bourguignon, qui se refroidit vite en hiver, rend le chauffage par le sol alimenté par PAC particulièrement confortable.",
+    "local_tip": "Dijon Métropole, récompensée 'Green Capital' par l'UE, offre des aides exceptionnelles via le programme OnDijon. L'Agence Locale de l'Énergie et du Climat de Côte-d'Or propose des permanences gratuites. Astuce : les caves à vin bourguignonnes, naturellement à 12°C, sont un excellent emplacement pour le groupe hydraulique intérieur de la PAC.",
+    "history_anecdote": "Les Hospices de Beaune, fleuron de l'architecture bourguignonne depuis 1443, ont récemment été équipés d'un système de chauffage géothermique moderne. À votre échelle, une PAC air/eau offre le même confort que celui réservé autrefois aux malades de l'Hôtel-Dieu — le luxe du chauffage central à la bourguignonne.",
+    "faq_local": {
+      "question": "Le climat froid de Dijon nécessite-t-il une PAC haute température ?",
+      "answer": "En zone H1c, une PAC haute température (65°C) est recommandée si vous conservez vos radiateurs en fonte. Pour une installation neuve avec plancher chauffant, un modèle standard (55°C) suffit et coûte 1 500€ de moins. Les hivers dijonnais (-5°C à -10°C) sont parfaitement gérés par les modèles modernes certifiés NF PAC."
+    },
+    "market_data": "En Côte-d'Or, les prix moyens sont de 10 000€ à 15 500€ TTC. Dijon bénéficie d'une concentration d'artisans RGE supérieure à la moyenne départementale."
+  },
+  "angers": {
+    "intro": "Angers, douceur angevine oblige, bénéficie d'un climat parmi les plus tempérés de France. Les hivers sont rarement rigoureux et les étés agréables — un profil idéal pour la PAC air/eau qui y affiche un COP saisonnier dépassant 3,8. Les maisons en tuffeau, typiques de l'Anjou, les pavillons d'Avrillé, Trélazé ou Beaucouzé sont parfaits pour accueillir cette technologie de chauffage moderne.",
+    "local_tip": "Angers Loire Métropole propose le service 'CoachCopro' pour les copropriétés et 'Habitat Conseil' pour les particuliers. L'association Alisée accompagne gratuitement les projets de rénovation énergétique. En Anjou, le calcaire tuffeau des maisons anciennes conserve bien la chaleur l'hiver, ce qui optimise le rendement de la PAC.",
+    "history_anecdote": "Le château d'Angers, forteresse du XIIIe siècle construite en schiste et calcaire, est l'un des plus grands châteaux médiévaux d'Europe. Ses murs de 3 mètres d'épaisseur assuraient naturellement une isolation thermique parfaite — un principe que la PAC air/eau prolonge avec la technologie moderne dans les maisons angevines.",
+    "faq_local": {
+      "question": "Quelle économie réalise-t-on avec une PAC air/eau à Angers ?",
+      "answer": "À Angers (zone H2b, climat doux), le passage d'une chaudière gaz à une PAC air/eau permet d'économiser 60 à 70% sur la facture de chauffage, soit 1 000 à 1 500€ par an pour un logement de 120m². Avec le climat clément angevin, le retour sur investissement est de 5 à 6 ans après aides."
+    },
+    "market_data": "En Maine-et-Loire, les prix sont de 9 000€ à 13 500€ TTC, légèrement sous la moyenne nationale. La 'douceur angevine' se retrouve aussi dans les devis !"
+  },
+  "nimes": {
+    "intro": "Nîmes, cité romaine baignée de soleil, offre un climat méditerranéen parfait pour la PAC air/eau. Les arènes antiques témoignent d'un savoir-faire architectural millénaire, et les maisons nîmoises modernes méritent tout autant un chauffage performant. Des quartiers de la Croix de Fer aux résidences de Castanet ou Costières, la PAC air/eau réversible est la solution tout-en-un : chauffage l'hiver, rafraîchissement l'été face aux 40°C gardois.",
+    "local_tip": "Nîmes Métropole propose des aides via le programme 'Habiter Mieux'. L'ADIL du Gard offre des consultations juridiques gratuites sur les aides financières. Attention au CEP (épisodes cévenols) : lors de pluies intenses, vérifiez que l'unité extérieure est surélevée de 10 cm minimum et que le drainage environnant est correct.",
+    "history_anecdote": "Les Romains qui ont construit les arènes de Nîmes et le Pont du Gard maîtrisaient déjà l'aqueduc et le chauffage par hypocauste. Deux mille ans plus tard, la PAC air/eau perpétue cette tradition d'ingénierie thermique dans le Gard — avec un rendement que les ingénieurs romains auraient envié.",
+    "faq_local": {
+      "question": "La climatisation réversible via PAC air/eau est-elle efficace à Nîmes ?",
+      "answer": "Oui, c'est même un argument décisif à Nîmes où les étés sont parmi les plus chauds de France (souvent > 35°C en juillet-août). Le rafraîchissement via plancher chauffant/refroidissant ou via ventilo-convecteurs est très efficace et consomme 3 à 4 fois moins qu'une climatisation classique."
+    },
+    "market_data": "Dans le Gard, les prix sont de 8 500€ à 13 000€ TTC, parmi les plus compétitifs de France grâce au climat favorable et à la forte densité d'artisans."
+  },
+  "villeurbanne": {
+    "intro": "Villeurbanne, jumelle de Lyon, partage son dynamisme et son climat semi-continental. Les résidences des Gratte-Ciel, les pavillons de Cusset ou les immeubles de Tonkin sont autant de logements où la PAC air/eau remplace avantageusement le chauffage collectif au gaz. La proximité de Lyon garantit un accès à un réseau dense d'installateurs RGE.",
+    "local_tip": "Les Villeurbannais bénéficient des mêmes aides que la Métropole de Lyon via le programme Écoréno'v. L'ALEC Lyon intervient aussi sur Villeurbanne. En copropriété (nombreuses aux Gratte-Ciel), la PAC air/eau individuelle est souvent préférable à une solution collective.",
+    "history_anecdote": "Les Gratte-Ciel de Villeurbanne, construits par Môrice Leroux dans les années 1930, étaient l'un des premiers ensembles urbains modernistes de France. Ces pionniers du logement social auraient sans doute adopté la PAC air/eau s'ils l'avaient connue.",
+    "faq_local": {
+      "question": "Peut-on installer une PAC air/eau en copropriété à Villeurbanne ?",
+      "answer": "Oui, avec l'accord de la copropriété. À Villeurbanne, les syndics sont de plus en plus favorables aux PAC individuelles qui réduisent les charges collectives. L'unité extérieure peut être installée sur balcon (avec support anti-vibration) ou en toiture-terrasse."
+    },
+    "market_data": "À Villeurbanne et dans le Rhône, les prix moyens sont de 10 000€ à 15 000€ TTC. La proximité de Lyon assure un excellent choix d'installateurs et des devis compétitifs."
+  },
+  "le-mans": {
+    "intro": "Le Mans, capitale de la Sarthe, offre un climat océanique dégradé avec des hivers doux et des étés modérés. Les pavillons des quartiers résidentiels des Sablons, de Pontlieue ou d'Allonnes sont parfaits pour la PAC air/eau. La ville des 24 Heures sait ce que signifie la performance — et votre PAC ne sera pas en reste.",
+    "local_tip": "Le Mans Métropole propose le programme 'Habiter Mieux' avec des aides complémentaires. L'Espace Info Énergie de la Sarthe offre des diagnostics gratuits. Le climat manceau, doux et humide, permet d'utiliser un modèle standard avec un excellent COP.",
+    "history_anecdote": "Le circuit des 24 Heures du Mans, temple de l'endurance automobile depuis 1923, symbolise la course à l'efficacité énergétique. Une PAC air/eau, c'est un peu la même philosophie : aller le plus loin possible avec le moins d'énergie possible.",
+    "faq_local": {
+      "question": "Le climat doux du Mans est-il favorable à la PAC ?",
+      "answer": "Très favorable. Le Mans est en zone H2b avec des hivers rarement sous -5°C. Le COP saisonnier moyen est de 3,8 à 4, ce qui garantit un retour sur investissement en 5 à 6 ans. Un modèle standard 55°C suffit dans la grande majorité des cas."
+    },
+    "market_data": "En Sarthe, les prix sont de 9 000€ à 14 000€ TTC, dans la moyenne basse nationale. Le Mans offre un bon rapport qualité/prix pour l'installation de PAC."
+  },
+  "aix-en-provence": {
+    "intro": "Aix-en-Provence, cité de Cézanne, bénéficie d'un ensoleillement exceptionnel et d'un climat méditerranéen qui fait de la PAC air/eau un investissement parmi les plus rentables de France. Les bastides provençales, les mas rénovés du Pays d'Aix et les résidences du quartier du Jas de Bouffan sont les candidats idéaux. Le mistral, omniprésent, nécessite cependant un positionnement réfléchi de l'unité extérieure.",
+    "local_tip": "Le Pays d'Aix propose des aides à la rénovation via l'ALEC du Pays d'Aix. Le mistral est votre ami pour le rendement (air sec et brassé) mais votre ennemi pour le bruit : installez l'unité extérieure à l'abri du vent dominant (côté sud-est). Les artisans RGE aixois maîtrisent parfaitement cette contrainte.",
+    "history_anecdote": "Les thermes romains de Sextius, fondés en 122 av. J.-C. par les Romains qui exploitaient déjà les eaux chaudes naturelles d'Aix, témoignent que la ville a toujours su tirer parti des ressources thermiques. La PAC air/eau s'inscrit dans cette tradition bimillénaire.",
+    "faq_local": {
+      "question": "Le mistral affecte-t-il les performances d'une PAC à Aix ?",
+      "answer": "Le mistral améliore légèrement les performances en brassant l'air autour de l'évaporateur. En revanche, le vent peut créer des nuisances sonores (effet Venturi). Les installateurs RGE d'Aix recommandent un positionnement abrité avec un écran pare-vent. Le COP moyen à Aix dépasse 4,3 — parmi les meilleurs de France."
+    },
+    "market_data": "À Aix-en-Provence et dans les Bouches-du-Rhône, les prix vont de 9 500€ à 15 000€ TTC, légèrement supérieurs à Marseille en raison du standing des logements et des exigences esthétiques plus élevées."
+  },
+  "clermont-ferrand": {
+    "intro": "Clermont-Ferrand, au pied de la chaîne des Puys classée UNESCO, connaît un climat semi-continental avec des hivers froids accentués par l'altitude (400m). Les maisons en pierre de Volvic, emblèmes du patrimoine clermontois, et les pavillons de Chamalières, Ceyrat ou Beaumont trouvent dans la PAC air/eau une solution de chauffage adaptée aux rigueurs auvergnates.",
+    "local_tip": "Clermont Auvergne Métropole propose le dispositif 'Rénov'Habitat' avec un guichet unique. L'ADIL 63 offre des consultations gratuites. En Auvergne (zone H1c), un modèle haute température est recommandé. Les maisons en pierre de Volvic ont une excellente inertie thermique qui optimise le fonctionnement de la PAC.",
+    "history_anecdote": "Clermont-Ferrand, berceau de Michelin et du pneumatique, a révolutionné la mobilité mondiale. Aujourd'hui, c'est la mobilité énergétique qui est en marche : les foyers clermontois passent du fioul à la PAC air/eau avec la même détermination que Bibendum sur la route.",
+    "faq_local": {
+      "question": "L'altitude de Clermont-Ferrand nécessite-t-elle une PAC spéciale ?",
+      "answer": "À 400m d'altitude, Clermont-Ferrand connaît des hivers plus froids que la plaine (-5 à -12°C). Un modèle haute température 14-16 kW (Daikin Altherma 3H ou Atlantic Alfea Excellia) est recommandé. Le ballon tampon de 200L est quasi indispensable pour lisser les cycles."
+    },
+    "market_data": "Dans le Puy-de-Dôme, les prix sont de 10 500€ à 16 000€ TTC, dans la moyenne des zones H1. Les aides sont plus généreuses en zone froide."
+  },
+  "brest": {
+    "intro": "Brest, pointe extrême de la Bretagne, affronte un climat océanique prononcé avec vent, pluie et douceur hivernale. Les pavillons de Saint-Marc, Lambézellec ou Guipavas sont parfaits pour la PAC air/eau : malgré le vent, les températures rarement négatives garantissent un excellent COP. La Bretagne est d'ailleurs la région de France où les PAC se vendent le plus !",
+    "local_tip": "Brest Métropole propose le programme 'Tinergie' avec un accompagnement et des aides spécifiques. Le vent brestois (150 jours de vent fort/an) impose un positionnement soigné de l'unité extérieure et un modèle avec traitement anti-corrosion marine. Les installateurs locaux sont experts de ces contraintes atlantiques.",
+    "history_anecdote": "Le port de Brest, base navale stratégique depuis Richelieu, a toujours été à la pointe de l'innovation maritime. Les sous-marins nucléaires de l'Île Longue utilisent d'ailleurs des systèmes thermodynamiques similaires aux pompes à chaleur pour leur conditionnement d'air !",
+    "faq_local": {
+      "question": "Le vent et l'air marin de Brest abîment-ils la PAC ?",
+      "answer": "L'air salin peut réduire la durée de vie des échangeurs sans précaution. À Brest, choisissez systématiquement un modèle avec coating anti-corrosion (Blue Fin, Gold Fin). Le vent n'affecte pas les performances mais peut augmenter le bruit : un écran pare-vent est recommandé. Avec ces précautions, votre PAC durera 15-20 ans."
+    },
+    "market_data": "Dans le Finistère, les prix sont de 9 500€ à 14 500€ TTC. Brest bénéficie de la forte dynamique de la filière PAC en Bretagne avec de nombreux installateurs RGE compétents."
+  },
+  "tours": {
+    "intro": "Tours, jardin de la France au cœur de la Loire, offre un climat tempéré idéal pour la PAC air/eau. Les maisons de tuffeau du Vieux-Tours, les pavillons de Joué-lès-Tours ou Saint-Avertin, et les résidences des bords de Loire bénéficient de conditions climatiques parfaites : hivers doux (rarement sous -5°C) et COP saisonnier supérieur à 3,8.",
+    "local_tip": "Tours Métropole propose le dispositif 'Métropole Rénov' avec accompagnement gratuit. Le tuffeau, pierre emblématique de Touraine, a une excellente inertie thermique qui se marie parfaitement avec le chauffage par PAC. L'ADIL 37 offre des consultations juridiques gratuites sur les aides financières.",
+    "history_anecdote": "Les châteaux de la Loire, de Chenonceau à Chambord, possédaient des systèmes de chauffage sophistiqués pour l'époque. Les cheminées monumentales des Renaissance consommaient des forêts entières ! Aujourd'hui, une PAC air/eau chauffe un château de 300m² pour le prix d'un studio parisien au radiateur électrique.",
+    "faq_local": {
+      "question": "Le tuffeau des maisons tourangelles est-il compatible avec la PAC ?",
+      "answer": "Parfaitement. Le tuffeau, pierre calcaire tendre, offre une excellente inertie thermique et régule naturellement l'humidité intérieure. Un plancher chauffant alimenté par PAC air/eau dans une maison en tuffeau offre un confort exceptionnel. En revanche, l'isolation par l'extérieur est déconseillée sur tuffeau : privilégiez l'isolation par l'intérieur."
+    },
+    "market_data": "En Indre-et-Loire, les prix moyens sont de 9 000€ à 13 500€ TTC, parmi les plus accessibles de France. Le marché tourangeau est mature avec de nombreux installateurs compétitifs."
+  },
+  "amiens": {
+    "intro": "Amiens, capitale de la Picardie et ville de Jules Verne, connaît des hivers froids et humides typiques des Hauts-de-France. Les maisons picardes en brique rouge, les pavillons d'Abbeville ou de Longueau sont des candidats parfaits pour la PAC air/eau haute température. La cathédrale d'Amiens, plus grande de France, témoigne du savoir-faire centenaire des artisans picards.",
+    "local_tip": "Amiens Métropole propose le programme 'Habiter Mieux' avec des aides spécifiques zone H1a. L'ALEC de la Somme accompagne gratuitement les particuliers. En zone H1a (la plus froide de France), exigez un modèle certifié NF PAC avec un COP ≥ 3,0 à -7°C.",
+    "history_anecdote": "Jules Verne, qui vécut à Amiens de 1871 à 1905, imaginait des mondes chauffés par des énergies du futur dans ses romans. La pompe à chaleur, qui extrait la chaleur de l'air froid, est exactement le type de technologie qui aurait enflammé son imagination visionnaire.",
+    "faq_local": {
+      "question": "Faut-il un appoint électrique à Amiens avec la PAC ?",
+      "answer": "Les PAC modernes intègrent un appoint électrique qui se déclenche automatiquement sous -10°C. À Amiens (zone H1a), cet appoint n'est sollicité que 10 à 15 jours par an. L'impact sur la facture annuelle est minime (< 50€). Les modèles Daikin Altherma et Atlantic Alfea fonctionnent jusqu'à -25°C."
+    },
+    "market_data": "Dans la Somme, les prix sont de 10 500€ à 16 000€ TTC. Les modèles haute température nécessaires en zone H1a augmentent le coût, mais les aides MaPrimeRénov' y sont maximales."
+  },
+  "limoges": {
+    "intro": "Limoges, capitale des arts du feu et de la porcelaine, se situe au cœur du Limousin avec un climat semi-océanique. Les hivers sont frais sans être rigoureux, idéaux pour la PAC air/eau. Les maisons limousines en granit, les pavillons de Panazol ou Isle, et les résidences du quartier de la Bastide trouvent dans cette technologie une alternative économique au fioul, encore très présent dans la région.",
+    "local_tip": "Le programme 'DOREMI en Limousin' offre un accompagnement global pour la rénovation énergétique. Le Limousin est l'une des régions les plus dépendantes du fioul de chauffage : le bonus MaPrimeRénov' pour le remplacement du fioul (jusqu'à 1 500€ supplémentaires) est particulièrement intéressant à Limoges.",
+    "history_anecdote": "Les fours des manufactures de porcelaine de Limoges, chauffés à 1 400°C depuis le XVIIIe siècle, ont forgé l'expertise thermique limousine. Cette maîtrise du feu se retrouve dans la qualité des installateurs locaux qui comprennent les subtilités du transfert de chaleur.",
+    "faq_local": {
+      "question": "Peut-on remplacer une chaudière fioul par une PAC à Limoges ?",
+      "answer": "C'est exactement le cas d'usage le plus courant à Limoges. Le remplacement fioul → PAC air/eau est le plus rentable : économie de 60 à 75% sur la facture et aides bonifiées (prime CEE fioul + MaPrimeRénov'). Le circuit de radiateurs existant peut être conservé avec un modèle haute température."
+    },
+    "market_data": "En Haute-Vienne, les prix sont de 9 500€ à 14 500€ TTC. Le remplacement de chaudière fioul est éligible à des aides bonifiées qui réduisent significativement le reste à charge."
+  },
+  "annecy": {
+    "intro": "Annecy, perle des Alpes au bord de son lac légendaire, connaît un climat montagnard adouci par la proximité lacustre. Les chalets des hauteurs de Semnoz, les maisons de Cran-Gevrier ou les résidences de Seynod sont tous candidats à la PAC air/eau. L'altitude (450-1000m selon les quartiers) exige un modèle haute performance, mais les économies face au fioul ou au propane — courants en Haute-Savoie — sont spectaculaires.",
+    "local_tip": "Le Grand Annecy propose des aides via le programme 'Annecy Climat 2030'. La CAUE 74 offre des conseils architecturaux gratuits. En zone de montagne, le ballon tampon est indispensable et la puissance doit être majorée de 10-15% par rapport à la plaine. Privilégiez les modèles certifiés Keymark avec un COP à -15°C.",
+    "history_anecdote": "Le lac d'Annecy, considéré comme le plus pur d'Europe grâce au système de collecte des eaux usées mis en place dans les années 1960, est un symbole de la capacité des Annéciens à innover pour l'environnement. La PAC air/eau perpétue cette tradition de transition écologique alpine.",
+    "faq_local": {
+      "question": "Une PAC air/eau est-elle efficace en altitude à Annecy ?",
+      "answer": "Oui, à condition de choisir le bon modèle. À 450m (centre d'Annecy), un modèle standard haute température suffit. Au-dessus de 800m (Semnoz, Talloires), privilégiez une PAC dimensionnée pour -20°C avec ballon tampon 300L. Le COP moyen reste de 3,0 à 3,5 — largement suffisant pour diviser la facture par 2,5 versus le propane."
+    },
+    "market_data": "En Haute-Savoie, les prix sont de 11 000€ à 17 000€ TTC, supérieurs à la moyenne en raison des contraintes montagne et du coût de la vie local. Le ROI reste excellent face au propane (1,50€/L)."
+  },
+  "perpignan": {
+    "intro": "Perpignan, ancienne capitale du royaume de Majorque, bénéficie d'un des climats les plus ensoleillés de France avec plus de 300 jours de soleil. La PAC air/eau y affiche des performances exceptionnelles avec un COP moyen supérieur à 4,5. Les maisons catalanes, les villas du Moulin-à-Vent ou les résidences de Canet-en-Roussillon sont idéales pour cette technologie.",
+    "local_tip": "Perpignan Méditerranée Métropole propose des aides via le programme 'Habiter Mieux Sérénité'. La tramontane, vent sec et froid, souffle fréquemment : protégez l'unité extérieure du côté nord-ouest. En zone H3, un modèle standard suffit — ne vous laissez pas convaincre d'acheter un modèle haute température inutile ici.",
+    "history_anecdote": "Le Palais des Rois de Majorque, forteresse du XIIIe siècle surplombant Perpignan, était chauffé par d'immenses cheminées qui engloutissaient les forêts des Pyrénées. Aujourd'hui, une PAC air/eau chauffe un logement perpignanais pour moins de 50€ par mois.",
+    "faq_local": {
+      "question": "Un modèle standard suffit-il à Perpignan ?",
+      "answer": "Absolument. Perpignan est en zone H3 (la plus douce de France métropolitaine). Un modèle standard 55°C est parfait et coûte 1 500 à 2 000€ de moins qu'un haute température. Les hivers sont si doux que la PAC fonctionne avec un COP de 4,5+ quasi toute la saison."
+    },
+    "market_data": "Dans les Pyrénées-Orientales, les prix sont parmi les plus bas : 8 000€ à 12 500€ TTC. Le modèle standard suffit et la main d'œuvre est compétitive."
+  },
+  "metz": {
+    "intro": "Metz, cité millénaire de Lorraine, connaît des hivers rigoureux dans la continuité du climat continental. La cathédrale Saint-Étienne aux vitraux immenses témoigne de la capacité des Messins à maîtriser leur environnement. Les maisons messines en pierre de Jaumont, les pavillons de Montigny-lès-Metz ou Woippy sont tous candidats à un remplacement de chaudière par une PAC air/eau haute température.",
+    "local_tip": "Metz Métropole propose le dispositif 'Metz Mon Habitat' avec des primes locales. L'ALEC de la Moselle offre des audits énergétiques gratuits. La pierre de Jaumont, calcaire ocre typique, a une bonne inertie thermique. En zone H1b, un modèle haute température 65°C est indispensable pour les radiateurs en fonte.",
+    "history_anecdote": "Le Centre Pompidou-Metz, chef-d'œuvre architectural de Shigeru Ban inauguré en 2010, est chauffé par un réseau de chaleur urbain à haute performance. À votre échelle, une PAC air/eau apporte cette même modernité énergétique à votre maison messine.",
+    "faq_local": {
+      "question": "Le climat lorrain convient-il à la PAC air/eau ?",
+      "answer": "Oui, avec le bon dimensionnement. Metz (zone H1b) a des hivers froids (-5 à -12°C) mais les PAC modernes gèrent parfaitement. Optez pour un modèle 12-16 kW haute température certifié NF PAC. Les économies restent de 55 à 65% vs le gaz malgré le climat."
+    },
+    "market_data": "En Moselle, les prix sont de 10 500€ à 16 000€ TTC. Les modèles haute température sont indispensables en zone H1b, ce qui augmente le coût mais les aides compensent."
+  },
+  "besancon": {
+    "intro": "Besançon, capitale de l'horlogerie française nichée dans une boucle du Doubs, connaît un climat semi-continental froid. Les maisons bisontiennes en pierre bleue, les pavillons de Planoise ou Palente, et les résidences du quartier de la Butte bénéficient tous d'un remplacement de chaudière par PAC air/eau. La Franche-Comté, encore très dépendante du fioul, offre un potentiel d'économies considérable.",
+    "local_tip": "Grand Besançon Métropole propose le programme 'Habiter Mieux' avec aides locales. La Franche-Comté est la 2ème région la plus dépendante du fioul : le bonus MaPrimeRénov' dépose fioul est particulièrement intéressant ici. L'ADIL 25 accompagne gratuitement les projets.",
+    "history_anecdote": "Besançon, ville de Victor Hugo et des horlogers, a toujours cultivé la précision. La PAC air/eau moderne, pilotée par des algorithmes d'intelligence artificielle qui ajustent la température au dixième de degré, aurait ravi les maîtres horlogers du Quai Vauban.",
+    "faq_local": {
+      "question": "Peut-on garder ses radiateurs en fonte avec une PAC à Besançon ?",
+      "answer": "Oui, avec un modèle haute température (65-70°C). Les radiateurs en fonte, très courants dans les maisons bisontines, fonctionnent parfaitement avec une PAC haute température. Le rendement est légèrement inférieur qu'avec un plancher chauffant, mais le confort est excellent et vous évitez de lourds travaux."
+    },
+    "market_data": "Dans le Doubs, les prix sont de 10 500€ à 16 000€ TTC. Le remplacement de chaudière fioul bénéficie d'aides bonifiées très intéressantes en Franche-Comté."
+  },
+  "orleans": {
+    "intro": "Orléans, cité johannique au bord de la Loire, offre un climat tempéré du Val de Loire idéal pour la PAC air/eau. Les maisons à colombages du centre historique, les pavillons d'Olivet, Saint-Jean-de-la-Ruelle ou Fleury-les-Aubrais sont autant de logements où cette technologie excelle. Le bassin orléanais, en plein essor démographique, voit fleurir les installations de PAC dans les quartiers résidentiels.",
+    "local_tip": "Orléans Métropole propose le dispositif 'Mon Projet Rénov' avec accompagnement gratuit de l'ADIL 45. La région Centre-Val de Loire offre des primes complémentaires. En zone H2b, un modèle standard 55°C convient pour la majorité des installations.",
+    "history_anecdote": "Jeanne d'Arc, qui libéra Orléans en 1429, a prouvé qu'une seule personne pouvait changer le destin d'une ville. Aujourd'hui, en installant une PAC air/eau, chaque Orléanais contribue à libérer sa ville de la dépendance aux énergies fossiles.",
+    "faq_local": {
+      "question": "Les crues de la Loire peuvent-elles endommager une PAC à Orléans ?",
+      "answer": "Si vous êtes en zone inondable du Plan de Prévention des Risques de la Loire, l'unité extérieure doit être surélevée au-dessus de la cote de crue de référence. Les installateurs RGE d'Orléans connaissent ces contraintes et positionnent l'unité en hauteur (muret ou support surélevé). Pour les quartiers hors zone inondable, aucune précaution particulière."
+    },
+    "market_data": "Dans le Loiret, les prix moyens sont de 9 500€ à 14 000€ TTC, dans la moyenne nationale. Orléans bénéficie de sa proximité avec l'Île-de-France pour l'accès aux installateurs."
+  },
+  "mulhouse": {
+    "intro": "Mulhouse, cité industrielle du Haut-Rhin, partage avec Colmar et Strasbourg le climat continental alsacien : hivers froids, étés chauds. Les maisons ouvrières des anciens quartiers textiles, les pavillons de Riedisheim ou Brunstatt et les résidences du Rebberg sont tous éligibles à la PAC air/eau. La tradition industrielle mulhousienne se retrouve dans l'excellence des chauffagistes locaux.",
+    "local_tip": "Mulhouse Alsace Agglomération propose des aides via le programme 'Climaxion' Grand Est. Le réseau 'Oktave' offre un accompagnement global gratuit. En Alsace (zone H1b), même conseil qu'à Strasbourg : privilégiez un modèle haute température compatible avec vos radiateurs existants.",
+    "history_anecdote": "Les manufactures textiles de Mulhouse, qui ont fait la richesse de la ville au XIXe siècle, étaient chauffées par d'immenses chaudières à charbon. La transition vers la PAC air/eau est symbolique : la même énergie d'innovation, mais au service de l'efficacité et de l'écologie.",
+    "faq_local": {
+      "question": "Les coupures de courant fréquentes en Alsace sont-elles un risque pour la PAC ?",
+      "answer": "Les coupures de courant en Alsace ne sont pas plus fréquentes qu'ailleurs. En cas de coupure, la PAC s'arrête puis redémarre automatiquement. L'inertie du circuit d'eau maintient la chaleur pendant plusieurs heures. Pour plus de sécurité, un onduleur de 3 kW (200-300€) peut assurer le relais pendant 2-3 heures."
+    },
+    "market_data": "Dans le Haut-Rhin, les prix sont de 10 500€ à 16 000€ TTC, similaires au Bas-Rhin. La zone H1b nécessite des modèles performants qui augmentent le budget."
+  },
+  "rouen": {
+    "intro": "Rouen, capitale de la Normandie, allie patrimoine médiéval et dynamisme moderne au bord de la Seine. Le climat est océanique avec des hivers doux et humides — parfait pour la PAC air/eau. Les maisons à colombages du centre historique, les pavillons de Mont-Saint-Aignan ou Bois-Guillaume, et les résidences de la rive gauche sont autant de candidats à cette solution de chauffage performante.",
+    "local_tip": "La Métropole Rouen Normandie propose le dispositif 'Rénover Malin' avec des aides up to 5 000€. L'ALEC de la Seine offre des permanences gratuites. Le climat normand, doux et humide, est idéal pour la PAC air/eau : COP saisonnier moyen de 3,8 sans risque de gel prolongé.",
+    "history_anecdote": "La cathédrale de Rouen, peinte par Monet sous 30 éclairages différents, témoigne de la sensibilité normande aux variations de lumière et de température. Une PAC air/eau moderne ajuste elle aussi sa puissance en temps réel selon les conditions extérieures — un Monet de la thermodynamique.",
+    "faq_local": {
+      "question": "La PAC air/eau est-elle adaptée aux maisons à colombages de Rouen ?",
+      "answer": "Oui, c'est même recommandé. Les maisons à colombages, mal isolées par nature, bénéficient grandement d'un chauffage performant. L'unité extérieure peut être installée dans la cour intérieure, hors de vue de la rue. Un modèle moyenne température (55°C) avec plancher chauffant ou radiateurs basse température est idéal."
+    },
+    "market_data": "En Seine-Maritime, les prix sont de 9 500€ à 14 500€ TTC, dans la moyenne nationale. Le réseau d'installateurs RGE normands est bien développé."
+  },
+  "caen": {
+    "intro": "Caen, cité de Guillaume le Conquérant, offre un climat océanique tempéré avec des hivers très doux. Les maisons en pierre de Caen, les pavillons de Hérouville-Saint-Clair ou Mondeville, et les résidences du quartier de la Prairie bénéficient d'un climat idéal pour la PAC air/eau. La pierre de Caen, exportée jusqu'en Angleterre au Moyen Âge, offre une inertie thermique remarquable.",
+    "local_tip": "Caen la Mer propose le programme 'Cit'ergie' avec des aides à la rénovation. La pierre de Caen, comme le tuffeau, régule naturellement l'humidité et conserve la chaleur. L'ADEME Normandie anime un réseau d'artisans RGE de confiance. Caen est en zone H2a : un modèle standard suffit.",
+    "history_anecdote": "L'Abbaye aux Hommes, fondée par Guillaume le Conquérant en 1063, a été reconstruite et chauffée selon les techniques de chaque époque. Après le charbon et le fioul, la PAC air/eau représente la dernière étape de cette évolution millénaire du confort thermique à Caen.",
+    "faq_local": {
+      "question": "Le climat doux de Caen justifie-t-il l'investissement dans une PAC ?",
+      "answer": "Absolument. Le climat doux de Caen (zone H2a, rarement sous 0°C) est le meilleur argument pour la PAC : le COP saisonnier dépasse 3,8 et un modèle standard 55°C suffit, ce qui réduit le coût d'achat. Le retour sur investissement est de 4 à 6 ans."
+    },
+    "market_data": "Dans le Calvados, les prix sont de 9 000€ à 13 500€ TTC, légèrement sous la moyenne nationale. Le climat doux permet d'utiliser des modèles standard moins coûteux."
+  },
+  "nancy": {
+    "intro": "Nancy, perle de l'Art Nouveau et ville de Stanislas, connaît des hivers lorrains rigoureux. La Place Stanislas, chef-d'œuvre du XVIIIe siècle classé UNESCO, témoigne du goût nancéien pour l'excellence. Les maisons Art Nouveau du côté de Saurupt, les pavillons de Vandœuvre ou Laxou et les résidences du plateau de Haye méritent un chauffage à la hauteur de ce patrimoine.",
+    "local_tip": "Le Grand Nancy propose le dispositif 'Rénov'Habitat' avec aide locale. L'ALEC Nancy Grands Territoires accompagne gratuitement les particuliers. Nancy étant en zone H1b, un modèle haute température est nécessaire. Les maisons Art Nouveau, souvent mal isolées, bénéficient d'un audit thermique préalable.",
+    "history_anecdote": "L'École de Nancy, mouvement Art Nouveau mené par Émile Gallé et Louis Majorelle, prônait l'alliance de l'art et de l'industrie. La PAC air/eau, alliance de technologie de pointe et de design discret, s'inscrit parfaitement dans cette philosophie nancéienne d'élégance technique.",
+    "faq_local": {
+      "question": "Les maisons Art Nouveau de Nancy sont-elles compatibles avec la PAC ?",
+      "answer": "Oui. Les maisons Art Nouveau, avec leurs grandes pièces et leurs radiateurs en fonte, sont d'excellentes candidates pour une PAC haute température. L'unité extérieure peut être dissimulée dans le jardin arrière. Un modèle 14-16 kW haute température (65°C) alimente parfaitement les radiateurs d'origine."
+    },
+    "market_data": "En Meurthe-et-Moselle, les prix sont de 10 500€ à 16 000€ TTC, similaires à Metz. La zone H1b justifie des modèles premium plus coûteux."
+  },
+  "avignon": {
+    "intro": "Avignon, cité des Papes, bénéficie du climat provençal avec ses 300 jours de soleil. Le mistral, vent violent du nord, est la signature climatique avignonnaise. Les maisons intra-muros, les villas du quartier de Montfavet ou les résidences du Pontet sont idéales pour la PAC air/eau, qui y affiche un COP exceptionnel de 4,2 à 4,5 en moyenne annuelle.",
+    "local_tip": "Le Grand Avignon propose des aides via le programme 'Habiter Mieux'. L'ADIL 84 offre des consultations gratuites. Le mistral est le principal facteur à prendre en compte : positionnez l'unité extérieure côté sud-est, à l'abri du mur nord. En zone H3, un modèle standard suffit.",
+    "history_anecdote": "Le Palais des Papes, plus grand palais gothique d'Europe, était chauffé par un réseau de cheminées monumentales au XIVe siècle. Sept siècles plus tard, les Avignonnais préfèrent la discrétion et l'efficacité d'une PAC air/eau — les papes eux-mêmes approuveraient cette sagesse thermique.",
+    "faq_local": {
+      "question": "Le mistral affecte-t-il les performances d'une PAC à Avignon ?",
+      "answer": "Le mistral, vent froid et sec, peut légèrement baisser les performances quand il souffle (30 à 50 jours/an). En contrepartie, il assèche l'air et empêche le givre sur l'échangeur. L'impact net est neutre voire positif. L'essentiel est de protéger l'unité extérieure du vent direct pour limiter le bruit."
+    },
+    "market_data": "Dans le Vaucluse, les prix sont de 8 500€ à 13 000€ TTC, parmi les plus compétitifs de France grâce au climat méditerranéen qui permet l'usage de modèles standard."
+  },
+  "poitiers": {
+    "intro": "Poitiers, ville d'art et d'histoire au carrefour du Poitou, offre un climat océanique doux qui fait de la PAC air/eau un choix particulièrement judicieux. Les maisons poitevines en calcaire, les pavillons de Buxerolles ou Saint-Benoît, et les résidences des Couronneries bénéficient de conditions climatiques idéales : hivers doux et COP saisonnier supérieur à 3,8.",
+    "local_tip": "Grand Poitiers propose le dispositif 'Rénov'Habitat' avec accompagnement personnalisé. Le Futuroscope voisin, vitrine technologique de la Vienne, rappelle que Poitiers a toujours été tournée vers l'innovation. L'ADIL 86 offre des consultations gratuites sur les aides financières.",
+    "history_anecdote": "Poitiers, lieu de la bataille de 732 où Charles Martel arrêta l'avancée arabe, est depuis un lieu de résistance et d'innovation. La transition de la chaudière fioul vers la PAC air/eau est une nouvelle bataille — écologique cette fois — que les Poitevins remportent avec la même détermination.",
+    "faq_local": {
+      "question": "Comment financer sa PAC air/eau à Poitiers ?",
+      "answer": "Un foyer aux revenus modestes à Poitiers peut cumuler : MaPrimeRénov' (10 000€), CEE (4 000€), TVA 5,5% (~1 000€) et Éco-PTZ (50 000€ à taux 0%). Le reste à charge peut descendre sous 2 000€ pour une PAC à 14 000€. L'ADIL 86 vous aide gratuitement à monter ces dossiers."
+    },
+    "market_data": "Dans la Vienne, les prix sont de 9 000€ à 13 500€ TTC, dans la moyenne basse nationale. Le climat doux permet d'utiliser des modèles standard économiques."
+  },
+  "dunkerque": {
+    "intro": "Dunkerque, port industriel des Flandres, affronte un climat rude : vent de mer, humidité et hivers froids. Mais c'est aussi la ville de Jean Bart et du carnaval, une cité qui ne recule devant rien ! Les maisons flamandes de Malo-les-Bains, les pavillons de Coudekerque-Branche ou Grande-Synthe sont des candidats solides pour la PAC air/eau haute température.",
+    "local_tip": "La CUD (Communauté Urbaine de Dunkerque) propose des aides via le programme 'Habiter Mieux'. En bord de mer (Malo, Leffrinckoucke), exigez un modèle avec coating anti-corrosion. Le vent quasi permanent améliore le brassage d'air autour de l'échangeur mais nécessite un écran phonique.",
+    "history_anecdote": "L'Opération Dynamo de 1940, l'évacuation de 300 000 soldats depuis les plages de Dunkerque, est un symbole de résilience. Cette même résilience, les Dunkerquois la montrent face au défi climatique en adoptant massivement les pompes à chaleur.",
+    "faq_local": {
+      "question": "Le vent dunkerquois est-il un problème pour la PAC ?",
+      "answer": "Non, le vent est plutôt bénéfique pour le rendement. En revanche, positionnez l'unité extérieure à l'abri des rafales (côté sud de la maison, derrière un muret). Les modèles avec traitement anti-corrosion marine sont indispensables à Dunkerque."
+    },
+    "market_data": "Dans le Nord littoral, les prix sont de 11 000€ à 16 500€ TTC en raison de la zone H1a et des modèles anti-corrosion nécessaires."
+  },
+  "versailles": {
+    "intro": "Versailles, cité royale et résidentielle, allie prestige et confort. Les hôtels particuliers du quartier Saint-Louis, les pavillons de Viroflay ou Vélizy et les résidences des Chantiers méritent un chauffage à la hauteur de leur standing. La PAC air/eau, discrète et performante, s'intègre parfaitement dans l'environnement patrimonial versaillais.",
+    "local_tip": "Versailles Grand Parc propose le dispositif 'Rénov'Habitat' avec accompagnement gratuit. Attention : en zone ABF (périmètre du château), l'unité extérieure doit être invisible depuis la voie publique. Les installateurs RGE des Yvelines connaissent ces contraintes et proposent des solutions dissimulées.",
+    "history_anecdote": "Le château de Versailles, chauffé par plus de 1 200 cheminées sous Louis XIV, consommait l'équivalent d'une forêt entière chaque hiver. Aujourd'hui, une PAC air/eau chauffe une maison versaillaise pour quelques centaines d'euros par an — le Roi-Soleil en serait vert de jalousie.",
+    "faq_local": {
+      "question": "Les contraintes ABF empêchent-elles l'installation d'une PAC à Versailles ?",
+      "answer": "Non, mais elles contraignent le positionnement de l'unité extérieure. En secteur ABF, elle doit être installée hors de la vue publique : jardin arrière, cour intérieure ou toiture-terrasse. Les installateurs RGE des Yvelines gèrent ces cas régulièrement."
+    },
+    "market_data": "Dans les Yvelines, les prix sont de 11 000€ à 17 000€ TTC, supérieurs à la moyenne en raison du standing des logements et des contraintes patrimoniales."
+  },
+  "pau": {
+    "intro": "Pau, ville royale au pied des Pyrénées, offre un panorama exceptionnel sur la chaîne montagneuse et un climat océanique doux influencé par le foehn. Les maisons béarnaises, les pavillons de Billère ou Lons et les résidences du boulevard des Pyrénées sont idéaux pour la PAC air/eau qui profite d'un microclimat plus doux qu'attendu à cette latitude.",
+    "local_tip": "La Communauté d'Agglomération Pau Béarn Pyrénées propose des aides via 'Habiter Mieux'. L'effet de foehn (vent chaud descendant des Pyrénées) maintient des températures clémentes même en hiver. Un modèle standard suffit en centre-ville. En altitude (quartiers sud), un modèle haute température est préférable.",
+    "history_anecdote": "Henri IV, roi de France né à Pau en 1553, aurait dit que Paris valait bien une messe. Aujourd'hui, les Palois diront qu'une PAC air/eau vaut bien l'investissement — surtout avec les aides MaPrimeRénov' qui rendent le reste à charge presque royal.",
+    "faq_local": {
+      "question": "La proximité des Pyrénées rend-elle la PAC moins efficace à Pau ?",
+      "answer": "Au contraire ! Pau bénéficie de l'effet de foehn qui adoucit les températures hivernales. Le COP saisonnier moyen est de 3,8, comparable à des villes côtières. Seuls les quartiers en altitude (> 400m) nécessitent un modèle haute température."
+    },
+    "market_data": "Dans les Pyrénées-Atlantiques, les prix sont de 9 000€ à 14 000€ TTC, dans la moyenne nationale."
+  },
+  "la-rochelle": {
+    "intro": "La Rochelle, perle de l'Atlantique, bénéficie d'un ensoleillement exceptionnel pour la façade ouest et d'un climat océanique doux. Les maisons rochelaises en pierre blanche du Vieux-Port, les pavillons de Lagord ou Périgny et les résidences d'Aytré sont parfaits pour la PAC air/eau. La ville pionnière en écologie (vélos en libre-service dès 1976 !) est naturellement en avance sur la transition énergétique.",
+    "local_tip": "La CDA de La Rochelle propose le programme 'Rénov'Action'. L'air marin nécessite un traitement anti-corrosion pour les logements proches du littoral. La douceur de l'hiver rochelais (rarement sous 0°C) permet d'utiliser un modèle standard avec un COP exceptionnel.",
+    "history_anecdote": "La Rochelle, pionnière du vélo en libre-service dès 1976 avec les 'vélos jaunes', a toujours eu un temps d'avance sur la mobilité durable. La PAC air/eau s'inscrit dans cette tradition rochelaise d'innovation écologique qui fait la fierté de la ville.",
+    "faq_local": {
+      "question": "Faut-il un traitement anti-corrosion à La Rochelle ?",
+      "answer": "Pour les logements à moins de 2 km du littoral (Vieux-Port, Les Minimes, Aytré plage), oui. Au-delà, un modèle standard suffit. Les installateurs RGE de Charente-Maritime proposent systématiquement l'option Blue Fin/Gold Fin pour les installations côtières."
+    },
+    "market_data": "En Charente-Maritime, les prix sont de 9 000€ à 14 000€ TTC, dans la moyenne basse. Le climat doux permet des modèles standard économiques."
+  },
+  "antibes": {
+    "intro": "Antibes, joyau de la Côte d'Azur entre Nice et Cannes, jouit d'un des meilleurs microclimats de France. La PAC air/eau y est un investissement roi avec un COP dépassant 4,5. Les villas du Cap d'Antibes, les résidences de Juan-les-Pins et les maisons de Vallauris ou Biot sont toutes candidates à cette technologie ultra-performante en climat méditerranéen.",
+    "local_tip": "La CASA (Communauté Sophia Antipolis) propose des aides locales. Comme à Nice, le sel marin impose un coating anti-corrosion pour les logements proches de la mer. Sur le Cap d'Antibes, l'intégration paysagère de l'unité extérieure est cruciale : les paysagistes locaux savent la dissimuler dans la végétation méditerranéenne.",
+    "history_anecdote": "Picasso, qui vécut au château Grimaldi d'Antibes en 1946, y peignit ses œuvres les plus lumineuses. Cette lumière méditerranéenne qui inspira le maître est aussi celle qui réchauffe l'air capté par votre PAC — un rendement digne d'un chef-d'œuvre.",
+    "faq_local": {
+      "question": "La PAC air/eau climatise-t-elle aussi en été à Antibes ?",
+      "answer": "Oui, avec un modèle réversible. C'est d'autant plus recommandé à Antibes où les étés dépassent régulièrement 30-35°C. Le rafraîchissement via plancher chauffant/refroidissant ou ventilo-convecteurs consomme 3-4x moins qu'une clim classique."
+    },
+    "market_data": "Dans les Alpes-Maritimes, les prix sont de 10 000€ à 16 000€ TTC, supérieurs à la moyenne en raison du standing des logements côtiers."
+  },
+  "cannes": {
+    "intro": "Cannes, capitale mondiale du cinéma, mêle glamour et confort de vie. Les villas de la Californie, les résidences de la Croisette et les maisons de Mougins ou Le Cannet méritent un chauffage premium. La PAC air/eau, invisible et performante, est le choix des propriétaires exigeants qui veulent le meilleur sans compromis esthétique.",
+    "local_tip": "La Communauté d'Agglomération Cannes Lérins propose des aides locales. À Cannes, l'esthétique prime : choisissez un modèle design (Daikin Emura, Mitsubishi Zen) et dissumulez l'unité extérieure dans un caisson acoustique intégré au jardin.",
+    "history_anecdote": "Le Festival de Cannes récompense chaque année l'excellence cinématographique. Si un prix existait pour l'innovation thermique, la PAC air/eau remporterait la Palme d'Or : performance, élégance et efficacité — tout ce qui fait le prestige cannois.",
+    "faq_local": {
+      "question": "Existe-t-il des PAC design adaptées au standing cannois ?",
+      "answer": "Absolument. Les marques premium comme Daikin (gamme Altherma design), Mitsubishi (Ecodan Silence) et Atlantic (Alfea Extensa Duo) proposent des unités extérieures ultra-silencieuses (< 35 dB) et des finitions soignées. Le surcoût de 500 à 1 500€ se justifie pleinement dans un environnement résidentiel haut de gamme."
+    },
+    "market_data": "À Cannes et environs, les prix atteignent 11 000€ à 18 000€ TTC pour les modèles premium privilégiés dans les résidences de standing."
+  },
+  "calais": {
+    "intro": "Calais, porte de l'Angleterre et ville portuaire du Pas-de-Calais, affronte un climat rude : vent marin, humidité et hivers froids. Les maisons calaisoises de brique, les pavillons de Coquelles ou Sangatte et les résidences du centre-ville bénéficient d'une PAC air/eau haute température pour lutter contre les conditions climatiques exigeantes.",
+    "local_tip": "La Communauté d'Agglomération Grand Calais Terres & Mers propose des aides via le programme régional. En bord de mer, le coating anti-corrosion est impératif. Le vent quasi permanent à Calais nécessite un écran phonique et un positionnement abrité de l'unité extérieure.",
+    "history_anecdote": "Les Bourgeois de Calais, immortalisés par Rodin, ont sacrifié leur confort pour sauver leur ville en 1347. Aujourd'hui, installer une PAC air/eau, c'est investir dans le confort de sa famille tout en sauvant la planète — un héroïsme du quotidien.",
+    "faq_local": {
+      "question": "Le brouillard salin de Calais endommage-t-il la PAC ?",
+      "answer": "Sans protection, oui. À Calais, le traitement anti-corrosion (Blue Fin, Gold Fin) est absolument indispensable. Prévoyez aussi un entretien annuel renforcé avec nettoyage des ailettes au karcher basse pression. Avec ces précautions, la PAC dure 15-20 ans comme partout ailleurs."
+    },
+    "market_data": "Dans le Pas-de-Calais, les prix sont de 11 000€ à 16 500€ TTC en raison de la zone H1a et des modèles anti-corrosion nécessaires."
+  },
+  "beziers": {
+    "intro": "Béziers, cité viticole de l'Hérault, jouit du climat méditerranéen avec des étés très chauds et des hivers doux. Les maisons vigneronnes, les villas du quartier de la Devèze ou les résidences de Villeneuve-lès-Béziers sont parfaites pour la PAC air/eau, qui y affiche un COP record. La réversibilité est un atout majeur face aux canicules estivales biterroises.",
+    "local_tip": "Béziers Méditerranée propose des aides via 'Habiter Mieux'. Béziers est en zone H3 : un modèle standard suffit amplement. L'option réversible (surcoût ~1 500€) est fortement recommandée compte tenu des étés caniculaires réguliers (> 40°C).",
+    "history_anecdote": "Le Canal du Midi, chef-d'œuvre de Pierre-Paul Riquet achevé en 1681, traverse Béziers via les écluses de Fonseranes. Ce génie hydraulique du XVIIe siècle préfigurait les principes de la thermodynamique utilisés par les PAC modernes.",
+    "faq_local": {
+      "question": "Faut-il une PAC réversible à Béziers ?",
+      "answer": "C'est très fortement recommandé. Avec des étés atteignant 35-42°C, le mode rafraîchissement est un véritable confort de vie. Le surcoût de 1 000-1 500€ pour l'option réversible est amorti en 1-2 étés comparé à l'achat d'un climatiseur séparé."
+    },
+    "market_data": "Dans l'Hérault, les prix sont de 8 500€ à 13 000€ TTC, parmi les plus bas de France grâce au climat favorable."
+  },
+  "saint-nazaire": {
+    "intro": "Saint-Nazaire, ville des Chantiers de l'Atlantique et berceau des plus grands paquebots du monde, se situe sur l'estuaire de la Loire avec un climat océanique prononcé. Les maisons reconstruites après-guerre, les pavillons de Pornichet ou Trignac et les résidences du quartier de la Ville-Port sont des candidats idéaux pour la PAC air/eau.",
+    "local_tip": "La CARENE (communauté de Saint-Nazaire) propose des aides via le programme 'Habiter Mieux'. L'air salin de l'estuaire nécessite un coating anti-corrosion. Les chantiers navals STX sont d'ailleurs une source d'expertise en thermodynamique qui profite aux installateurs locaux.",
+    "history_anecdote": "Les Chantiers de l'Atlantique, qui ont construit le Normandie, le France et le Symphony of the Seas, utilisent des systèmes thermodynamiques sophistiqués pour la climatisation des paquebots. Cette expertise industrielle navale se retrouve dans la qualité des installateurs de PAC nazairiens.",
+    "faq_local": {
+      "question": "L'humidité de l'estuaire affecte-t-elle la PAC ?",
+      "answer": "L'humidité océanique n'affecte pas les performances mais le sel marin peut corroder les échangeurs. À Saint-Nazaire, un modèle avec coating anti-corrosion est recommandé, surtout pour les logements proches de l'estuaire. Le dégivrage automatique gère l'humidité sans perte significative de rendement."
+    },
+    "market_data": "En Loire-Atlantique, les prix sont de 9 500€ à 14 000€ TTC, similaires à Nantes."
+  },
+  "colmar": {
+    "intro": "Colmar, la 'Petite Venise' alsacienne, bénéficie d'un microclimat unique : c'est l'une des villes les moins pluvieuses de France grâce à l'abri des Vosges. Les maisons à colombages colorées, les pavillons d'Ingersheim ou Wintzenheim et les résidences de la route des Vins sont parfaits pour la PAC air/eau.",
+    "local_tip": "Colmar Agglomération propose des aides via le programme 'Climaxion' Grand Est. Le microclimat colmarien, plus sec que le reste de l'Alsace, est favorable à la PAC. Malgré tout, Colmar reste en zone H1b : un modèle haute température est nécessaire pour les hivers froids.",
+    "history_anecdote": "Auguste Bartholdi, sculpteur de la Statue de la Liberté, est né à Colmar en 1834. Sa statue éclaire le monde depuis New York — votre PAC air/eau éclairera (enfin, chauffera) votre maison colmarienne avec la même efficacité symbolique.",
+    "faq_local": {
+      "question": "Le microclimat sec de Colmar est-il un avantage pour la PAC ?",
+      "answer": "Oui, l'air sec réduit le givre sur l'échangeur, ce qui diminue la fréquence des cycles de dégivrage et améliore le rendement de 3-5% par rapport à une ville humide comme Strasbourg. C'est un petit avantage mais il compte sur 15-20 ans."
+    },
+    "market_data": "Dans le Haut-Rhin, les prix sont de 10 500€ à 16 000€ TTC, similaires au reste de l'Alsace."
+  },
+  "ajaccio": {
+    "intro": "Ajaccio, cité natale de Napoléon, bénéficie du climat le plus doux de France avec des hivers exceptionnellement cléments (10-15°C en janvier). La PAC air/eau y affiche les meilleures performances nationales avec un COP dépassant 4,8. Les villas des Sanguinaires, les maisons du centre historique et les résidences de Mezzavia sont idéales.",
+    "local_tip": "La CAPA (Communauté d'Agglomération du Pays Ajaccien) et la Collectivité de Corse proposent des aides spécifiques. En Corse, le coût des matériaux est majoré de 10-20% en raison du transport maritime. Compensez en choisissant un modèle standard (le climat le permet largement) et en faisant jouer la concurrence.",
+    "history_anecdote": "Napoléon Bonaparte, né à Ajaccio en 1769, a conquis l'Europe avec stratégie et détermination. Conquérir sa facture de chauffage avec une PAC air/eau est un combat plus modeste mais tout aussi gratifiant — avec une victoire garantie sous le soleil ajaccien.",
+    "faq_local": {
+      "question": "Les surcoûts insulaires sont-ils compensés par les aides en Corse ?",
+      "answer": "La Collectivité de Corse propose des aides complémentaires qui compensent en partie les surcoûts logistiques. De plus, le climat ultra-doux permet d'utiliser un modèle standard bas de gamme (8 kW suffisent pour 120m²), ce qui réduit le coût d'achat. Le retour sur investissement est le plus rapide de France : 3-4 ans."
+    },
+    "market_data": "En Corse-du-Sud, les prix sont de 10 000€ à 15 000€ TTC, majorés de 10-15% par rapport au continent en raison des frais de transport."
+  },
+  "bourges": {
+    "intro": "Bourges, cité de Jacques Cœur et de sa cathédrale classée UNESCO, offre un climat continental tempéré au cœur du Berry. Les maisons à colombages du centre historique, les pavillons de Saint-Doulchard ou Mehun-sur-Yèvre et les résidences du quartier Avaricum sont parfaits pour la PAC air/eau.",
+    "local_tip": "Bourges Plus propose le programme 'Habiter Mieux' avec un guichet unique. Le Berry, encore fortement dépendant du fioul et du propane, offre un potentiel d'économies considérable. L'ADIL 18 accompagne gratuitement les projets de rénovation.",
+    "history_anecdote": "Jacques Cœur, argentier de Charles VII qui fit de Bourges une capitale commerciale au XVe siècle, comprenait la valeur de l'investissement rentable. Une PAC air/eau est exactement ce type d'investissement : un coût initial qui se rembourse en économies pendant 15-20 ans.",
+    "faq_local": {
+      "question": "Peut-on remplacer une chaudière propane par une PAC à Bourges ?",
+      "answer": "C'est le remplacement le plus rentable ! Le propane coûte 1,50-2€/kg soit environ 0,12€/kWh contre 0,04€/kWh pour la PAC (0,18€ élec ÷ COP 4). L'économie est de 65-75% sur la facture. Les aides sont bonifiées pour le remplacement d'énergie fossile."
+    },
+    "market_data": "Dans le Cher, les prix sont de 9 500€ à 14 000€ TTC, dans la moyenne nationale."
+  },
+  "quimper": {
+    "intro": "Quimper, capitale de la Cornouaille au confluent de l'Odet et du Steïr, offre un climat océanique doux et humide. Les maisons de granit bretonnes, les pavillons d'Ergué-Gabéric ou Pluguffan et les résidences du quartier de Kerfeunteun sont idéaux pour la PAC air/eau qui profite de la douceur bretonne (rarement sous 0°C).",
+    "local_tip": "Quimper Bretagne Occidentale propose le programme 'Tinergie' avec aide et accompagnement. La Bretagne est la 1ère région de France en installation de PAC. L'ALEC du Pays de Cornouaille offre des diagnostics gratuits. Le climat breton, doux et humide, est optimal pour le COP.",
+    "history_anecdote": "Les faïenceries de Quimper, actives depuis 1690, ont maîtrisé l'art du feu pendant plus de trois siècles. Cette connaissance intime de la chaleur se retrouve dans l'expertise des installateurs bretons qui configurent les PAC avec un savoir-faire hérité de générations d'artisans.",
+    "faq_local": {
+      "question": "Le climat breton est-il le meilleur de France pour la PAC ?",
+      "answer": "Il est parmi les meilleurs, oui. La douceur (5-10°C en hiver), la stabilité thermique et la rareté du gel assurent un COP saisonnier de 3,8-4,2. Seul le littoral méditerranéen fait mieux. En plus, la forte densité d'installateurs en Bretagne garantit des prix compétitifs."
+    },
+    "market_data": "Dans le Finistère, les prix sont de 9 000€ à 14 000€ TTC, dans la moyenne basse grâce à la forte concurrence entre installateurs bretons."
+  },
+  "valence": {
+    "intro": "Valence, porte du Midi au cœur de la vallée du Rhône, marque la frontière entre climat continental et méditerranéen. Les maisons valenténoises, les pavillons de Bourg-lès-Valence ou Portes-lès-Valence et les résidences du quartier de Fontbarlettes bénéficient d'un ensoleillement généreux et de températures clémentes qui optimisent le rendement de la PAC air/eau.",
+    "local_tip": "Valence Romans Agglo propose le dispositif 'Rénov'Habitat'. La vallée du Rhône est exposée au mistral qui peut impacter le confort acoustique. L'ADIL 26 offre des consultations gratuites. Valence est en zone H2d : un modèle standard suffit, avec l'option réversible recommandée pour les étés chauds.",
+    "history_anecdote": "Napoléon Bonaparte fit une halte marquante à Valence en tant que jeune lieutenant d'artillerie. La vallée du Rhône, corridor énergétique historique avec ses centrales nucléaires, est aujourd'hui aussi le théâtre d'une transition vers les pompes à chaleur dans l'habitat résidentiel.",
+    "faq_local": {
+      "question": "Le mistral de la vallée du Rhône pose-t-il problème ?",
+      "answer": "Le mistral souffle régulièrement dans la vallée du Rhône à Valence. Il améliore le rendement en brassant l'air mais peut créer du bruit. Positionnez l'unité extérieure côté est ou sud, à l'abri du couloir de vent rhodanien. Un écran acoustique de 1,2m suffit."
+    },
+    "market_data": "Dans la Drôme, les prix sont de 9 000€ à 14 000€ TTC. Le climat favorable de transition permet d'utiliser des modèles standard économiques."
+  },
+  "troyes": {
+    "intro": "Troyes, capitale du Champagne méridional, enchante par ses ruelles médiévales et ses maisons à pans de bois. Le climat est continental avec des hivers froids et des étés chauds. Les maisons à colombages du centre historique, les pavillons de Sainte-Savine ou La Chapelle-Saint-Luc et les résidences du quartier des Marots sont candidats à la PAC air/eau haute température.",
+    "local_tip": "Troyes Champagne Métropole propose le programme 'Habiter Mieux' avec aide locale. Le pan de bois des maisons typiques isole mal : coupler la PAC avec une isolation par l'intérieur est fortement recommandé. L'ADIL 10 accompagne gratuitement les projets.",
+    "history_anecdote": "Les foires de Champagne firent de Troyes un centre commercial européen au Moyen Âge. Le système de poids et mesures troyen donna naissance à l'once troy, encore utilisée pour peser l'or. Investir dans une PAC air/eau, c'est aussi peser en or sur votre facture énergétique.",
+    "faq_local": {
+      "question": "Comment chauffer une maison à pans de bois avec une PAC ?",
+      "answer": "Les maisons à pans de bois sont mal isolées mais ont du charme. La PAC haute température (65°C) alimente efficacement les radiateurs existants. L'idéal est de coupler avec une isolation par l'intérieur (pas par l'extérieur pour préserver la façade). Nos installateurs RGE à Troyes proposent des solutions globales."
+    },
+    "market_data": "Dans l'Aube, les prix sont de 10 000€ à 15 500€ TTC, dans la moyenne des zones H1."
+  },
+  "chambery": {
+    "intro": "Chambéry, porte des Alpes entre lac du Bourget et massif de la Chartreuse, connaît un climat montagnard adouci. Les maisons savoyardes, les pavillons de Cognin ou La Ravoire et les résidences du quartier du Biollay trouvent dans la PAC air/eau une alternative performante au fioul encore très présent en Savoie.",
+    "local_tip": "Grand Chambéry propose le dispositif 'Rénov'Habitat Savoie'. L'ASDER (Association Savoyarde pour le Développement des Énergies Renouvelables) est un acteur incontournable qui offre des conseils gratuits. En Savoie (zone H1c), un modèle haute température avec COP garanti à -10°C est indispensable.",
+    "history_anecdote": "Chambéry, ancienne capitale des États de Savoie, a accueilli le Saint-Suaire pendant 400 ans dans sa Sainte-Chapelle. Les ducs de Savoie chauffaient leur palais avec des poêles en faïence sophistiqués — les ancêtres conceptuels de nos pompes à chaleur modernes.",
+    "faq_local": {
+      "question": "La neige gêne-t-elle le fonctionnement de la PAC en Savoie ?",
+      "answer": "Non, si l'unité extérieure est correctement installée : surélevée de 30 cm minimum pour éviter l'enneigement, avec un dégivrage automatique performant. Les installateurs savoyards positionnent systématiquement les unités sous un auvent ou un débord de toiture pour protéger de la neige et de la pluie."
+    },
+    "market_data": "En Savoie, les prix sont de 11 000€ à 17 000€ TTC, supérieurs à la moyenne en raison de la zone montagne et des modèles haute performance nécessaires."
+  },
+  "lorient": {
+    "intro": "Lorient, ville de la mer et de la voile, bénéficie du climat océanique breton doux et humide. Les maisons de Lanester, les pavillons de Ploemeur ou Hennebont et les résidences du quartier du Moustoir sont parfaits pour la PAC air/eau qui profite de températures hivernales clémentes. La cité de la Compagnie des Indes a toujours été tournée vers l'innovation.",
+    "local_tip": "Lorient Agglomération propose le programme 'Rénov'Habitat'. En bord de mer (Larmor-Plage, Gâvres), un traitement anti-corrosion est nécessaire. La tradition maritime lorientaise a formé des artisans qui comprennent les contraintes du milieu salin.",
+    "history_anecdote": "Lorient, fondée par la Compagnie des Indes en 1666 pour le commerce maritime, a toujours été à la convergence du monde et de l'innovation. Les sous-marins de la base de Keroman utilisent des systèmes thermodynamiques apparentés aux PAC — la ville a la technologie dans ses gènes.",
+    "faq_local": {
+      "question": "Faut-il un modèle anti-corrosion à Lorient ?",
+      "answer": "Pour les logements à moins de 3 km du littoral (Lorient centre, Larmor-Plage, Port-Louis), oui. Pour les communes de l'intérieur (Lanester, Hennebont), un modèle standard suffit. Le surcoût du coating anti-corrosion est de 200 à 500€."
+    },
+    "market_data": "Dans le Morbihan, les prix sont de 9 000€ à 14 000€ TTC, dans la moyenne basse bretonne."
+  },
+  "montauban": {
+    "intro": "Montauban, cité d'Ingres en brique rose, bénéficie du climat du sud-ouest avec des hivers doux et des étés chauds. Les maisons montalbanaises en brique, les pavillons de Caussade ou Moissac et les résidences du quartier de Villebourbon sont idéaux pour la PAC air/eau qui profite d'un climat tempéré à la croisée des influences atlantique et méditerranéenne.",
+    "local_tip": "Le Grand Montauban propose le programme 'Habiter Mieux'. Le Tarn-et-Garonne est en zone H2c : un modèle standard suffit. Les étés chauds (> 35°C régulièrement) rendent l'option réversible très pertinente.",
+    "history_anecdote": "Ingres, maître du Néoclassicisme né à Montauban en 1780, recherchait la perfection dans chaque trait. La PAC air/eau moderne, avec ses algorithmes de régulation au dixième de degré, aurait satisfait son exigence de précision absolue.",
+    "faq_local": {
+      "question": "La PAC réversible est-elle utile à Montauban ?",
+      "answer": "Très utile. Montauban connaît régulièrement des pics à 35-40°C en été. Le mode rafraîchissement par plancher ou ventilo-convecteurs consomme 3x moins qu'une climatisation classique. Le surcoût de 1 000-1 500€ est amorti en 2 étés."
+    },
+    "market_data": "En Tarn-et-Garonne, les prix sont de 9 000€ à 13 500€ TTC, dans la moyenne basse du sud-ouest."
+  },
+  "niort": {
+    "intro": "Niort, capitale française de l'assurance et des mutuelles, offre un climat océanique doux parfait pour la PAC air/eau. Les maisons niortaises, les pavillons de Chauray ou Aiffres et les résidences du quartier du Clou sont idéaux. Les Niortais, experts en gestion des risques, savent que la PAC est l'investissement le plus sûr pour leur confort thermique.",
+    "local_tip": "La CAN (Communauté d'Agglomération du Niortais) propose des aides via 'Habiter Mieux'. Niort est en zone H2b : un modèle standard suffit. Les mutuelles niortaises (MAIF, MACIF, MAAF) assurent les PAC dans leurs contrats habitation — vérifiez votre couverture.",
+    "history_anecdote": "Niort, capitale des mutuelles depuis le XIXe siècle, a inventé le concept de mutualisation des risques. Ironiquement, investir dans une PAC air/eau est l'un des placements les moins risqués qui soit : économies garanties, aides d'État, et durée de vie de 15-20 ans.",
+    "faq_local": {
+      "question": "Ma mutuelle niortaise couvre-t-elle la PAC ?",
+      "answer": "Les contrats multirisques habitation des mutuelles niortaises (MAIF, MACIF, MAAF, Groupama) couvrent généralement la PAC au titre du contenu du logement. Vérifiez que votre contrat inclut la couverture 'équipements techniques' et déclarez l'installation. La garantie décennale de l'installateur RGE vous protège pendant 10 ans."
+    },
+    "market_data": "Dans les Deux-Sèvres, les prix sont de 9 000€ à 13 500€ TTC, très compétitifs grâce au climat doux."
+  },
+  "bayonne": {
+    "intro": "Bayonne, capitale du Pays basque français, offre un climat océanique doux influencé par les Pyrénées. Les maisons basques à colombages rouges, les villas de Biarritz ou Anglet et les résidences du Petit Bayonne sont parfaits pour la PAC air/eau qui profite de la douceur atlantique. Le Pays basque a toujours su allier tradition et modernité.",
+    "local_tip": "La Communauté d'Agglomération Pays Basque propose des aides via le programme 'Habiter Mieux'. L'air marin de la côte basque nécessite un coating anti-corrosion. Le climat est si doux qu'un modèle standard bas de gamme suffit pour la plupart des logements.",
+    "history_anecdote": "Le chocolat, introduit à Bayonne par les juifs sépharades au XVIIe siècle, a fait de la ville un centre d'innovation gastronomique. Cette capacité à adopter et adapter les innovations venues d'ailleurs se retrouve dans l'engouement basque pour les pompes à chaleur.",
+    "faq_local": {
+      "question": "La PAC air/eau convient-elle aux maisons basques traditionnelles ?",
+      "answer": "Parfaitement. Les maisons basques à colombages, avec leurs murs épais en pierre, ont une excellente inertie thermique. L'unité extérieure peut être installée à l'arrière de la maison, hors de vue de la façade traditionnelle. Un modèle standard 8-12 kW suffit dans le climat doux basque."
+    },
+    "market_data": "Au Pays basque (Pyrénées-Atlantiques), les prix sont de 9 500€ à 14 500€ TTC. Le marché est dynamique avec de nombreux installateurs qualifiés."
+  },
+  "vannes": {
+    "intro": "Vannes, perle du Golfe du Morbihan, offre un microclimat doux et ensoleillé pour la Bretagne. Les maisons à colombages intra-muros, les pavillons de Séné ou Theix et les résidences de Conleau sont parfaits pour la PAC air/eau. Le Golfe du Morbihan, 'petite mer' en breton, adoucit les températures et garantit un COP saisonnier exceptionnel.",
+    "local_tip": "Golfe du Morbihan Vannes Agglomération propose le programme 'Rénov'Habitat'. Le microclimat du Golfe (2°C de plus que l'intérieur) est particulièrement favorable. En bord de Golfe, un coating anti-corrosion est recommandé. Le réseau d'installateurs morbihannais est dense et compétitif.",
+    "history_anecdote": "Anne de Bretagne, née au château de l'Hermine à Vannes en 1477, fut la dernière duchesse de Bretagne. Son château était chauffé par d'immenses cheminées — aujourd'hui, les Vannetais préfèrent la discrétion et l'efficacité d'une PAC air/eau pour leur confort thermique.",
+    "faq_local": {
+      "question": "Le microclimat du Golfe du Morbihan est-il favorable à la PAC ?",
+      "answer": "Très favorable. Le Golfe adoucit les températures de 2-3°C par rapport à l'intérieur des terres. Les hivers à Vannes sont parmi les plus doux de Bretagne (6-8°C de moyenne). Le COP saisonnier atteint 4,0-4,2, rivalisent avec des villes méditerranéennes."
+    },
+    "market_data": "Dans le Morbihan, les prix sont de 9 000€ à 14 000€ TTC, dans la moyenne basse bretonne."
+  },
+  "boulogne-billancourt": {
+    "intro": "Boulogne-Billancourt, première ville d'Île-de-France après Paris, mêle résidentiel haut de gamme et patrimoine industriel. Les maisons Art Déco du quartier des Princes, les pavillons de la zone pavillonnaire sud et les résidences des bords de Seine méritent une PAC air/eau à la hauteur de leur standing.",
+    "local_tip": "GPSO (Grand Paris Seine Ouest) propose des aides via le programme 'Rénov'Habitat'. En zone dense comme Boulogne, les normes acoustiques sont strictes (< 25 dB en limite de propriété la nuit). Choisissez un modèle ultra-silencieux et un emplacement à l'abri du voisinage.",
+    "history_anecdote": "Les usines Renault de l'Île Seguin, qui ont produit des millions de voitures à Boulogne pendant un siècle, ont laissé place à la Seine Musicale. Cette reconversion symbolise la transition énergétique que vivent les Boulonnais en remplaçant leur chaudière par une PAC.",
+    "faq_local": {
+      "question": "Les contraintes de bruit en zone dense empêchent-elles l'installation ?",
+      "answer": "Non, les modèles récents émettent moins de 35 dB à 3m. En zone dense, un caisson acoustique (200-400€) peut réduire le bruit à < 25 dB, conforme même aux copropriétés les plus exigeantes de Boulogne."
+    },
+    "market_data": "Dans les Hauts-de-Seine, les prix sont de 12 000€ à 18 000€ TTC, les plus élevés de France en raison des contraintes d'accès et du standing des logements."
+  },
+  "argenteuil": {
+    "intro": "Argenteuil, au bord de la Seine dans le Val-d'Oise, offre un cadre résidentiel avec un bon accès aux réseaux d'installateurs franciliens. Les pavillons du Val-Notre-Dame, les résidences du centre-ville et les maisons du quartier d'Orgemont bénéficient de la dynamique de rénovation énergétique portée par l'Île-de-France.",
+    "local_tip": "La Communauté d'Agglomération Argenteuil-Bezons propose des aides via l'ADEME Île-de-France. La densité d'installateurs RGE en Île-de-France garantit des devis compétitifs. Profitez-en pour comparer au moins 3 devis.",
+    "history_anecdote": "Claude Monet a peint ses célèbres coquelicots à Argenteuil dans les années 1870. Cette ville d'art et de lumière continue d'inspirer l'innovation avec la transition vers les énergies renouvelables.",
+    "faq_local": {
+      "question": "Les aides Île-de-France s'appliquent-elles à Argenteuil ?",
+      "answer": "Oui, les aides régionales Île-de-France sont cumulables avec MaPrimeRénov' et les CEE. Le programme Action Cœur de Ville peut également bénéficier au centre d'Argenteuil."
+    },
+    "market_data": "Dans le Val-d'Oise, les prix sont de 10 500€ à 16 000€ TTC, dans la moyenne francilienne."
+  },
+  "montreuil": {
+    "intro": "Montreuil, commune la plus peuplée de Seine-Saint-Denis, est en pleine mutation urbaine. Les maisons du Bas-Montreuil, les pavillons des Murs à Pêches et les résidences du centre-ville sont des candidats parfaits pour la PAC air/eau, notamment en remplacement de chaudières individuelles gaz vieillissantes.",
+    "local_tip": "Est Ensemble Grand Paris propose le dispositif 'Coach Rénov' avec accompagnement gratuit. Montreuil étant en zone dense, les modèles ultra-silencieux sont recommandés. L'ALEC MVE (Maîtrise de la Ville Énergie) offre des conseils gratuits.",
+    "history_anecdote": "Montreuil, surnommée la 'ville aux pêches' depuis le XVIIe siècle grâce à ses murs à pêches, sait ce que signifie cultiver la chaleur. Les espaliers exposés au sud captaient la chaleur solaire exactement comme le fait aujourd'hui une PAC air/eau.",
+    "faq_local": {
+      "question": "Peut-on installer une PAC dans une maison mitoyenne à Montreuil ?",
+      "answer": "Oui, en respectant les normes acoustiques. L'unité extérieure doit être à plus de 2m de la limite de propriété et émettre moins de 30 dB en limite. Un modèle compact posé dans la cour arrière est la solution la plus courante à Montreuil."
+    },
+    "market_data": "En Seine-Saint-Denis, les prix sont de 10 000€ à 15 500€ TTC. Les aides MaPrimeRénov' sont souvent bonifiées pour les revenus modestes, nombreux dans le 93."
+  },
+  "roubaix": {
+    "intro": "Roubaix, ancienne capitale mondiale du textile, vit une renaissance urbaine impressionnante. Les maisons de brique des quartiers de l'Alma, de l'Épeule ou du Pile sont en pleine rénovation et le remplacement des vieilles chaudières par des PAC air/eau est au cœur de cette transformation. La Piscine (musée) témoigne de la capacité roubaisienne à réinventer son patrimoine.",
+    "local_tip": "La MEL (Métropole de Lille) couvre Roubaix avec le programme 'Amélio'. Les maisons ouvrières roubaisiennes, compactes et mitoyennes, se chauffent efficacement avec des PAC de 8-10 kW. L'isolation des combles est souvent le premier geste à combiner avec la PAC.",
+    "history_anecdote": "La Piscine de Roubaix, anciens bains art déco transformés en musée, est le symbole de la reconversion roubaisienne. De même, transformer une maison ouvrière chauffée au gaz en logement basse consommation avec PAC est une reconversion énergétique à la portée de tous.",
+    "faq_local": {
+      "question": "La PAC est-elle adaptée aux petites maisons mitoyennes de Roubaix ?",
+      "answer": "Parfaitement. Les maisons mitoyennes roubaisiennes (60-90m²) nécessitent des PAC de petite puissance (6-10 kW) qui sont les moins chères du marché. L'unité extérieure compacte se loge dans une cour ou un jardinet. Le coût total est souvent sous 10 000€ TTC."
+    },
+    "market_data": "À Roubaix et dans le Nord, les prix sont de 9 000€ à 15 000€ TTC pour les maisons mitoyennes, inférieurs aux pavillons grâce aux petites puissances nécessaires."
+  },
+  "tourcoing": {
+    "intro": "Tourcoing, jumelle de Roubaix et ville textile historique, partage la même dynamique de rénovation. Les maisons de maître du centre et les pavillons des quartiers résidentiels du Blanc-Seau ou de la Bourgogne sont de bons candidats pour la PAC air/eau.",
+    "local_tip": "Mêmes aides que Roubaix via la MEL programme 'Amélio'. Les maisons tourquennoises à étage bénéficient d'un chauffage par PAC avec radiateurs haute température. Associez à l'isolation des combles pour un résultat optimal.",
+    "history_anecdote": "Le Fresnoy, ancien complexe de loisirs reconverti en studio national d'art contemporain, illustre l'esprit tourquennois d'innovation. Passer du chauffage au gaz à la PAC air/eau est une autre forme de reconversion artistique — celle de votre confort de vie.",
+    "faq_local": {
+      "question": "Quel budget pour équiper une maison tourquennoise ?",
+      "answer": "Pour une maison mitoyenne typique de 80-100m², comptez 9 000€ à 12 000€ TTC. Après aides (MaPrimeRénov' + CEE), le reste à charge peut descendre à 3 000-5 000€. La MEL propose en plus un éco-prêt à taux 0 local."
+    },
+    "market_data": "À Tourcoing comme à Roubaix, les prix sont de 9 000€ à 14 500€ TTC."
+  },
+  "la-seyne-sur-mer": {
+    "intro": "La Seyne-sur-Mer, sur les rives de la rade de Toulon, profite du climat méditerranéen avec des hivers très doux. Les maisons du quartier de Tamaris, les pavillons des Sablettes et les résidences du centre-ville sont idéaux pour la PAC air/eau qui atteint ici des performances record.",
+    "local_tip": "TPM (Toulon Provence Méditerranée) couvre La Seyne avec des aides locales. En bord de rade, un coating anti-corrosion est recommandé. Le modèle réversible est particulièrement apprécié face aux étés caniculaires.",
+    "history_anecdote": "Les chantiers navals de La Seyne, qui ont construit des navires pendant 150 ans, maîtrisaient les échanges thermiques dans les moteurs marins. Cette expertise technique se perpétue dans la qualité des installateurs varois de PAC.",
+    "faq_local": {
+      "question": "Le climat de La Seyne justifie-t-il une PAC simple ou réversible ?",
+      "answer": "Réversible, sans hésiter. Les étés à La Seyne dépassent régulièrement 33°C avec l'humidité de la rade. Le surcoût de 1 000-1 500€ pour la réversibilité est amorti en un seul été."
+    },
+    "market_data": "Dans le Var, les prix sont de 8 500€ à 13 000€ TTC, parmi les plus compétitifs de France."
+  },
+  "saint-quentin": {
+    "intro": "Saint-Quentin, ville d'art et d'industrie de l'Aisne, connaît un climat continental froid. Les maisons picardes en brique, les pavillons de Gauchy ou Rouvroy et les résidences du centre-ville bénéficient d'une PAC air/eau haute température pour affronter les hivers rigoureux du nord de l'Aisne.",
+    "local_tip": "La Communauté d'Agglomération du Saint-Quentinois propose des aides 'Habiter Mieux'. Zone H1a oblige, un modèle haute température 14-16 kW est indispensable. Les maisons picardes en brique ont une bonne inertie qui convient bien au fonctionnement continu de la PAC.",
+    "history_anecdote": "Le canal de Saint-Quentin, achevé par Napoléon Ier en 1810, relie l'Oise à l'Escaut. Cet exploit d'ingénierie hydraulique préfigurait les principes de circulation de fluide utilisés dans les PAC modernes.",
+    "faq_local": {
+      "question": "Quelle puissance de PAC pour le climat de Saint-Quentin ?",
+      "answer": "Saint-Quentin est en zone H1a, la plus exigeante. Pour 120m², comptez 14-16 kW. Un modèle haute température (65°C) est indispensable pour les radiateurs en fonte. Malgré le climat, les économies sont de 55-65% vs le gaz."
+    },
+    "market_data": "Dans l'Aisne, les prix sont de 10 500€ à 16 000€ TTC, majorés par le besoin de modèles haute température."
+  },
+  "beauvais": {
+    "intro": "Beauvais, célèbre pour sa cathédrale au chœur le plus haut du monde, connaît un climat contrasté entre influence océanique et continental. Les maisons beauvaisiennes, les pavillons de Tillé ou Saint-Just-des-Marais sont des candidats parfaits pour la PAC air/eau.",
+    "local_tip": "La Communauté d'Agglomération du Beauvaisis propose des aides locales. L'Oise étant en zone H1a, un modèle haute température est recommandé. L'ADIL 60 accompagne les projets gratuitement.",
+    "history_anecdote": "La cathédrale Saint-Pierre de Beauvais possède le chœur gothique le plus haut du monde (48m). Ce gigantisme architectural rappelle que les Beauvaisiens voient toujours les choses en grand — y compris pour leur transition énergétique.",
+    "faq_local": {
+      "question": "Le vent du nord affecte-t-il la PAC à Beauvais ?",
+      "answer": "Le vent peut augmenter les déperditions thermiques du logement mais ne gêne pas directement la PAC. Positionnez l'unité extérieure côté sud et ajoutez un écran pare-vent si nécessaire."
+    },
+    "market_data": "Dans l'Oise, les prix sont de 10 000€ à 15 500€ TTC, similaires au reste de la Picardie."
+  },
+  "cholet": {
+    "intro": "Cholet, capitale des Mauges et du textile dans le Maine-et-Loire, offre un climat océanique tempéré. Les pavillons des quartiers résidentiels, les maisons du centre-ville et les lotissements récents sont parfaits pour la PAC air/eau. La mentalité industrieuse choletaise se prête bien à cet investissement rationnel et rentable.",
+    "local_tip": "L'Agglomération du Choletais propose des aides via 'Habiter Mieux'. Le climat dos (zone H2b) permet d'utiliser un modèle standard. Le bassin choletais est bien desservi par les installateurs RGE angevins et vendéens.",
+    "history_anecdote": "Cholet, cœur des Guerres de Vendée et ville de la résistance, a toujours été combative. Le combat pour l'indépendance énergétique via la PAC air/eau est une bataille que les Choletais mènent avec la même détermination.",
+    "faq_local": {
+      "question": "Le réseau d'installateurs est-il bon à Cholet ?",
+      "answer": "Oui, Cholet est au carrefour du Maine-et-Loire et de la Vendée, deux départements dynamiques en rénovation énergétique. Vous bénéficiez des artisans RGE d'Angers et de La Roche-sur-Yon."
+    },
+    "market_data": "En Maine-et-Loire, les prix sont de 9 000€ à 13 500€ TTC, très compétitifs."
+  },
+  "chartres": {
+    "intro": "Chartres, cité de la cathédrale aux vitraux légendaires, offre un climat de la Beauce typiquement continental. Les maisons chartraines, les pavillons de Lucé ou Mainvilliers et les résidences du plateau de Chartres sont parfaits pour une installation de PAC air/eau.",
+    "local_tip": "Chartres Métropole propose le programme 'Rénov'Action Habitat'. L'Eure-et-Loir est en zone H2a, un modèle standard à haute température convient selon vos radiateurs. La plaine de Beauce est ventée : protégez l'unité extérieure.",
+    "history_anecdote": "Les vitraux de la cathédrale de Chartres, chefs-d'œuvre du XIIIe siècle, filtrent la lumière avec une précision magistrale. De même, la PAC air/eau filtre et concentre la chaleur de l'air pour un rendement optimal.",
+    "faq_local": {
+      "question": "Le vent de la Beauce gêne-t-il l'installation à Chartres ?",
+      "answer": "Le vent de la Beauce est régulier mais pas violent. Un écran pare-vent ou un positionnement côté maison suffit. L'air brassé améliore même légèrement les échanges thermiques au niveau de l'unité extérieure."
+    },
+    "market_data": "En Eure-et-Loir, les prix sont de 9 500€ à 14 000€ TTC."
+  },
+  "laval": {
+    "intro": "Laval, préfecture de la Mayenne au cœur du Grand Ouest, offre un climat océanique doux. La ville du Douanier Rousseau voit ses pavillons résidentiels de Changé, Bonchamp ou Saint-Berthevin passer massivement au chauffage par PAC air/eau.",
+    "local_tip": "Laval Agglomération propose des aides via 'Habiter Mieux'. La Mayenne est bien dotée en artisans RGE grâce à la proximité de Rennes et Le Mans. Zone H2b : modèle standard suffisant.",
+    "history_anecdote": "Henri Rousseau, dit le Douanier, né à Laval en 1844, peignait des jungles tropicales sans jamais avoir quitté la France. De même, votre PAC air/eau crée un microclimat tropical dans votre maison lavalloise sans avoir besoin de voyager.",
+    "faq_local": {
+      "question": "Le climat lavallois est-il favorable à la PAC ?",
+      "answer": "Très favorable. Laval est en zone H2b avec des hivers doux (rarement sous -5°C). Le COP saisonnier moyen est de 3,7-4,0, garantissant un retour sur investissement en 5-6 ans."
+    },
+    "market_data": "En Mayenne, les prix sont de 9 000€ à 13 000€ TTC, très compétitifs."
+  },
+  "arras": {
+    "intro": "Arras, ville aux deux places flamandes inscrites à l'UNESCO, connaît un climat nordique exigeant. Les maisons de la Grand-Place, les pavillons d'Achicourt ou Saint-Nicolas-lez-Arras et les résidences du quartier de la Citadelle sont tous candidats à la PAC air/eau haute température.",
+    "local_tip": "La CUA (Communauté Urbaine d'Arras) propose des aides. Zone H1a, modèle haute température obligatoire. Le Pas-de-Calais est le département le plus dynamique des Hauts-de-France pour les installations de PAC.",
+    "history_anecdote": "Les places d'Arras, reconstruites à l'identique après la Première Guerre mondiale, symbolisent la résilience artésienne. Cette même résilience se retrouve dans l'adoption des PAC air/eau qui fonctionnent même par -15°C dans le climat nordique.",
+    "faq_local": {
+      "question": "Les aides sont-elles plus élevées dans le Nord ?",
+      "answer": "Oui ! En zone H1a, MaPrimeRénov' accorde les montants maximaux. Un foyer aux revenus modestes peut cumuler jusqu'à 15 000€ d'aides (MaPrimeRénov' + CEE + aides locales), réduisant le reste à charge à 2 000-4 000€."
+    },
+    "market_data": "Dans le Pas-de-Calais, les prix sont de 10 500€ à 16 000€ TTC."
+  },
+  "bastia": {
+    "intro": "Bastia, capitale économique de la Haute-Corse, bénéficie d'un climat méditerranéen avec des hivers très doux. Le vieux port, le quartier de Toga et les résidences de Biguglia ou Furiani profitent de conditions idéales pour la PAC air/eau avec un COP saisonnier exceptionnel.",
+    "local_tip": "La Collectivité de Corse propose des aides spécifiques. Comme à Ajaccio, les surcoûts insulaires (transport maritime) sont compensés par le climat ultra-favorable qui permet des modèles standard petite puissance. En bord de mer, coating anti-corrosion obligatoire.",
+    "history_anecdote": "Pascal Paoli, père de la nation corse et précurseur de la démocratie, fit de Bastia un centre de pouvoir éclairé au XVIIIe siècle. Cet esprit d'indépendance se retrouve chez les Bastiais qui choisissent la PAC pour leur autonomie énergétique.",
+    "faq_local": {
+      "question": "Le surcoût corse est-il justifié pour la PAC ?",
+      "answer": "Le surcoût est de 10-15% par rapport au continent (transport maritime). Mais le climat ultra-doux de Bastia (COP > 4,5) et les petites puissances nécessaires (8-10 kW pour 120m²) compensent largement. Le ROI est de 3-4 ans, le meilleur de France."
+    },
+    "market_data": "En Haute-Corse, les prix sont de 10 000€ à 15 000€ TTC, majorés par les frais de transport insulaire."
+  },
+  "belfort": {
+    "intro": "Belfort, gardienne de la Trouée de Belfort entre Vosges et Jura, connaît un climat continental avec des hivers rudes. Le Lion de Bartholdi veille sur la ville dont les maisons en grès rose, les pavillons de Danjoutin ou Offemont affrontent vaillamment les -10°C hivernaux grâce aux PAC air/eau haute température.",
+    "local_tip": "Le Grand Belfort propose des aides via le programme régional Bourgogne-Franche-Comté. Zone H1c avec des hivers marqués : modèle haute température 14-16 kW indispensable. Le réseau Rénov'Habitat FC accompagne les projets gratuitement.",
+    "history_anecdote": "Le Lion de Belfort, sculpté par Bartholdi en 1880 pour célébrer la résistance de la ville en 1870-71, symbolise la force face à l'adversité. Les PAC modernes résistent aux hivers belfortains avec la même détermination.",
+    "faq_local": {
+      "question": "La PAC résiste-t-elle aux hivers belfortains ?",
+      "answer": "Oui, les modèles modernes fonctionnent jusqu'à -25°C. À Belfort (zone H1c, hivers à -10/-15°C), le COP moyen est de 3,0-3,5. Les économies restent de 50-60% vs le gaz. Un ballon tampon 200L est recommandé pour lisser les cycles."
+    },
+    "market_data": "En Territoire de Belfort, les prix sont de 10 500€ à 16 000€ TTC."
+  },
+  "blois": {
+    "intro": "Blois, cité royale sur les bords de la Loire, offre un climat Val de Loire idéal pour la PAC air/eau. Le château royal, les maisons de la vieille ville et les pavillons de Vineuil ou La Chaussée-Saint-Victor bénéficient de ce climat tempéré qui garantit un COP saisonnier excellent.",
+    "local_tip": "Agglopolys (communauté d'agglomération de Blois) propose des aides via 'Habiter Mieux'. Zone H2b, modèle standard suffisant. La proximité de Tours et Orléans assure un bon réseau d'installateurs RGE.",
+    "history_anecdote": "Le château de Blois, résidence favorite de 7 rois de France, a vu défiler les innovations architecturales de la Renaissance. Aujourd'hui, c'est la PAC air/eau qui représente la Renais- sance du chauffage résidentiel blésois.",
+    "faq_local": {
+      "question": "Le château de Blois est-il en zone ABF ?",
+      "answer": "Le centre historique de Blois est effectivement en périmètre ABF. L'unité extérieure doit être invisible depuis la voie publique. En pratique, une installation dans une cour intérieure ou un jardin arrière suffit pour obtenir l'accord de l'ABF."
+    },
+    "market_data": "Dans le Loir-et-Cher, les prix sont de 9 000€ à 13 500€ TTC."
+  },
+  "angouleme": {
+    "intro": "Angoulême, ville haute perchée sur son éperon rocheux et capitale de la bande dessinée, offre un climat doux et ensoleillé de Charente. Les maisons en pierre calcaire du plateau, les pavillons de Soyaux ou L'Isle-d'Espagnac sont parfaits pour la PAC air/eau.",
+    "local_tip": "GrandAngoulême propose le programme 'Habiter Mieux'. La Charente, encore dépendante du fioul, offre un fort potentiel d'économies. Zone H2c, modèle standard suffisant. L'ADIL 16 accompagne les projets gratuitement.",
+    "history_anecdote": "Le Festival de la BD d'Angoulême, plus grand festival de bande dessinée au monde, célèbre la créativité depuis 1974. Installer une PAC air/eau, c'est écrire une nouvelle page — plus verte — de l'histoire de votre maison angoumoisine.",
+    "faq_local": {
+      "question": "La pierre calcaire charentaise est-elle adaptée à la PAC ?",
+      "answer": "Excellente question. La pierre calcaire, très courante en Charente, a une forte inertie thermique qui stocke et restitue la chaleur lentement. C'est le partenaire idéal d'une PAC air/eau qui fonctionne en continu à basse température."
+    },
+    "market_data": "En Charente, les prix sont de 9 000€ à 13 500€ TTC, dans la moyenne basse."
+  },
+  "albi": {
+    "intro": "Albi, cité épiscopale classée UNESCO avec sa cathédrale en brique rouge unique au monde, profite du climat occitan avec des hivers doux et des étés chauds. Les maisons albigeoides en brique, les pavillons de Lescure-d'Albigeois ou Carmaux sont parfaits pour la PAC air/eau.",
+    "local_tip": "L'Agglomération d'Albi propose des aides via 'Habiter Mieux'. Le Tarn est en zone H2c : modèle standard suffisant. L'option réversible est recommandée pour les étés chauds (> 35°C). La brique albigeoise a une excellente inertie thermique.",
+    "history_anecdote": "Toulouse-Lautrec, né à Albi en 1864, a immortalisé la vie nocturne parisienne. La cathédrale Sainte-Cécile, forteresse de brique rouge, offre une leçon d'inertie thermique : ses murs de 2,5m maintiennent une température constante — exactement le principe que la PAC optimise.",
+    "faq_local": {
+      "question": "La PAC réversible est-elle utile à Albi ?",
+      "answer": "Oui, les étés tarnais dépassent régulièrement 35°C. Le rafraîchissement par PAC réversible coûte 3-4x moins qu'une climatisation classique. Le surcoût de 1 000-1 500€ est amorti en 1-2 étés."
+    },
+    "market_data": "Dans le Tarn, les prix sont de 9 000€ à 13 500€ TTC, compétitifs."
+  },
+  "carcassonne": {
+    "intro": "Carcassonne, cité médiévale classée UNESCO, offre un climat méditerranéen avec influence atlantique. Les maisons de la Bastide Saint-Louis, les pavillons de Trèbes ou Berriac sont idéaux pour la PAC air/eau. La double influence climatique garantit des hivers doux et un excellent rendement.",
+    "local_tip": "Carcassonne Agglo propose des aides via 'Habiter Mieux'. Zone H3, modèle standard suffisant. En périmètre ABF (cité médiévale), l'unité extérieure doit être dissimulée. L'ADIL 11 accompagne gratuitement.",
+    "history_anecdote": "La Cité de Carcassonne, restaurée par Viollet-le-Duc au XIXe siècle, était chauffée par des braseros et des cheminées. Les 52 tours de la Cité consommaient plus de bois qu'une forêt entière. Aujourd'hui, une PAC chauffe une maison pour quelques centaines d'euros par an.",
+    "faq_local": {
+      "question": "Les contraintes patrimoniales de Carcassonne empêchent-elles la PAC ?",
+      "answer": "Dans la Cité médiévale, les contraintes ABF sont fortes. Dans la Bastide et les quartiers résidentiels, aucun problème. L'unité extérieure peut être installée dans un jardin ou une cour intérieure sans autorisation spéciale."
+    },
+    "market_data": "Dans l'Aude, les prix sont de 8 500€ à 13 000€ TTC, parmi les plus bas de France."
+  },
+  "bourg-en-bresse": {
+    "intro": "Bourg-en-Bresse, capitale de l'Ain et pays du poulet de Bresse, offre un climat semi-continental avec des hivers marqués. Les maisons bressanes, les pavillons de Viriat ou Péronnas sont des candidats parfaits pour la PAC air/eau.",
+    "local_tip": "Grand Bourg Agglomération propose des aides. Zone H1c, modèle standard ou haute température selon vos radiateurs. L'Ain bénéficie de la proximité de Lyon pour l'accès aux installateurs RGE.",
+    "history_anecdote": "Le monastère royal de Brou, joyau gothique flamboyant construit par Marguerite d'Autriche, est chauffé par un système moderne intégré avec respect du patrimoine. Une PAC air/eau dans votre maison bressane perpétue cette tradition d'innovation respectueuse.",
+    "faq_local": {
+      "question": "Quel modèle de PAC pour le climat de Bourg-en-Bresse ?",
+      "answer": "Bourg-en-Bresse est à 230m d'altitude en zone H1c. Les hivers sont froids (-5 à -10°C) mais courts. Un modèle standard haute température (55-65°C) de 10-14 kW convient pour la majorité des maisons bressanes."
+    },
+    "market_data": "Dans l'Ain, les prix sont de 10 000€ à 15 000€ TTC."
+  },
+  "agen": {
+    "intro": "Agen, capitale du pruneau au confluent du Canal de Garonne, bénéficie du climat doux du sud-ouest. Les maisons agenaises, les villas de Bon-Encontre ou Le Passage-d'Agen sont parfaites pour la PAC air/eau qui profite de conditions climatiques optimales.",
+    "local_tip": "L'Agglomération d'Agen propose des aides 'Habiter Mieux'. Zone H2c, modèle standard suffisant. Le Lot-et-Garonne est encore dépendant du fioul dans les zones rurales : le remplacement par PAC est ultra-rentable.",
+    "history_anecdote": "Le pont-canal d'Agen, qui enjambe la Garonne depuis 1843, est un exploit d'ingénierie hydraulique. Cette même ingéniosité se retrouve dans les circuits hydrauliques de la PAC air/eau qui acheminent la chaleur jusqu'à vos radiateurs avec une précision remarquable.",
+    "faq_local": {
+      "question": "Peut-on combiner PAC et poêle à bois à Agen ?",
+      "answer": "Absolument, c'est même une excellente combinaison. Le poêle à bois chauffe la pièce de vie lors des soirées d'hiver tandis que la PAC assure le chauffage de base de toute la maison. Cette complémentarité divise la consommation de bois par 3 et réduit encore la facture."
+    },
+    "market_data": "En Lot-et-Garonne, les prix sont de 8 500€ à 13 000€ TTC, parmi les plus accessibles du sud-ouest."
+  },
+  "epinal": {
+    "intro": "Épinal, ville des images et préfecture des Vosges, connaît un climat continental froid accentué par le relief vosgien. Les maisons vosgiennes en grès rose, les pavillons de Golbey ou Chantraine affrontent des hivers rigoureux où la PAC air/eau haute température prouve sa valeur.",
+    "local_tip": "L'Agglomération d'Épinal propose des aides via le programme Grand Est 'Climaxion'. Les Vosges sont en zone H1b-H1c : modèle haute température obligatoire. Le bois, abondant dans les Vosges, peut être un appoint complémentaire idéal.",
+    "history_anecdote": "L'Imagerie d'Épinal, célèbre depuis 1796 pour ses images populaires, a mythifié la vie quotidienne française. L'image d'Épinal de la PAC, c'est une maison vosgienne chaude et confortable malgré la neige dehors — et c'est une réalité, pas un mythe.",
+    "faq_local": {
+      "question": "La neige vosgienne gêne-t-elle la PAC ?",
+      "answer": "Non, si l'unité extérieure est surélevée (30 cm min.) et protégée par un auvent. Le dégivrage automatique gère le gel et la neige. En montagne vosgienne (> 500m), un ballon tampon 200-300L est recommandé."
+    },
+    "market_data": "Dans les Vosges, les prix sont de 10 500€ à 16 000€ TTC."
+  },
+  "tarbes": {
+    "intro": "Tarbes, au pied des Pyrénées, offre un climat sous influence montagnarde mais adouci par l'effet de foehn. Les maisons tarbaises, les pavillons d'Aureilhan ou Séméac et les résidences du quartier de l'Arsenal sont bien placés pour profiter de la PAC air/eau.",
+    "local_tip": "L'Agglomération Tarbes-Lourdes-Pyrénées propose des aides 'Habiter Mieux'. Le foehn pyrénéen adoucit les températures hivernales. Zone H2c en ville, H1c en altitude. L'ADIL 65 accompagne gratuitement les projets.",
+    "history_anecdote": "Le Haras National de Tarbes, fondé par Napoléon Ier en 1806, élevait les meilleurs chevaux de l'armée française. Aujourd'hui, ce sont les PAC air/eau qui font avancer la transition énergétique tarbaise — avec la même puissance mais en silence.",
+    "faq_local": {
+      "question": "L'altitude de Tarbes (300m) nécessite-t-elle un modèle spécial ?",
+      "answer": "À 300m, Tarbes centre est en zone H2c : un modèle standard suffit. En direction de Lourdes et la montagne (> 500m), passez en haute température. L'effet de foehn maintient des températures plus clémentes que l'altitude ne le laisserait supposer."
+    },
+    "market_data": "Dans les Hautes-Pyrénées, les prix sont de 9 500€ à 14 000€ TTC."
+  },
+  "brive-la-gaillarde": {
+    "intro": "Brive-la-Gaillarde, porte du Midi corrézien, bénéficie d'un microclimat doux et ensoleillé pour le Limousin. Les maisons en grès rouge, les pavillons de Malemort ou Allassac profitent de conditions climatiques favorables à la PAC air/eau.",
+    "local_tip": "L'Agglomération de Brive propose des aides 'Habiter Mieux'. Zone H2c avec un microclimat particulièrement clément pour le Limousin. Le remplacement des nombreuses chaudières fioul de la campagne corrézienne est prioritaire.",
+    "history_anecdote": "Brive, surnommée la 'Gaillarde' pour sa bravoure, a toujours eu du caractère. Les Brivistes abordent la transition énergétique avec le même esprit combatif : exit le fioul, place à la PAC air/eau et aux économies durables.",
+    "faq_local": {
+      "question": "Le microclimat de Brive est-il vraiment plus doux ?",
+      "answer": "Oui, Brive bénéficie d'un microclimat atypique pour le Limousin : 2-3°C de plus que Limoges, plus ensoleillé et protégé des vents du nord. Le COP moyen est excellent (3,7-4,0) et un modèle standard suffit."
+    },
+    "market_data": "En Corrèze, les prix sont de 9 000€ à 14 000€ TTC."
+  },
+  "auxerre": {
+    "intro": "Auxerre, perle de Bourgogne sur les rives de l'Yonne, offre un climat continental tempéré. Les maisons à pans de bois, les pavillons de Moneteau ou Perrigny sont candidats à la PAC air/eau, solution idéale pour remplacer les chaudières fioul encore nombreuses dans l'Yonne.",
+    "local_tip": "La Communauté de l'Auxerrois propose des aides. Zone H1c, modèle haute température recommandé. L'ADIL 89 offre des consultations gratuites. Le fioul est encore très présent dans l'Yonne : le remplacement par PAC bénéficie d'aides bonifiées.",
+    "history_anecdote": "Auxerre, ville de Cadet Rousselle 'qui a trois maisons', est connue pour ses comptines depuis le XVIIIe siècle. Aujourd'hui, les Auxerrois ont une maison bien mieux chauffée grâce à la PAC — et ça, ce n'est pas une comptine.",
+    "faq_local": {
+      "question": "Le fioul est-il encore courant à Auxerre ?",
+      "answer": "Oui, l'Yonne est l'un des départements les plus dépendants au fioul (> 25% du parc). Le remplacement par PAC air/eau est le cas d'usage le plus rentable : 65-75% d'économies + aides bonifiées 'sortie du fioul'."
+    },
+    "market_data": "Dans l'Yonne, les prix sont de 10 000€ à 15 000€ TTC."
+  },
+  "charleville-mezieres": {
+    "intro": "Charleville-Mézières, ville natale de Rimbaud sur les bords de la Meuse, connaît un climat continental froid typique des Ardennes. Les maisons ardennaises en ardoise et brique, les pavillons de Villers-Semeuse ou Sedan sont des candidats à la PAC air/eau haute température.",
+    "local_tip": "Ardenne Métropole propose des aides via le programme 'Climaxion' Grand Est. Zone H1b avec des hivers rigoureux : modèle haute température 14-16 kW indispensable. Le réseau 'Oktave' accompagne les projets en Grand Est.",
+    "history_anecdote": "Rimbaud, qui écrivit à 17 ans le célèbre 'Bateau Ivre', cherchait la liberté absolue. La PAC air/eau offre une forme de liberté — celle de se libérer du fioul et du gaz, pour une énergie plus propre et moins chère.",
+    "faq_local": {
+      "question": "Le climat ardennais est-il compatible avec la PAC ?",
+      "answer": "Oui, malgré des hivers froids (-5 à -15°C). Les PAC haute température modernes fonctionnent jusqu'à -25°C. Le COP moyen aux Ardennes est de 3,0-3,5, suffisant pour économiser 50-60% vs le fioul."
+    },
+    "market_data": "Dans les Ardennes, les prix sont de 10 500€ à 16 000€ TTC."
+  },
+  "frejus": {
+    "intro": "Fréjus, cité romaine de la Côte d'Azur, bénéficie d'un climat méditerranéen exceptionnel. Les villas de Saint-Raphaël, les maisons de Puget-sur-Argens et les résidences de Fréjus-Plage profitent de conditions optimales pour la PAC air/eau avec un COP dépassant 4,5.",
+    "local_tip": "La CAVEM (Communauté d'Agglomération Var Estérel Méditerranée) propose des aides locales. En zone littorale, coating anti-corrosion recommandé. Modèle réversible fortement conseillé pour les étés caniculaires.",
+    "history_anecdote": "Les arènes de Fréjus, construites au Ier siècle, accueillaient 10 000 spectateurs. Les Romains, pionniers du chauffage par hypocauste, auraient été fascinés par la PAC air/eau — la technologie ultime pour chauffer sans flamme.",
+    "faq_local": {
+      "question": "Le sel marin de Fréjus-Plage abîme-t-il la PAC ?",
+      "answer": "En zone littorale (< 1 km de la mer), un coating anti-corrosion est indispensable (Blue Fin ou Gold Fin). Au-delà, un modèle standard suffit. Avec cette précaution, la durée de vie reste de 15-20 ans."
+    },
+    "market_data": "Dans le Var côtier, les prix sont de 9 000€ à 14 000€ TTC."
+  },
+  "gap": {
+    "intro": "Gap, préfecture la plus haute de France (750m), connaît un climat alpin ensoleillé mais froid en hiver. Les maisons gapençaises, les chalets de Bayard et les pavillons de La Roche-des-Arnauds sont idéaux pour la PAC air/eau haute température qui excelle dans ce type d'environnement montagnard.",
+    "local_tip": "La Communauté d'Agglomération Gap-Tallard-Durance propose des aides. À 750m, Gap est en zone H1c montagne : modèle haute température 14-16 kW avec ballon tampon 200L obligatoire. L'ensoleillement exceptionnel (300j/an) aide au rendement.",
+    "history_anecdote": "Gap, étape de la Route Napoléon entre Golfe-Juan et Grenoble, a vu passer l'Empereur en 1815. Napoléon, visionnaire en matière d'infrastructure, aurait certainement encouragé l'adoption des PAC dans les Alpes du Sud.",
+    "faq_local": {
+      "question": "Une PAC fonctionne-t-elle à 750m d'altitude à Gap ?",
+      "answer": "Oui, parfaitement. Gap bénéficie d'un ensoleillement exceptionnel qui maintient des températures diurnes positives une grande partie de l'hiver. Les nuits froides (-10/-15°C) sont gérées par le mode grand froid des PAC modernes. Un ballon tampon est indispensable pour lisser les cycles jour/nuit."
+    },
+    "market_data": "Dans les Hautes-Alpes, les prix sont de 11 000€ à 17 000€ TTC, majorés par les contraintes montagne."
+  },
+  "la-roche-sur-yon": {
+    "intro": "La Roche-sur-Yon, préfecture de la Vendée créée par Napoléon en 1804, offre un climat océanique doux idéal pour la PAC air/eau. Les pavillons des quartiers résidentiels, les maisons de Mouilleron-le-Captif ou Le Boupère profitent d'un excellent COP saisonnier.",
+    "local_tip": "La Roche-sur-Yon Agglomération propose des aides. Zone H2b, modèle standard suffisant. La Vendée est l'un des départements les plus dynamiques pour l'installation de PAC en Pays de la Loire.",
+    "history_anecdote": "La Roche-sur-Yon, ville nouvelle napoléonienne construite sur un plan pentagonal, était une cité modèle. Napoléon voulait une ville parfaite — une PAC air/eau est le complément parfait de cette vision d'efficacité.",
+    "faq_local": {
+      "question": "Les aides sont-elles les mêmes en Vendée qu'ailleurs ?",
+      "answer": "Les aides nationales (MaPrimeRénov', CEE, TVA 5,5%, Éco-PTZ) s'appliquent partout en France. La Vendée bénéficie en plus du programme régional Pays de la Loire. Au total, un foyer vendéen aux revenus modestes peut bénéficier de 12 000 à 15 000€ d'aides."
+    },
+    "market_data": "En Vendée, les prix sont de 9 000€ à 13 500€ TTC, très compétitifs."
+  },
+  "le-blanc-mesnil": {
+    "intro": "Le Blanc-Mesnil, au cœur de la Seine-Saint-Denis, voit ses pavillons résidentiels et ses résidences passer à la PAC air/eau pour réduire les charges de chauffage.",
+    "local_tip": "Paris Terres d'Envol propose des aides. La densité d'installateurs RGE en Île-de-France garantit des devis compétitifs.",
+    "history_anecdote": "Le Blanc-Mesnil, ville d'aviation depuis les pionniers du Bourget, regarde toujours vers l'avenir — y compris pour le chauffage de ses logements.",
+    "faq_local": {
+      "question": "Les aides sont-elles majorées en Seine-Saint-Denis ?",
+      "answer": "Oui, les revenus modestes étant plus fréquents dans le 93, les montants MaPrimeRénov' sont souvent au plafond (11 000€ pour les revenus très modestes)."
+    },
+    "market_data": "En Seine-Saint-Denis, les prix sont de 10 000€ à 15 500€ TTC."
+  },
+  "lens": {
+    "intro": "Lens, ancienne cité minière transformée en pôle culturel grâce au Louvre-Lens, voit ses corons et maisons de briques passer du charbon à la PAC air/eau.",
+    "local_tip": "La CALL (Communauté d'Agglomération Lens-Liévin) propose des aides via 'Amélio'. Zone H1a, modèle haute température nécessaire.",
+    "history_anecdote": "Le Louvre-Lens, ouvert en 2012 dans un ancien bassin minier, symbolise la reconversion du Nord. La PAC air/eau est une autre reconversion : du charbon à l'énergie propre.",
+    "faq_local": {
+      "question": "Les corons sont-ils adaptés à la PAC ?",
+      "answer": "Oui ! Les maisons mitoyennes des corons (60-90m²) nécessitent des PAC de petite puissance (6-10 kW) peu coûteuses. L'isolation des combles est le complément idéal."
+    },
+    "market_data": "Dans le Pas-de-Calais minier, les prix sont de 9 000€ à 14 000€ TTC."
+  },
+  "macon": {
+    "intro": "Mâcon, porte sud de la Bourgogne, offre un climat doux de transition entre continental et méditerranéen. Les maisons mâconnaises et les pavillons de Charnay ou Sancé sont idéaux pour la PAC air/eau.",
+    "local_tip": "Mâconnais Sud Bourgogne propose des aides. Zone H2c, modèle standard suffisant. Le vignoble environnant témoigne de la douceur du climat.",
+    "history_anecdote": "Lamartine, poète romantique né à Mâcon, écrivait : 'Ô temps ! suspends ton vol'. Si le temps ne suspend pas son vol, la PAC suspend elle vos factures de chauffage exorbitantes.",
+    "faq_local": {
+      "question": "Le climat de Mâcon est-il vraiment doux pour la Bourgogne ?",
+      "answer": "Oui, Mâcon est la ville la plus méridionale de Bourgogne avec un microclimat nettement plus doux que Dijon ou Auxerre. Un modèle standard suffit, ce qui réduit le coût."
+    },
+    "market_data": "En Saône-et-Loire sud, les prix sont de 9 000€ à 13 500€ TTC."
+  },
+  "meaux": {
+    "intro": "Meaux, cité briarde historique à l'est de Paris, connaît un climat continental d'Île-de-France. Les pavillons de la grande couronne est sont les premiers candidats à la PAC air/eau.",
+    "local_tip": "Le Pays de Meaux propose des aides. La proximité de Paris assure un excellent réseau d'installateurs. Zone H1, modèle standard à haute température selon vos radiateurs.",
+    "history_anecdote": "Bossuet, l'Aigle de Meaux, prononçait des oraisons funèbres retentissantes au XVIIe siècle. Aujourd'hui, c'est l'oraison funèbre de la chaudière gaz que les Meldois célèbrent en adoptant la PAC.",
+    "faq_local": {
+      "question": "Les pavillons de la grande couronne sont-ils adaptés ?",
+      "answer": "Parfaitement. Les pavillons des années 60-90 de Meaux et environs (100-140m²) sont le cœur de cible de la PAC air/eau. Puissance type : 10-14 kW, budget : 10 000-15 000€ TTC."
+    },
+    "market_data": "En Seine-et-Marne, les prix sont de 10 000€ à 15 500€ TTC."
+  },
+  "montbeliard": {
+    "intro": "Montbéliard, berceau de Peugeot, connaît un climat continental froid du Doubs. Les maisons de Sochaux, Audincourt ou Valentigney sont candidates à la PAC haute température.",
+    "local_tip": "PMA (Pays de Montbéliard Agglomération) propose des aides. Zone H1c, modèle haute température indispensable. La tradition automobile de Peugeot a formé des techniciens en thermodynamique reconvertis en installateurs PAC.",
+    "history_anecdote": "Peugeot, fondé à Montbéliard, a révolutionné l'automobile. La PAC air/eau est une révolution similaire pour le chauffage — même esprit d'ingénierie, même souci d'efficacité.",
+    "faq_local": {
+      "question": "L'expertise Peugeot profite-t-elle aux installateurs ?",
+      "answer": "Indirectement oui. Le bassin industriel de Montbéliard a formé de nombreux techniciens en thermodynamique et froïdistes reconvertis dans l'installation de PAC."
+    },
+    "market_data": "Dans le Doubs nord, les prix sont de 10 500€ à 16 000€ TTC."
+  },
+  "mont-de-marsan": {
+    "intro": "Mont-de-Marsan, cité landaise au confluent de la Douze et du Midou, profite du climat landais doux et humide. Idéal pour la PAC air/eau.",
+    "local_tip": "Mont de Marsan Agglo propose des aides. Zone H2c, modèle standard suffisant. Les Landes sont boisées : un poêle à bois en complément est une excellente combinaison.",
+    "history_anecdote": "Mont-de-Marsan, ville fleurie 4 fleurs et cité de la sculpture, cultive la beauté — y compris celle d'une facture de chauffage divisée par 3 grâce à la PAC.",
+    "faq_local": {
+      "question": "Peut-on combiner PAC et chauffage bois dans les Landes ?",
+      "answer": "C'est même la combinaison idéale ! Le poêle à bois chauffe le salon tandis que la PAC assure le chauffage global. Le bois landais est très accessible."
+    },
+    "market_data": "Dans les Landes, les prix sont de 8 500€ à 13 000€ TTC."
+  },
+  "perigueux": {
+    "intro": "Périgueux, capitale du Périgord et de la gastronomie, offre un climat doux de Dordogne. Les maisons périgourdines en pierre blonde sont parfaites pour la PAC air/eau.",
+    "local_tip": "Le Grand Périgueux propose des aides. Zone H2c, modèle standard suffisant. La pierre du Périgord a une excellente inertie thermique.",
+    "history_anecdote": "La cathédrale Saint-Front de Périgueux, inspirée de Saint-Marc de Venise, prouve que le Périgord a toujours su adopter les meilleures idées venues d'ailleurs — y compris la PAC air/eau.",
+    "faq_local": {
+      "question": "La pierre périgourdine convient-elle à la PAC ?",
+      "answer": "C'est un duo parfait. La pierre blonde du Périgord, épaisse et dense, stocke la chaleur produite par la PAC et la restitue lentement. Le confort est exceptionnel."
+    },
+    "market_data": "En Dordogne, les prix sont de 9 000€ à 13 500€ TTC."
+  },
+  "rochefort": {
+    "intro": "Rochefort, ville-arsenal de la Marine royale, bénéficie du climat doux océanique de Charente-Maritime. Les maisons de la ville classée et les pavillons environnants sont idéaux pour la PAC.",
+    "local_tip": "La CARO propose des aides. Air salin de l'estuaire : coating anti-corrosion recommandé en zone portuaire. Modèle standard suffisant en zone H2b.",
+    "history_anecdote": "Rochefort, où fut construite la frégate l'Hermione en 1779, est un bastion de la construction navale. La précision des charpentiers navals se retrouve dans le savoir-faire des installateurs locaux.",
+    "faq_local": {
+      "question": "L'air salin de l'estuaire est-il un problème ?",
+      "answer": "En zone portuaire, oui : choisissez un modèle avec coating anti-corrosion. En retrait de l'estuaire, un modèle standard suffit."
+    },
+    "market_data": "En Charente-Maritime, les prix sont de 9 000€ à 13 500€ TTC."
+  },
+  "rodez": {
+    "intro": "Rodez, ville haute de l'Aveyron couronnée par sa cathédrale, offre un climat semi-continental de causse. Les maisons aveyronnaises en grès rose sont des candidates à la PAC haute température.",
+    "local_tip": "Rodez Agglomération propose des aides. Zone H2c-H1c selon l'altitude. Le musée Soulages témoigne de la capacité rouergate à allier tradition et modernité.",
+    "history_anecdote": "Pierre Soulages, maître de l'outrenoir né à Rodez, jouait avec la lumière et l'ombre. La PAC joue avec la chaleur de l'air — invisible mais puissante, comme l'art de Soulages.",
+    "faq_local": {
+      "question": "L'altitude de Rodez (630m) nécessite-t-elle un modèle spécial ?",
+      "answer": "À 630m, les hivers sont froids mais ensoleillés. Un modèle haute température 10-14 kW convient. Le ballon tampon est recommandé pour les nuits les plus froides."
+    },
+    "market_data": "En Aveyron, les prix sont de 10 000€ à 15 000€ TTC."
+  },
+  "saint-brieuc": {
+    "intro": "Saint-Brieuc, préfecture des Côtes-d'Armor, bénéficie du climat breton doux. Les maisons de granit, les pavillons de Plérin ou Trégueux profitent d'un COP saisonnier excellent.",
+    "local_tip": "Saint-Brieuc Armor Agglomération propose le programme 'Rénov'Habitat'. La Bretagne est la 1ère région de France en installation de PAC. Modèle standard suffisant.",
+    "history_anecdote": "Saint-Brieuc, fondée par le moine gallois Brieuc au VIe siècle, a toujours accueilli les bonnes idées d'outre-mer. La PAC, venue du Japon via la Scandinavie, perpétue cette tradition.",
+    "faq_local": {
+      "question": "La Bretagne est-elle vraiment la 1ère région pour les PAC ?",
+      "answer": "Oui, avec plus de 25% des installations nationales. Le climat doux, le dynamisme des installateurs et les aides régionales en font le territoire le plus favorable de France."
+    },
+    "market_data": "Dans les Côtes-d'Armor, les prix sont de 9 000€ à 14 000€ TTC."
+  },
+  "saint-malo": {
+    "intro": "Saint-Malo, cité corsaire et station balnéaire, offre un microclimat doux grâce au Gulf Stream. Les maisons intra-muros, les pavillons de Paramé ou Saint-Servan sont parfaits pour la PAC air/eau.",
+    "local_tip": "Saint-Malo Agglomération propose des aides. En intra-muros (zone ABF), l'unité extérieure doit être invisible. En bord de mer, coating anti-corrosion obligatoire. Climat très favorable : modèle standard suffisant.",
+    "history_anecdote": "Les corsaires malouins parcouraient les mers du monde entier. Aujourd'hui, c'est la chaleur de l'air malouin que la PAC capture pour chauffer votre maison — un trésor plus accessible que l'or des galions.",
+    "faq_local": {
+      "question": "Les remparts de Saint-Malo empêchent-ils la PAC ?",
+      "answer": "En intra-muros, les contraintes ABF sont strictes mais pas rédhibitoires. L'unité extérieure peut être installée dans une cour intérieure ou sur un toit-terrasse, hors de vue des remparts."
+    },
+    "market_data": "En Ille-et-Vilaine côtier, les prix sont de 9 500€ à 14 500€ TTC."
+  },
+  "sete": {
+    "intro": "Sète, île singulière entre étang de Thau et Méditerranée, bénéficie d'un climat exceptionnel. Les maisons du Mont Saint-Clair, les villas de la Corniche et les résidences du centre-ville profitent de la PAC air/eau avec un COP record.",
+    "local_tip": "Sète Agglopôle Méditerranée propose des aides. Double exposition maritime (mer + étang) : coating anti-corrosion fortement recommandé. Modèle réversible conseillé pour les étés chauds et humides.",
+    "history_anecdote": "Georges Brassens, enfant de Sète, chantait 'le temps ne fait rien à l'affaire'. Pour la PAC, le temps fait beaucoup à l'affaire : 15-20 ans de confort et d'économies.",
+    "faq_local": {
+      "question": "La double exposition maritime de Sète est-elle un problème ?",
+      "answer": "Sète étant entourée d'eau (mer + étang), l'air est très salin. Un coating anti-corrosion renforcé est indispensable. Malgré cette contrainte, le climat ultra-doux garantit un COP > 4,5 et un ROI de 3-5 ans."
+    },
+    "market_data": "Dans l'Hérault côtier, les prix sont de 9 000€ à 14 000€ TTC."
+  },
+  "soissons": {
+    "intro": "Soissons, ancienne capitale mérovingienne de l'Aisne, connaît un climat continental froid. Les maisons de pierre et les pavillons résidentiels bénéficient de la PAC haute température.",
+    "local_tip": "GrandSoissons Agglomération propose des aides. Zone H1a, modèle haute température obligatoire. Les aides sont maximales dans cette zone.",
+    "history_anecdote": "Le Vase de Soissons, brisé par Clovis en 486, est le symbole de l'autorité royale. Briser sa dépendance au fioul avec une PAC air/eau est tout aussi décisif pour votre budget.",
+    "faq_local": {
+      "question": "Les aides dans l'Aisne sont-elles élevées ?",
+      "answer": "Oui, la zone H1a + les revenus régionaux = montants MaPrimeRénov' souvent au maximum. Un foyer modeste peut bénéficier de 13 000-16 000€ d'aides cumulées."
+    },
+    "market_data": "Dans l'Aisne, les prix sont de 10 500€ à 16 000€ TTC."
+  },
+  "thionville": {
+    "intro": "Thionville, ville mosellane frontalière du Luxembourg, connaît un climat continental froid. Les maisons thionvilloises et les pavillons de Yutz ou Terville profitent de la PAC haute température.",
+    "local_tip": "La CCPHVA propose des aides. Zone H1b, modèle haute température nécessaire. La proximité du Luxembourg offre aussi l'accès à des artisans transfrontaliers.",
+    "history_anecdote": "Thionville, ancienne Diedenhofen, a navigué entre France et Allemagne au fil des siècles. Cette double culture se retrouve dans l'adoption des PAC, très populaires des deux côtés du Rhin.",
+    "faq_local": {
+      "question": "Les artisans luxembourgeois peuvent-ils intervenir à Thionville ?",
+      "answer": "Oui, mais ils doivent être certifiés RGE en France pour que vous bénéficier des aides MaPrimeRénov'. Préférez un installateur français RGE pour simplicité administrative."
+    },
+    "market_data": "En Moselle nord, les prix sont de 10 500€ à 16 000€ TTC."
+  },
+  "valenciennes": {
+    "intro": "Valenciennes, cité historique du Hainaut, vit une renaissance économique et énergétique. Les maisons de brique flamandes et les pavillons résidentiels passent au PAC air/eau haute température.",
+    "local_tip": "Valenciennes Métropole propose des aides via 'Amélio'. Zone H1a, modèle haute température 14-16 kW. Les maisons flamandes en brique ont une bonne inertie thermique qui favorise la PAC.",
+    "history_anecdote": "Watteau, peintre des fêtes galantes né à Valenciennes en 1684, créait des scènes de bonheur insouciant. Une maison bien chauffée par PAC, c'est un peu cette insouciance retrouvée — le bonheur de ne plus s'inquiéter de sa facture de chauffage.",
+    "faq_local": {
+      "question": "Le réseau d'installateurs est-il bon à Valenciennes ?",
+      "answer": "Oui, le Hainaut bénéficie de la dynamique de la MEL (Lille) et dispose de nombreux artisans RGE qualifiés. La forte concentration d'habitat résidentiel stimule le marché."
+    },
+    "market_data": "Dans le Nord sud, les prix sont de 10 500€ à 15 500€ TTC."
+  },
+  "chalon-sur-saone": {
+    "intro": "Chalon-sur-Saône, berceau de la photographie, offre un climat de transition bourguignon. Les maisons chalonnaises sont parfaites pour la PAC air/eau.",
+    "local_tip": "Le Grand Chalon propose des aides. Zone H2c, modèle standard suffisant dans cette partie méridionale de la Bourgogne.",
+    "history_anecdote": "Niépce inventa la photographie à Chalon en 1826. Près de 200 ans plus tard, la PAC est une autre révolution technologique qui transforme le quotidien des Chalonnais.",
+    "faq_local": {
+      "question": "Chalon est-il vraiment plus doux que le reste de la Bourgogne ?",
+      "answer": "Oui, la vallée de la Saône adoucit le climat. Chalon est en zone H2c, bien plus douce que Dijon (H1c). Un modèle standard suffit, économisant 1 500-2 000€."
+    },
+    "market_data": "En Saône-et-Loire, les prix sont de 9 000€ à 14 000€ TTC."
+  },
+  "chateauroux": {
+    "intro": "Châteauroux, préfecture de l'Indre au cœur du Berry, offre un climat continental doux. Les maisons berrichonnes sont candidates à la PAC air/eau.",
+    "local_tip": "Châteauroux Métropole propose des aides. Zone H2b, modèle standard suffisant. Le Berry est encore dépendant du fioul : le remplacement par PAC est ultra-rentable.",
+    "history_anecdote": "George Sand, figure du Berry, prônait la vie simple et proche de la nature à Nohant. La PAC air/eau, qui utilise l'énergie gratuite de l'air, aurait ravi cette pionnière de l'écologie avant l'heure.",
+    "faq_local": {
+      "question": "Le fioul est-il encore courant dans l'Indre ?",
+      "answer": "Oui, plus de 30% des maisons individuelles de l'Indre sont chauffées au fioul. Le remplacement par PAC offre 65-75% d'économies avec des aides bonifiées."
+    },
+    "market_data": "Dans l'Indre, les prix sont de 9 000€ à 14 000€ TTC."
+  },
+  "compiegne": {
+    "intro": "Compiègne, cité impériale et ville de la forêt, connaît un climat continental de l'Oise. Les maisons de la ville historique et les pavillons résidentiels sont candidats à la PAC.",
+    "local_tip": "L'ARC (Agglomération Compiégnoise) propose des aides. Zone H1a, modèle haute température recommandé.",
+    "history_anecdote": "Le château de Compiègne, résidence favorite de Napoléon III, symbolise le luxe impérial. La PAC air/eau offre un confort impérial à un prix républicain.",
+    "faq_local": {
+      "question": "La forêt de Compiègne influence-t-elle le climat ?",
+      "answer": "La forêt adoucit légèrement les températures et protège du vent. Un avantage pour la PAC qui bénéficie de conditions plus stables qu'en plaine picarde."
+    },
+    "market_data": "Dans l'Oise, les prix sont de 10 000€ à 15 500€ TTC."
+  },
+  "dax": {
+    "intro": "Dax, station thermale des Landes, bénéficie du climat landais doux et humide. La ville qui soigne par la chaleur de ses boues adopte naturellement la PAC air/eau.",
+    "local_tip": "Le Grand Dax propose des aides. Zone H2c, modèle standard suffisant. Les eaux thermales de Dax sont chauffées naturellement — la PAC utilise le même principe de captation de chaleur.",
+    "history_anecdote": "Les thermes de Dax, actifs depuis l'époque romaine, exploitent la chaleur naturelle des eaux souterraines. La PAC exploite la chaleur naturelle de l'air — même philosophie, technologie moderne.",
+    "faq_local": {
+      "question": "Le climat de Dax est-il favorable à la PAC ?",
+      "answer": "Très favorable. L'influence atlantique maintient des hivers doux (rarement sous 0°C). Le COP saisonnier dépasse 4,0. Un modèle standard suffit largement."
+    },
+    "market_data": "Dans les Landes, les prix sont de 8 500€ à 13 000€ TTC."
+  },
+  "evreux": {
+    "intro": "Évreux, préfecture de l'Eure, offre un climat normand doux. Les maisons ébroïciennes et les pavillons résidentiels sont parfaits pour la PAC air/eau.",
+    "local_tip": "Évreux Portes de Normandie propose des aides. Zone H2a, modèle standard suffisant. Le climat normand, doux et stable, est idéal.",
+    "history_anecdote": "La cathédrale d'Évreux, mélange de styles du XIe au XVIe siècle, témoigne de l'évolution architecturale normande. La PAC est la dernière évolution du confort thermique ébroïcien.",
+    "faq_local": {
+      "question": "Le climat normand d'Évreux est-il adapté ?",
+      "answer": "Parfaitement. Évreux est en zone H2a avec des hivers doux. Le COP saisonnier est de 3,8-4,0. Un modèle standard suffit, ce qui réduit le budget."
+    },
+    "market_data": "Dans l'Eure, les prix sont de 9 000€ à 14 000€ TTC."
+  },
+  "villenave-d-ornon": {
+    "intro": "Villenave-d'Ornon, commune résidentielle bordelaise, offre le même climat doux que Bordeaux. Les pavillons et maisons individuelles sont les premiers candidats à la PAC.",
+    "local_tip": "Bordeaux Métropole couvre Villenave avec les mêmes aides que Bordeaux ('Rénov'Habitat'). Zone H2c, modèle standard suffisant.",
+    "history_anecdote": "Villenave-d'Ornon, porte sud de la Métropole bordelaise, est au cœur des Graves, terroir viticole célèbre. Comme le vin, la PAC se bonifie avec le temps — les performances s'améliorent à chaque génération de modèles.",
+    "faq_local": {
+      "question": "Les aides de Bordeaux Métropole s'appliquent-elles ?",
+      "answer": "Oui, Villenave-d'Ornon fait partie de Bordeaux Métropole et bénéficie du programme 'Rénov'Habitat' avec les mêmes aides et le même accompagnement."
+    },
+    "market_data": "En Gironde sud, les prix sont de 9 000€ à 14 000€ TTC."
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "name": "Photovoltaik Kostenrechner",
+  "short_name": "PV-Rechner",
+  "description": "Was kostet eine Solaranlage 2026? Preise, Förderung & Angebote vergleichen.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0277BD",
+  "lang": "de",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "/favicon.ico",
+      "sizes": "32x32",
+      "type": "image/x-icon"
+    }
+  ]
+}
