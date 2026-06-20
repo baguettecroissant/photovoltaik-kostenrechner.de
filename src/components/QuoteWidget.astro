@@ -295,6 +295,63 @@ const { keyword = siteConfig.niche.name, defaultZip = '' } = Astro.props;
           setTimeout(function() {
             window.open(siteConfig.taptaphome.trackingLinkPV, '_blank');
           }, 1500);
+        } else if (mode === 'api') {
+          // Submit to serverless function API
+          const submitBtn = form.querySelector('.submit-btn');
+          const originalBtnText = submitBtn ? submitBtn.innerText : '';
+          if (submitBtn) {
+            submitBtn.disabled = true;
+            submitBtn.innerText = 'Wird gesendet...';
+          }
+
+          const payload = {
+            firstname: data.firstname,
+            lastname: data.lastname,
+            email: data.email,
+            phone: data.phone,
+            zip: data.zip,
+            niche: 'photovoltaics',
+            domain: siteConfig.domain,
+            subject_key: 'photovoltaics',
+            service_key: 'power_system',
+            job_details: {
+              eigentumsverhaeltnisse: "Eigner / Entscheidungsbefugt",
+              objekt: "Einfamilienhaus",
+              dacheindeckung: "Dachziegel",
+              stromverbrauch: "3.500-4.500 kWh",
+              zeitpunkt_projektbegin: "In den nächsten 3 Monaten",
+              stromspeicher: "Weiß nicht / Beratung erwünscht"
+            },
+            pageUrl: window.location.href
+          };
+
+          fetch('/api/lead', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload),
+          })
+          .then(res => res.json())
+          .then(resData => {
+            if (resData.success) {
+              steps.forEach(step => step.classList.add('hidden'));
+              successPane.classList.remove('hidden');
+              footerNav.classList.add('hidden');
+            } else {
+              alert('Fehler bei der Übermittlung: ' + (resData.errors ? resData.errors.join(', ') : 'Bitte überprüfen Sie Ihre Eingaben.'));
+              if (submitBtn) {
+                submitBtn.disabled = false;
+                submitBtn.innerText = originalBtnText;
+              }
+            }
+          })
+          .catch(err => {
+            console.error(err);
+            alert('Ein Netzwerkfehler ist aufgetreten. Bitte versuchen Sie es erneut.');
+            if (submitBtn) {
+              submitBtn.disabled = false;
+              submitBtn.innerText = originalBtnText;
+            }
+          });
         } else {
           // Standard API/Success response
           steps.forEach(step => step.classList.add('hidden'));
