@@ -56,6 +56,18 @@ test('GET expose uniquement la version saine du gateway', async () => {
   assert.equal(body.ok, true);
   assert.equal(body.site, SITE);
   assert.match(body.version, /^2026-08-12\./);
+  assert.equal(body.gateway_configured, true);
+  assert.equal(JSON.stringify(body).includes('unit-test-secret'), false);
+});
+
+test('GET signale un secret runtime absent sans exposer de valeur', async () => {
+  const response = await onRequestGet({
+    env: {},
+    request: request({ method: 'GET' }),
+  });
+  const body = await response.json();
+  assert.equal(response.status, 200);
+  assert.equal(body.gateway_configured, false);
   assert.equal(JSON.stringify(body).includes('secret'), false);
 });
 

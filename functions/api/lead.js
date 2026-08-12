@@ -73,6 +73,8 @@ export async function onRequestGet(context) {
     ok: true,
     site: SITE_DOMAIN,
     version: VERSION,
+    gateway_configured: typeof context.env?.TAPTAPHOME_GATEWAY_SECRET === 'string'
+      && context.env.TAPTAPHOME_GATEWAY_SECRET.length > 0,
   });
 }
 
