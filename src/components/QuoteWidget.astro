@@ -25,28 +25,28 @@ const { keyword = siteConfig.niche.name, defaultZip = '' } = Astro.props;
     
     <!-- Step 1: Eigentum -->
     <div class="step-pane active" data-step="1">
-      <p class="text-xs font-semibold text-amber-600 uppercase tracking-wider mb-2 font-heading">Schritt 1 von 6</p>
+      <p class="text-xs font-semibold text-amber-600 uppercase tracking-wider mb-2 font-heading">Schritt 1 von 7</p>
       <h4 class="font-bold text-base text-gray-900 mb-4 font-heading">Sind Sie Eigentümer der Immobilie?</h4>
       <div class="space-y-3">
-        <button type="button" class="form-btn" data-next="true">Ja, ich bin Eigentümer</button>
+        <button type="button" class="form-btn" data-next="true" data-detail-key="eigentumsverhaeltnisse" data-detail-value="Eigner / Entscheidungsbefugt">Ja, ich bin Eigentümer</button>
         <button type="button" class="form-btn" data-disqualify="owner">Nein, ich bin Mieter</button>
       </div>
     </div>
 
     <!-- Step 2: Art der Immobilie -->
     <div class="step-pane hidden" data-step="2">
-      <p class="text-xs font-semibold text-amber-600 uppercase tracking-wider mb-2 font-heading">Schritt 2 von 6</p>
+      <p class="text-xs font-semibold text-amber-600 uppercase tracking-wider mb-2 font-heading">Schritt 2 von 7</p>
       <h4 class="font-bold text-base text-gray-900 mb-4 font-heading">Um welche Art von Gebäude handelt es sich?</h4>
       <div class="space-y-3">
-        <button type="button" class="form-btn" data-next="true">Einfamilienhaus</button>
-        <button type="button" class="form-btn" data-next="true">Zweifamilienhaus</button>
+        <button type="button" class="form-btn" data-next="true" data-detail-key="objekt" data-detail-value="Einfamilienhaus">Einfamilienhaus</button>
+        <button type="button" class="form-btn" data-next="true" data-detail-key="objekt" data-detail-value="Zweifamilienhaus">Zweifamilienhaus</button>
         <button type="button" class="form-btn" data-disqualify="property">Mehrfamilienhaus / Sonstiges</button>
       </div>
     </div>
 
     <!-- Step 3: Dachfläche -->
     <div class="step-pane hidden" data-step="3">
-      <p class="text-xs font-semibold text-amber-600 uppercase tracking-wider mb-2 font-heading">Schritt 3 von 6</p>
+      <p class="text-xs font-semibold text-amber-600 uppercase tracking-wider mb-2 font-heading">Schritt 3 von 7</p>
       <h4 class="font-bold text-base text-gray-900 mb-4 font-heading">Wie groß ist die ungefähre nutzbare Dachfläche?</h4>
       <div class="space-y-3">
         <button type="button" class="form-btn" data-next="true">Mehr als 20 m²</button>
@@ -56,26 +56,49 @@ const { keyword = siteConfig.niche.name, defaultZip = '' } = Astro.props;
 
     <!-- Step 4: Dacheindeckung -->
     <div class="step-pane hidden" data-step="4">
-      <p class="text-xs font-semibold text-amber-600 uppercase tracking-wider mb-2 font-heading">Schritt 4 von 6</p>
+      <p class="text-xs font-semibold text-amber-600 uppercase tracking-wider mb-2 font-heading">Schritt 4 von 7</p>
       <h4 class="font-bold text-base text-gray-900 mb-4 font-heading">Welche Eindeckung hat Ihr Dach?</h4>
       <div class="space-y-3">
-        <button type="button" class="form-btn" data-next="true">Ziegel / Beton / Metall / Bitumen</button>
+        <button type="button" class="form-btn" data-next="true" data-detail-key="dacheindeckung" data-detail-value="Dachziegel">Dachziegel</button>
+        <button type="button" class="form-btn" data-next="true" data-detail-key="dacheindeckung" data-detail-value="Blech">Blech</button>
+        <button type="button" class="form-btn" data-next="true" data-detail-key="dacheindeckung" data-detail-value="Dachpappe / Bitumen">Dachpappe / Bitumen</button>
+        <button type="button" class="form-btn" data-next="true" data-detail-key="dacheindeckung" data-detail-value="Folie">Folie</button>
+        <button type="button" class="form-btn" data-next="true" data-detail-key="dacheindeckung" data-detail-value="Wellplatten">Wellplatten</button>
+        <button type="button" class="form-btn" data-next="true" data-detail-key="dacheindeckung" data-detail-value="Biberschwanzziegel">Biberschwanzziegel</button>
+        <button type="button" class="form-btn" data-next="true" data-detail-key="dacheindeckung" data-detail-value="Begrüntes Dach">Begrüntes Dach</button>
         <button type="button" class="form-btn" data-disqualify="asbestos">Schiefer / Asbest</button>
       </div>
     </div>
 
-    <!-- Step 5: Zeitplan -->
+    <!-- Step 5: Jährlicher Stromverbrauch -->
     <div class="step-pane hidden" data-step="5">
-      <p class="text-xs font-semibold text-amber-600 uppercase tracking-wider mb-2 font-heading">Schritt 5 von 6</p>
+      <p class="text-xs font-semibold text-amber-600 uppercase tracking-wider mb-2 font-heading">Schritt 5 von 7</p>
+      <h4 class="font-bold text-base text-gray-900 mb-4 font-heading">Wie hoch ist Ihr jährlicher Stromverbrauch?</h4>
+      <div class="space-y-3">
+        <button type="button" class="form-btn" data-next="true" data-detail-key="stromverbrauch" data-detail-value="1.500-2.500 kWh">1.500-2.500 kWh</button>
+        <button type="button" class="form-btn" data-next="true" data-detail-key="stromverbrauch" data-detail-value="2.500-3.500 kWh">2.500-3.500 kWh</button>
+        <button type="button" class="form-btn" data-next="true" data-detail-key="stromverbrauch" data-detail-value="3.500-4.500 kWh">3.500-4.500 kWh</button>
+        <button type="button" class="form-btn" data-next="true" data-detail-key="stromverbrauch" data-detail-value="über 4.500 kWh">über 4.500 kWh</button>
+        <button type="button" class="form-btn" data-next="true" data-detail-key="stromverbrauch" data-detail-value="über 7.500 kWh">über 7.500 kWh</button>
+        <button type="button" class="form-btn" data-next="true" data-detail-key="stromverbrauch" data-detail-value="über 10.000 kWh">über 10.000 kWh</button>
+        <button type="button" class="form-btn" data-disqualify="consumption">Weniger als 1.500 kWh</button>
+      </div>
+    </div>
+
+    <!-- Step 6: Zeitplan -->
+    <div class="step-pane hidden" data-step="6">
+      <p class="text-xs font-semibold text-amber-600 uppercase tracking-wider mb-2 font-heading">Schritt 6 von 7</p>
       <h4 class="font-bold text-base text-gray-900 mb-4 font-heading">Wann soll die Solaranlage installiert werden?</h4>
       <div class="space-y-3">
-        <button type="button" class="form-btn" data-next="true">In den nächsten 6 Monaten</button>
+        <button type="button" class="form-btn" data-next="true" data-detail-key="zeitpunkt_projektbegin" data-detail-value="Umgehend">Umgehend</button>
+        <button type="button" class="form-btn" data-next="true" data-detail-key="zeitpunkt_projektbegin" data-detail-value="In den nächsten 3 Monaten">In den nächsten 3 Monaten</button>
+        <button type="button" class="form-btn" data-next="true" data-detail-key="zeitpunkt_projektbegin" data-detail-value="In 3 bis 6 Monaten">In 3 bis 6 Monaten</button>
         <button type="button" class="form-btn" data-disqualify="timing">Später</button>
       </div>
     </div>
 
-    <!-- Step 6: Kontaktdaten (Qualified) -->
-    <div class="step-pane hidden" data-step="6">
+    <!-- Step 7: Kontaktdaten (Qualified) -->
+    <div class="step-pane hidden" data-step="7">
       <p class="text-xs font-semibold text-amber-600 uppercase tracking-wider mb-2 font-heading">Letzter Schritt</p>
       <h4 class="font-bold text-base text-gray-900 mb-4 font-heading">Angebote kostenlos anfordern</h4>
       
@@ -102,10 +125,25 @@ const { keyword = siteConfig.niche.name, defaultZip = '' } = Astro.props;
           <label class="block text-xs font-bold text-gray-600 mb-1">Telefonnummer</label>
           <input type="tel" name="phone" required placeholder="z.B. 0170 1234567" class="form-input" />
         </div>
-        
-        <div class="text-[10px] text-gray-500 leading-snug mt-2">
-          Mit dem Absenden stimmen Sie zu, dass Ihre Daten zur Angebotserstellung an {siteConfig.taptaphome.partnerName} übermittelt werden.
+        <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;" />
+        <div>
+          <label class="block text-xs font-bold text-gray-600 mb-1">Straße und Hausnummer</label>
+          <input type="text" name="street" required maxlength="200" autocomplete="street-address" placeholder="Musterstraße 12" class="form-input" />
         </div>
+        <div class="grid grid-cols-2 gap-2">
+          <div>
+            <label class="block text-xs font-bold text-gray-600 mb-1">Ort</label>
+            <input type="text" name="city" required maxlength="120" autocomplete="address-level2" placeholder="Ort" class="form-input" />
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-gray-600 mb-1">Dachfläche (m²)</label>
+            <input type="number" name="dachflaeche" required min="20" max="10000" step="1" inputmode="numeric" class="form-input" />
+          </div>
+        </div>
+        <label class="flex items-start gap-2 text-[10px] text-gray-600 leading-snug mt-2">
+          <input type="checkbox" name="consent" required class="mt-0.5" />
+          <span>Ich willige ein, dass meine Angaben zur Bearbeitung meiner Angebotsanfrage an <strong>TapTapHome (DAA GmbH)</strong> übermittelt werden. Ich habe die <a href="/datenschutz" class="underline" target="_blank" rel="noopener noreferrer">Datenschutzhinweise</a> und die <a href="https://www.taptaphome.com/de/agb-nutzer" class="underline" target="_blank" rel="noopener noreferrer">AGB für Anfragesteller:innen</a> gelesen.</span>
+        </label>
 
         <button type="submit" class="submit-btn mt-3">
           ☀️ Jetzt Angebote anfordern →
@@ -206,159 +244,102 @@ const { keyword = siteConfig.niche.name, defaultZip = '' } = Astro.props;
 <script is:inline define:vars={{ siteConfig }}>
   (function() {
     const container = document.getElementById('solar-form-wizard');
-    if (!container) return;
+    const form = document.getElementById('solar-lead-form');
+    if (!container || !form) return;
 
     let currentStep = 1;
+    const answers = {};
+    const formStartedAt = new Date().toISOString();
+    const idempotencyKey = (globalThis.crypto && crypto.randomUUID ? crypto.randomUUID() : 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) { var r = crypto.getRandomValues(new Uint8Array(1))[0] & 15; var v = c === 'x' ? r : (r & 3) | 8; return v.toString(16); }));
     const steps = container.querySelectorAll('.step-pane[data-step]');
     const prevBtn = document.getElementById('prev-step-btn');
     const footerNav = document.getElementById('form-nav-footer');
     const disqualifyPane = document.getElementById('disqualify-pane');
     const successPane = document.getElementById('success-pane');
     const disqualifyMsg = document.getElementById('disqualify-msg');
-
+    const requiredAnswers = ["eigentumsverhaeltnisse", "objekt", "dacheindeckung", "stromverbrauch", "zeitpunkt_projektbegin"];
     const disqualifyMessages = {
-      owner: 'Unsere Partner-Fachbetriebe arbeiten ausschließlich mit Hauseigentümern zusammen. Mieter können wir leider nicht vermitteln.',
-      property: 'Über dieses Portal können Solaranlagen leider nur für freistehende Einfamilienhäuser und Zweifamilienhäuser angefragt werden.',
-      size: 'Für eine wirtschaftliche Nutzung ist eine nutzbare Dachfläche von mindestens 20 m² erforderlich.',
-      asbestos: 'Aus Sicherheitsgründen belegen unsere Fachpartner keine Dächer mit Asbest- oder Schieferdeckung.',
-      timing: 'Unsere Partner-Betriebe können Kapazitäten nur für Projekte reservieren, deren Umsetzung in den nächsten 6 Monaten geplant ist.'
+      owner: 'Unsere Partner-Fachbetriebe arbeiten ausschließlich mit Hauseigentümern zusammen.',
+      property: 'Mehrfamilienhäuser und Gewerbeobjekte können über diesen Dienst nicht vermittelt werden.',
+      size: 'Das Projekt liegt außerhalb der vermittelbaren Flächengrenzen.',
+      type: 'Dieser Wärmepumpentyp wird über diesen Dienst nicht vermittelt.',
+      roof: 'Dieser Aufstellungsort wird über diesen Dienst nicht vermittelt.',
+      timing: 'Vermittelt werden nur Projekte, die innerhalb der nächsten sechs Monate beginnen.',
+      asbestos: 'Dächer mit Schiefer oder Asbest können nicht vermittelt werden.',
+      consumption: 'Für die Vermittlung ist ein jährlicher Stromverbrauch ab 1.500 kWh erforderlich.',
+      unsupported: 'Diese Auswahl wird über diesen Dienst nicht vermittelt.'
     };
 
     function showStep(stepNum) {
-      steps.forEach(step => {
-        if (parseInt(step.getAttribute('data-step')) === stepNum) {
-          step.classList.remove('hidden');
-          step.classList.add('active');
-        } else {
-          step.classList.add('hidden');
-          step.classList.remove('active');
-        }
+      steps.forEach(function(step) {
+        const active = Number(step.getAttribute('data-step')) === stepNum;
+        step.classList.toggle('hidden', !active);
+        step.classList.toggle('active', active);
       });
-      
       currentStep = stepNum;
-
-      if (currentStep > 1 && currentStep <= 6) {
-        prevBtn.classList.remove('hidden');
-      } else {
-        prevBtn.classList.add('hidden');
-      }
+      if (prevBtn) prevBtn.classList.toggle('hidden', !(currentStep > 1 && currentStep <= 7));
     }
 
-    // Bind next step buttons
-    container.addEventListener('click', function(e) {
-      const btn = e.target.closest('button');
+    container.addEventListener('click', function(event) {
+      const btn = event.target.closest('button');
       if (!btn) return;
-
+      const detailKey = btn.getAttribute('data-detail-key');
+      const detailValue = btn.getAttribute('data-detail-value');
+      if (detailKey && detailValue) answers[detailKey] = detailValue;
       if (btn.getAttribute('data-next') === 'true') {
         showStep(currentStep + 1);
       } else if (btn.getAttribute('data-disqualify')) {
-        const filterType = btn.getAttribute('data-disqualify');
-        disqualifyMsg.innerHTML = disqualifyMessages[filterType] || 'Ihre Angaben entsprechen leider nicht den Kriterien der regionalen Fachpartner.';
-        
-        // Hide all steps and show disqualification
-        steps.forEach(step => step.classList.add('hidden'));
-        disqualifyPane.classList.remove('hidden');
-        footerNav.classList.add('hidden');
+        const reason = btn.getAttribute('data-disqualify');
+        if (disqualifyMsg) disqualifyMsg.textContent = disqualifyMessages[reason] || disqualifyMessages.unsupported;
+        steps.forEach(function(step) { step.classList.add('hidden'); });
+        if (disqualifyPane) disqualifyPane.classList.remove('hidden');
+        if (footerNav) footerNav.classList.add('hidden');
       }
     });
 
-    // Bind prev button
-    if (prevBtn) {
-      prevBtn.addEventListener('click', function() {
-        if (currentStep > 1) {
-          showStep(currentStep - 1);
-        }
-      });
-    }
+    if (prevBtn) prevBtn.addEventListener('click', function() { if (currentStep > 1) showStep(currentStep - 1); });
 
-    // Submit handler
-    const form = document.getElementById('solar-lead-form');
-    if (form) {
-      form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        // Form data collection
-        const formData = new FormData(form);
-        const data = Object.fromEntries(formData.entries());
-        console.log('Qualified lead data collected:', data);
-
-        // Monetization Action depending on Mode
-        const mode = siteConfig.taptaphome.mode;
-        
-        if (mode === 'redirect') {
-          // Success pane show
-          steps.forEach(step => step.classList.add('hidden'));
-          successPane.classList.remove('hidden');
-          footerNav.classList.add('hidden');
-          
-          // Redirect to affiliate tracking link
-          setTimeout(function() {
-            window.open(siteConfig.taptaphome.trackingLinkPV, '_blank');
-          }, 1500);
-        } else if (mode === 'api') {
-          // Submit to serverless function API
-          const submitBtn = form.querySelector('.submit-btn');
-          const originalBtnText = submitBtn ? submitBtn.innerText : '';
-          if (submitBtn) {
-            submitBtn.disabled = true;
-            submitBtn.innerText = 'Wird gesendet...';
-          }
-
-          const payload = {
-            firstname: data.firstname,
-            lastname: data.lastname,
-            email: data.email,
-            phone: data.phone,
-            zip: data.zip,
-            niche: 'photovoltaics',
-            domain: siteConfig.domain,
-            subject_key: 'photovoltaics',
-            service_key: 'power_system',
-            job_details: {
-              eigentumsverhaeltnisse: "Eigner / Entscheidungsbefugt",
-              objekt: "Einfamilienhaus",
-              dacheindeckung: "Dachziegel",
-              stromverbrauch: "3.500-4.500 kWh",
-              zeitpunkt_projektbegin: "In den nächsten 3 Monaten",
-              stromspeicher: "Weiß nicht / Beratung erwünscht"
-            },
-            pageUrl: window.location.href
-          };
-
-          fetch('/api/lead', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(payload),
-          })
-          .then(res => res.json())
-          .then(resData => {
-            if (resData.success) {
-              steps.forEach(step => step.classList.add('hidden'));
-              successPane.classList.remove('hidden');
-              footerNav.classList.add('hidden');
-            } else {
-              alert('Fehler bei der Übermittlung: ' + (resData.errors ? resData.errors.join(', ') : 'Bitte überprüfen Sie Ihre Eingaben.'));
-              if (submitBtn) {
-                submitBtn.disabled = false;
-                submitBtn.innerText = originalBtnText;
-              }
-            }
-          })
-          .catch(err => {
-            console.error(err);
-            alert('Ein Netzwerkfehler ist aufgetreten. Bitte versuchen Sie es erneut.');
-            if (submitBtn) {
-              submitBtn.disabled = false;
-              submitBtn.innerText = originalBtnText;
-            }
-          });
-        } else {
-          // Standard API/Success response
-          steps.forEach(step => step.classList.add('hidden'));
-          successPane.classList.remove('hidden');
-          footerNav.classList.add('hidden');
-        }
-      });
-    }
+    form.addEventListener('submit', async function(event) {
+      event.preventDefault();
+      if (!form.reportValidity()) return;
+      if (requiredAnswers.some(function(key) { return !answers[key]; })) {
+        alert('Bitte beantworten Sie alle Projektfragen.');
+        return;
+      }
+      const data = Object.fromEntries(new FormData(form).entries());
+      const submitBtn = form.querySelector('.submit-btn');
+      const originalText = submitBtn ? submitBtn.innerText : '';
+      if (submitBtn) { submitBtn.disabled = true; submitBtn.innerText = 'Wird gesendet...'; }
+      const jobDetails = Object.assign({}, answers);
+      jobDetails.dachflaeche = Number(data.dachflaeche);
+      const payload = {
+        firstname: data.firstname,
+        lastname: data.lastname,
+        email: data.email,
+        phone: data.phone,
+        street: data.street,
+        zip: data.zip,
+        city: data.city,
+        job_details: jobDetails,
+        page_url: window.location.href,
+        consent: form.querySelector('[name="consent"]').checked,
+        consent_version: 'taptaphome-de-2026-08-12-v1',
+        consent_at: new Date().toISOString(),
+        form_started_at: formStartedAt,
+        idempotency_key: idempotencyKey,
+        website: data.website || ''
+      };
+      try {
+        const response = await fetch('/api/lead', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+        const result = await response.json().catch(function() { return { success: false, errors: ['Ungültige Serverantwort.'] }; });
+        if (!response.ok || result.success !== true) throw new Error(Array.isArray(result.errors) ? result.errors.join(', ') : 'Bitte versuchen Sie es erneut.');
+        steps.forEach(function(step) { step.classList.add('hidden'); });
+        if (successPane) successPane.classList.remove('hidden');
+        if (footerNav) footerNav.classList.add('hidden');
+      } catch (error) {
+        alert('Fehler bei der Übermittlung: ' + (error instanceof Error ? error.message : 'Bitte versuchen Sie es erneut.'));
+        if (submitBtn) { submitBtn.disabled = false; submitBtn.innerText = originalText; }
+      }
+    });
   })();
 </script>
